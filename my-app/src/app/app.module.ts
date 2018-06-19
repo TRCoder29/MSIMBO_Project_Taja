@@ -8,11 +8,12 @@ import { AboutComponent } from './components/Business/about/about.component';
 import { BlogComponent } from './components/Business/blog/blog.component';
 import { ContactComponent } from './components/Business/contact/contact.component';
 import { FaqComponent } from './components/Business/faq/faq.component';
-import { AdminDashboardComponent } from './components/Business/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
 import { ProfileComponent } from './components/User/profile/profile.component';
 import { ItineraryComponent } from './components/business/itinerary/itinerary.component';
+import { ServicesComponent } from './components/business/services/services.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ItineraryComponent } from './components/business/itinerary/itinerary.co
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    ItineraryComponent
+    ItineraryComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule
