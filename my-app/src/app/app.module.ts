@@ -14,6 +14,8 @@ import { RegisterComponent } from './components/User/register/register.component
 import { ProfileComponent } from './components/User/profile/profile.component';
 import { ItineraryComponent } from './components/business/itinerary/itinerary.component';
 import { ServicesComponent } from './components/business/services/services.component';
+import { BlogNewComponent } from './components/Business/blog/blog-new/blog-new.component';
+import { BlogEditComponent } from './components/Business/blog/blog-edit/blog-edit.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ServicesComponent } from './components/business/services/services.compo
     RegisterComponent,
     ProfileComponent,
     ItineraryComponent,
-    ServicesComponent
+    ServicesComponent,
+    BlogNewComponent,
+    BlogEditComponent
   ],
   imports: [
     BrowserModule
