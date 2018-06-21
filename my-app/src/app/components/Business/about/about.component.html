@@ -1,40 +1,43 @@
+<!-- Background Image -->
+<!-- <body background="/Media/GildedMarket.jpg"> -->
+
 <!-- Nav Bar -->
 <nav class="topnav float-right">
-	<a href="#home">Home</a>
+	<!-- Home -->
+	<button class="dropbtn" href="home.html">Home</button>
+	<!-- About -->
+	<button class="dropbtn" href="about.html">About</button>
+	<!-- Services -->
 	<div class="active dropdown">
-	    <button class="dropbtn">About 
-	      <i class="fa fa-caret-down"></i>
+	    <button class="dropbtn">Services
+	    	<i class="fa fa-caret-down"></i>
 	    </button>
 	    <div class="dropdown-content">
-      		<a href="#">About</a>
-      		<a href="#">FAQ</a>
+      		<a href="services">General Services</a>
+      		<a href="doing-business">Doing Business</a>
+      		<a href="itinerary-request">Request Services</a>
 	    </div>
 	</div>
+	<!-- Blog -->
+	<button class="dropbtn" href="blog.html">Blog</button>
+	<!-- Contact -->
+	<button class="dropbtn" href="contact.html">Contact</button>
+	<!-- Profile -->
 	<div class="active dropdown">
-	    <button class="dropbtn">Services 
-	      <i class="fa fa-caret-down"></i>
+	    <button class="dropbtn">Profile
+	    	<i class="fa fa-caret-down"></i>
 	    </button>
 	    <div class="dropdown-content">
-      		<a href="#">General Services</a>
-      		<a href="#">Request a Trip</a>
-	    </div>
-	</div> 
-	<a href="#blog">Blog</a>
-	<a href="#contact">Contact</a>
-	<div class="active dropdown">
-	    <button class="dropbtn">Profile 
-	      <i class="fa fa-caret-down"></i>
-	    </button>
-	    <div class="dropdown-content">
-	    	<a href="#">My Account</a>
-      		<a href="#">Login</a>
-      		<a href="#">Register</a>
+	    	<a href="user/:uid">My Account</a>
+      		<a href="login.html">Login</a>
+      		<a href="register.html">Register</a>
 	    </div>
 	</div> 
 </nav>
 
 <!-- About Business: Mission Statement, Customer Promises, Reviews -->
-<div style="overflow: auto border:2px solid white; padding:2%">
+<div class='container' style="overflow: auto border:2px solid white; padding:2%">
+	<p>
 	<!-- Mission Statement: Heading and Description -->
 	Mission Statement Under Construction
 
@@ -53,12 +56,13 @@
 	6. I promise to provide you the best customer service that I can, and will give you the genuine courtesy and care that you deserve.
 	
 	7. If I am unable to provide the desired product or service, I will point you in the direction of an someone of repute that can.
+	</p>
 </div>
 
 <!-- footer -->
-<nav class="navbar navbar-dark bg-primary fixed-bottom">
+<nav class="navbar navbar-dark fixed-bottom">
 	<!-- Admin Login (Button) -->
 	<div class="sw-width">
-		<a class="sw-font-white float-right" routerLink=""><i class="fas fa-user"></i></a>
+		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
 	</div>
 </nav>

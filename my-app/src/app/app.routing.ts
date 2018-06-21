@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Routes, RouterModule} from "@angular/router";
+import { ModuleWithProviders} from "@angular/core";
 
 import { AppComponent } from './app.component';
 
@@ -24,33 +24,32 @@ import { ProfileComponent } from './components/User/profile/profile.component';
 import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
 
-import { Routing } from './app.routing';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AdminDashboardComponent,
-    HomeComponent,
-    AboutComponent,
-    BlogMainComponent,
-    ContactComponent,
-    ItineraryComponent,
-    ServicesComponent,
-    DoingBusinessComponent,
-    BlogMainComponent,
-    BlogNewComponent,
-    BlogEditComponent,
-    ProfileComponent,
-    LoginComponent,
-    RegisterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    Routing
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+
+
+const APP_ROUTES : Routes = [
+  // User (More Profile Components to Come)
+  { path : '', component: AboutComponent},
+  { path : 'login' , component: LoginComponent},
+  { path : 'register' , component: RegisterComponent},
+  { path : 'user/:uid' , component: ProfileComponent},
+
+  // Business
+  { path : 'home' , component: HomeComponent},
+  { path : 'about', component : AboutComponent},
+  { path : 'contact' , component: ContactComponent},
+
+  { path : 'services' , component: ServicesComponent},
+  { path : 'doing-business' , component: DoingBusinessComponent},
+  { path : 'itinerary-request' , component: ItineraryComponent},
+
+  { path : 'blog', component : BlogMainComponent},
+  { path : 'admin/:aid/blog/new' , component: BlogNewComponent},
+  { path : 'admin/:aid/blog/:bgid/edit' , component: BlogEditComponent},
+
+  // Admin (More Admin Components to Come)
+  { path : 'admin', component: AdminDashboardComponent}
+];
+
+// Export the routes as module providers
+export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

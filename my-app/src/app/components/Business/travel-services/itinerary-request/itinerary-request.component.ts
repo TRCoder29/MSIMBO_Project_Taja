@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-itinerary',
-  templateUrl: './itinerary.component.html',
-  styleUrls: ['./itinerary.component.css']
+  selector: 'app-itinerary-request',
+  templateUrl: './itinerary-request.component.html',
+  styleUrls: ['./itinerary-request.component.css']
 })
 export class ItineraryComponent implements OnInit {
 
