@@ -1,3 +1,32 @@
+<!-- Nav Bar -->
+<div class="navbar">
+	<a href="#home">Home</a>
+	<a href="#about">About</a>
+	<div class="dropdown">
+		<button class="dropbtn">Services
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a href="services">General Services</a>
+			<a href="doing-business">Doing Business</a>
+			<a href="itinerary-request">Request Services</a>
+		</div>
+	</div>
+	<a href="#blog">Blog</a>
+	<a href="#contact">Contact</a>
+	<div class="dropdown">
+		<button class="dropbtn">Profile
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<!-- Make My Account disappear when not logged in -->
+			<a href="user/{{uid}}">My Account</a>
+			<a href="login.html">Login</a>
+			<a href="register.html">Register</a>
+		</div>
+	</div>
+</div>
+
 <!-- FAQ Page -->
 <div class="container-fluid">
 
@@ -60,3 +89,10 @@
 
 </div>
 
+<!-- footer -->
+<nav class="navbar navbar-dark fixed-bottom">
+	<!-- Admin Login (Button) -->
+	<div class="sw-width">
+		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
+	</div>
+</nav>
