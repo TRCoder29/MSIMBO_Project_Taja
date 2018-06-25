@@ -2,61 +2,74 @@
 <!-- <body background="/Media/GildedMarket.jpg"> -->
 
 <!-- Nav Bar -->
-<nav class="topnav float-right">
-	<!-- Home -->
-	<button class="dropbtn" href="home.html">Home</button>
-	<!-- About -->
-	<button class="dropbtn" href="about.html">About</button>
-	<!-- Services -->
-	<div class="active dropdown">
-	    <button class="dropbtn">Services
-	    	<i class="fa fa-caret-down"></i>
-	    </button>
-	    <div class="dropdown-content">
-      		<a href="services">General Services</a>
-      		<a href="doing-business">Doing Business</a>
-      		<a href="itinerary-request">Request Services</a>
-	    </div>
+<div class="navbar">
+	<a href="#home">Home</a>
+	<a href="#about">About</a>
+	<div class="dropdown">
+		<button class="dropbtn">Services
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a href="services">General Services</a>
+			<a href="doing-business">Doing Business</a>
+			<a href="itinerary-request">Request Services</a>
+		</div>
 	</div>
-	<!-- Blog -->
-	<button class="dropbtn" href="blog.html">Blog</button>
-	<!-- Contact -->
-	<button class="dropbtn" href="contact.html">Contact</button>
-	<!-- Profile -->
-	<div class="active dropdown">
-	    <button class="dropbtn">Profile
-	    	<i class="fa fa-caret-down"></i>
-	    </button>
-	    <div class="dropdown-content">
-	    	<a href="user/:uid">My Account</a>
-      		<a href="login.html">Login</a>
-      		<a href="register.html">Register</a>
-	    </div>
-	</div> 
-</nav>
+	<a href="#blog">Blog</a>
+	<a href="#contact">Contact</a>
+	<div class="dropdown">
+		<button class="dropbtn">Profile
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<!-- Make My Account disappear when not logged in -->
+			<a href="user/{{uid}}">My Account</a>
+			<a href="login.html">Login</a>
+			<a href="register.html">Register</a>
+		</div>
+	</div>
+</div>
 
 <!-- About Business: Mission Statement, Customer Promises, Reviews -->
-<div class='container' style="overflow: auto border:2px solid white; padding:2%">
+<div class='container-fluid' id="aboutbiz" style="overflow: auto border:2px solid white; padding:2%">
+	
+	<h6>Mission Statement</h6>
 	<p>
 	<!-- Mission Statement: Heading and Description -->
-	Mission Statement Under Construction
+	Under Construction
+	</p>
 
 	<!-- Customer Promises: Heading and Description -->
-	Customer Promises:
-	1. I will do my very best to curate and provide quality travel experiences within your desired budget.
-	
-	2. I will not promote a trip or service that is beneath my own personal travel tastes and standards within your requested price range (unless you insist).
-	
-	3. I will never push or pressure you to book anything. I will book only when you are ready and comfortable with the product or service proposed.
-	
-	4. No quote is ever guaranteed, since market prices and availability can change at any minute. If your package price changes, I will do my absolute best to find you a package with an equal or lesser price at an equal or greater quality if available.
-	
-	5. I promise to put your well-being and enjoyment over profit, meaning that I will not try to sell you products that do not fit your travel needs and wants, for my own gain.
-	
-	6. I promise to provide you the best customer service that I can, and will give you the genuine courtesy and care that you deserve.
-	
-	7. If I am unable to provide the desired product or service, I will point you in the direction of an someone of repute that can.
-	</p>
+	<h6>Customer Promises:</h6>
+	<ol>
+		<li>
+		I will do my very best to curate and provide quality travel experiences within your desired budget.
+		</li>
+		
+		<li>
+		I will not promote a trip or service that is beneath my own personal travel tastes and standards within your requested price range (unless you insist).
+		</li>
+		
+		<li>
+		I will never push or pressure you to book anything. I will book only when you are ready and comfortable with the product or service proposed.
+		</li>
+		
+		<li>
+		No quote is ever guaranteed, since market prices and availability can change at any minute. If your package price changes, I will do my absolute best to find you a package with an equal or lesser price at an equal or greater quality if available.
+		</li>
+		
+		<li>
+		I promise to put your well-being and enjoyment over profit, meaning that I will not try to sell you products that do not fit your travel needs and wants, for my own gain.
+		</li>
+		
+		<li>
+		I promise to provide you the best customer service that I can, and will give you the genuine courtesy and care that you deserve.
+		</li>
+		
+		<li>
+		If I am unable to provide the desired product or service, I will point you in the direction of an someone of repute that can.
+		</li>
+	</ol>
 </div>
 
 <!-- footer -->
@@ -66,3 +79,4 @@
 		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
 	</div>
 </nav>
+
