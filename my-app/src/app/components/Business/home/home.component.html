@@ -1,13 +1,53 @@
-<div>
-	No Nav Bar
+<!-- 	No Nav Bar
 
 	Photo buttons to each page: About, Services, Blog, Contact, Profile
 
 	When you hover, it shows additional paths
 
-	About: (About, FAQs)
-	Services: (General Services, Request a Trip)
-	Blog: "Blog" or "Be Inspired"
-	Contact: "Reach out!"
-	Profile: (Login, Register)
+		1. About: (About, FAQs)
+		2. Services: (General Services, Doing Business, Request a Trip)
+		3. Blog: "Blog" or "Be Inspired"
+		4. Contact: "Reach out!"
+		5. Profile: (My Account, Log-Out, Login, Register)
+ -->
+<div class=homebackground>
+	<div class="container-fluid">
+		<div class="homebutton homebutton1">
+			<h6>About</h6>
+			<a href="about">Learn more!</a>
+		</div>
+
+		<div class="homebutton homebutton2">
+			<h6>Services</h6>
+			<a href="general-services">General Services</a>
+			<a href="doing-business">Doing Business</a>
+			<a href="itinerary-request">Request a Trip</a>
+		</div>
+
+		<div class="homebutton homebutton3">
+			<h6>Blog</h6>
+			<a href="blog">Be inspired!</a>
+		</div>
+
+		<div class="homebutton homebutton4">
+			<h6>Contact</h6>
+			<a href="contact">Reach out!</a>
+		</div>
+
+		<div class="homebutton homebutton5" href="Profile">
+			<h6>Profile</h6>
+			<a class="user" href="user/{{uid}}">My Account</a>
+			<a class="user" href="login">Log Out</a>
+			<a class="guest" href="login">Login</a>
+			<a class="guest" href="register">Register</a>
+		</div>
+	</div>
 </div>
+
+<!-- Nav Footer -->
+<nav class="navbar navbar-dark fixed-bottom">
+	<!-- Admin Login (Button) -->
+	<div class="sw-width">
+		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
+	</div>
+</nav>
