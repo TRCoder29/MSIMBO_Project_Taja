@@ -43,7 +43,7 @@ const APP_ROUTES : Routes = [
   { path : 'doing-business' , component: DoingBusinessComponent},
   { path : 'itinerary-request' , component: ItineraryComponent},
 
-  { path : 'blog', component : BlogMainComponent},
+  { path : 'blog-main', component : BlogMainComponent},
   { path : 'admin/:aid/blog/new' , component: BlogNewComponent},
   { path : 'admin/:aid/blog/:bgid/edit' , component: BlogEditComponent},
 

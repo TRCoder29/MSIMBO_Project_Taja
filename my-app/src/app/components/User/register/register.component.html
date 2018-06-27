@@ -12,17 +12,18 @@
 			<a href="itinerary-request">Request Services</a>
 		</div>
 	</div>
-	<a href="blog">Blog</a>
+	<a href="blog-main">Blog</a>
 	<a href="contact">Contact</a>
 	<div class="dropdown">
 		<button class="dropbtn">Profile
 			<i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-content">
-			<!-- Make My Account disappear when not logged in -->
-			<a href="user/{{uid}}">My Account</a>
-			<a href="login">Login</a>
-			<a href="register">Register</a>
+			<!-- Make My Account and Log Out disappear when not logged in -->
+			<a class="user" href="user/{{uid}}">My Account</a>
+			<a class="user" href="login">Log Out</a>
+			<a class="guest" href="login">Login</a>
+			<a class="guest" href="register">Register</a>
 		</div>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <!-- Nav Bar -->
 <div class="navbar">
-	<a href="#home">Home</a>
-	<a href="#about">About</a>
+	<a href="home">Home</a>
+	<a href="about">About</a>
 	<div class="dropdown">
 		<button class="dropbtn">Services
 			<i class="fa fa-caret-down"></i>
@@ -12,37 +12,56 @@
 			<a href="itinerary-request">Request Services</a>
 		</div>
 	</div>
-	<a href="#blog">Blog</a>
-	<a href="#contact">Contact</a>
+	<a href="blog-main">Blog</a>
+	<a href="contact">Contact</a>
 	<div class="dropdown">
 		<button class="dropbtn">Profile
 			<i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-content">
-			<!-- Make My Account disappear when not logged in -->
-			<a href="user/{{uid}}">My Account</a>
-			<a href="login.html">Login</a>
-			<a href="register.html">Register</a>
+			<!-- Make My Account and Log Out disappear when not logged in -->
+			<a class="user" href="user/{{uid}}">My Account</a>
+			<a class="user" href="login">Log Out</a>
+			<a class="guest" href="login">Login</a>
+			<a class="guest" href="register">Register</a>
 		</div>
 	</div>
 </div>
 
 <!-- Itinerary Request Forms and Travel Info -->
-<div>
+<div class=itinbackground>
 	<!-- Left -->
-	Survey Dropdown
-	Client Travel Survey
-	Group Client Travel Survey
-	Special Event Travel Survey
-	Name (First/Last), Date of Birth, Preferred Port of Departure, E-Mail, Phone, Address, Preferences, etc.
-	Send/Register/Log-In Option
+	<div class="itintransbox row container-fluid">
+		<div class="col-sm-6 d-none d-sm-block float-left">
+			<h6>Request Service</h6>
+			<ul>
+				<!-- Request a Trip -->
+				<li>Solo Travel</li>
+				<li>Group Travel</li>
+				<li>Special Event/Occasion Travel</li>
+				<!-- 	Name (First/Last), Date of Birth, Preferred Port of Departure, E-Mail, Phone, Address, Preferences, etc. Send/Register/Log-In Option -->
+				<!-- Other Services -->
+				<li>Travel Consulting</li>
+				<li>Services/Amenities</li>
+			</ul>
+		</div>
+	</div>
 
 	<!-- Right -->
-	“Need Some Inspiration?”
-	“See where I’ve been!” (Link to Blog)
-	“See what’s out there!” (Link to Lonely Planet. Note: Good, but clients can book there. Going to have to express the value of services on the About page.)
-	“Feeling Adventurous? Surprise Yourself!” (Link to Earth Roulette Note: Jantaroo is good, but it leads to Expedia)
-	“Google It” Google Search Bar (Create a search bar: see this link for instructions )
+	<div class="itintransbox row container-fluid">
+		<div class="col-sm-6 d-none d-sm-block float-right">
+			<h6>“Need Some Inspiration?”</h6>
+			<ul>
+				<li><a href="blog-main">“See where I’ve been!”</a></li>
+				<li><a href="https://www.lonelyplanet.com/">“See what’s out there!”</a></li>
+				<!-- Note: Good, but clients can book there. Going to have to express the value of services on the About page.) -->
+				<li><a href="https://earthroulette.com/">“Feeling Adventurous? Surprise Yourself!”</a></li>
+				<!--  Note: Link to Earth Roulette Note: Jantaroo is good, but it leads to Expedia -->
+				<li><a href="https://www.google.com/">Have an idea and want more info? Google it!”</a></li>
+				<!-- Google Search Bar (Create a search bar: see this link for instructions) -->
+			</ul>
+		</div>
+	</div>
 </div>
 
 <!-- footer -->

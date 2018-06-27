@@ -243,7 +243,7 @@ div.genservtransbox {
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-div.genservtransbox p, ol {
+div.genservtransbox p, ul {
   margin: 2%;
 /*  font-weight: bold;*/
 /*  color: #000000;*/
@@ -256,3 +256,121 @@ div.genservtransbox h6 {
 /*  color: #000000;*/
   color: #ffffff;
 }
+
+/*----------------------------------------------------*/
+
+/*Doing Business Page*/
+
+/*Background Image*/
+div.dobizbackground { 
+    /* The image used */
+    background-image: url("./media/OliveMarket.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    padding-left: 450px;
+    padding-right: 450px;
+    padding-bottom: 50px;
+}
+
+
+/*Transparent Content Box*/
+div.dobiztransbox {
+  margin: 20px;
+  padding: 30px;
+/*  background-color: #ffffff;*/
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.dobiztransbox p, ol {
+  margin: 2%;
+/*  font-weight: bold;*/
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+div.dobiztransbox h6 {
+  margin: 2%;
+  font-weight: bold;
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+/*----------------------------------------------------*/
+
+/*Itinerary Request*/
+
+/*Background Image*/
+div.itinbackground { 
+    /* The image used */
+    background-image: url("./media/PoolSide.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    padding-left: 450px;
+    padding-right: 450px;
+    padding-bottom: 50px;
+}
+
+
+/*Transparent Content Box*/
+div.itintransbox {
+  margin: 20px;
+  padding: 30px;
+/*  background-color: #ffffff;*/
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.itintransbox p, ul {
+  margin: 2%;
+/*  font-weight: bold;*/
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+div.itintransbox h6 {
+  margin: 2%;
+  font-weight: bold;
+/*  color: #000000;*/
+  color: #ffffff;
+}
+/*----------------------------------------------------*/
+
+/*Blog*/
+
+
+
+
+/*----------------------------------------------------*/
+/*Contact*/
+
+
+
+/*----------------------------------------------------*/
+
+/*Profile*/
+
+
+
+
+/*----------------------------------------------------*/
+
+/*Admin*/
