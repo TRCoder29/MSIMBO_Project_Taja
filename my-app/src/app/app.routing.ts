@@ -29,7 +29,7 @@ import { RegisterComponent } from './components/User/register/register.component
 
 const APP_ROUTES : Routes = [
   // User (More Profile Components to Come)
-  { path : '', component: AboutComponent},
+  { path : '', component: HomeComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent},
   { path : 'user/:uid' , component: ProfileComponent},
