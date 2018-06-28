@@ -6,11 +6,13 @@
 /*"Group Buttons" https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_group_justified*/
 /*"Hover Picture" https://www.w3schools.com/howto/howto_css_image_overlay.asp*/
 /*"Blog Layout" https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blog_layout*/
+/*Drop-Down Forms (For Survey) https://www.w3schools.com/html/html_form_elements.asp*/
+/*Remove Bullets from UL https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_unordered_none)*/
+
 
 /*Navbar Style (General)*/
 .navbar {
     overflow: hidden;
-/*    background-color: #333;*/
     background-color: #000000;
     font-family: Arial, Helvetica, sans-serif;
     height: 30px;
@@ -88,18 +90,14 @@
 
 /*Home*/
 
-/*Background Image*/
+/*Background*/
 div.homebackground {
     background-color: #000000;
-
-    /* Full height */
     height: 100%; 
-
-    /*Padding around the outside of the buttons*/
-    padding-top: 200px;
+    padding-top: 300px;
     padding-left: 400px;
     padding-right: 400px;
-    padding-bottom: 200px;
+    padding-bottom: 300px;
 }
 
 
@@ -194,13 +192,8 @@ div.homebackground {
 
 /*Background Image*/
 div.aboutbackground { 
-    /* The image used */
     background-image: url("./media/GildedMarket.jpg");
-
-    /* Full height */
     height: 100%; 
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -215,24 +208,19 @@ div.aboutbackground {
 div.abouttransbox {
   margin: 20px;
   padding: 30px;
-/*  background-color: #ffffff;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 div.abouttransbox p, ol {
   margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
   color: #ffffff;
 }
 
 div.abouttransbox h6 {
   margin: 2%;
   font-weight: bold;
-/*  color: #000000;*/
   color: #ffffff;
 }
 
@@ -241,21 +229,16 @@ div.abouttransbox h6 {
 /*General Services Page*/
 
 /*Background Image*/
-div.genservbackground { 
-    /* The image used */
+div.genservbackground {
     background-image: url("./media/BlueAlley.jpg");
-
-    /* Full height */
     height: 100%;
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 200px;
     padding-left: 450px;
     padding-right: 450px;
-    padding-bottom: 250px;
+    padding-bottom: 450px;
 }
 
 
@@ -263,24 +246,19 @@ div.genservbackground {
 div.genservtransbox {
   margin: 20px;
   padding: 30px;
-/*  background-color: #ffffff;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-div.genservtransbox p, ul {
+div.genservtransbox p {
   margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
   color: #ffffff;
 }
 
-div.genservtransbox h6 {
+div.genservtransbox label {
   margin: 2%;
   font-weight: bold;
-/*  color: #000000;*/
   color: #ffffff;
 }
 
@@ -290,17 +268,12 @@ div.genservtransbox h6 {
 
 /*Background Image*/
 div.dobizbackground { 
-    /* The image used */
-    background-image: url("./media/OliveMarket.jpg");
-
-    /* Full height */
+    background-image: url("./media/FortressGarden.jpg");
     height: 100%; 
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-left: 450px;
     padding-right: 450px;
     padding-bottom: 50px;
@@ -311,24 +284,19 @@ div.dobizbackground {
 div.dobiztransbox {
   margin: 20px;
   padding: 30px;
-/*  background-color: #ffffff;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 div.dobiztransbox p, ol {
   margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
   color: #ffffff;
 }
 
 div.dobiztransbox h6 {
   margin: 2%;
   font-weight: bold;
-/*  color: #000000;*/
   color: #ffffff;
 }
 
@@ -338,91 +306,76 @@ div.dobiztransbox h6 {
 
 /*Background Image*/
 div.itinbackground { 
-    /* The image used */
     background-image: url("./media/CancunView.jpg");
-
-    /* Full height */
     height: 100%; 
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 100px;
     padding-left: 450px;
     padding-right: 450px;
-    padding-bottom: 50px;
+    padding-bottom: 310px;
 }
 
 
 /*Transparent Content Box*/
 div.itintransbox {
-  margin: 20px;
+  margin: 50px;
   padding: 30px;
-/*  background-color: #ffffff;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-div.itintransbox p, ul {
-  margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
-  color: #ffffff;
-}
-
-div.itintransbox h6 {
+div.itintransbox label {
   margin: 2%;
   font-weight: bold;
-/*  color: #000000;*/
   color: #ffffff;
 }
+
+div.itintransbox p {
+  margin: 2%;
+  color: #ffffff;
+}
+
+div.itintransbox a {
+  margin: 2%;
+}
+
 /*----------------------------------------------------*/
 
 /*Blog*/
 
 /*Background Image*/
 div.blogbackground { 
-    /* The image used */
     background-image: url("./media/FlowerTree.jpg");
-
-    /* Full height */
     height: 100%; 
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 300px;
+    padding-top: 10px;
     padding-left: 450px;
     padding-right: 450px;
-    padding-bottom: 280px;
+    padding-bottom: 10px;
 }
 
 /*Transparent Content Box*/
 div.blogtransbox {
   margin: 20px;
   padding: 30px;
-/*  background-color: #ffffff;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 div.blogtransbox p, ul {
   margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
   color: #ffffff;
 }
 
 div.blogtransbox h6 {
   margin: 2%;
   font-weight: bold;
-/*  color: #000000;*/
   color: #ffffff;
 }
 
@@ -431,47 +384,32 @@ div.blogtransbox h6 {
 
 /*Background Image*/
 div.contactbackground { 
-    /* The image used */
     background-image: url("./media/GardenWalkway.jpg");
-
-    /* Full height */
     height: 100%; 
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 100px;
-    padding-left: 400px;
-    padding-right: 250px;
-    padding-bottom: 250px;
+    padding-top: 25px;
+    padding-left: 600px;
+    padding-right: 100px;
+    padding-bottom: 0px;
 }
 
 /*Transparent Content Box*/
 div.contacttransbox {
-  margin: 20px;
+  margin: 60px;
   padding: 30px;
-  width: 80%;
-/*  background-color: #ffffff;*/
+  width: 600px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-div.contacttransbox p, ul {
+div.contacttransbox label {
   margin: 2%;
-/*  font-weight: bold;*/
-/*  color: #000000;*/
   color: #ffffff;
 }
 
-div.contacttransbox h6 {
-  margin: 2%;
-  font-weight: bold;
-/*  color: #000000;*/
-  color: #ffffff;
-}
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -512,8 +450,28 @@ div.contacttransbox h6 {
 
 /*Profile*/
 
+/*Background*/
+div.profilebackground {
+    background-color: #F2C2B7;
+    height: 100%; 
+    padding-top: 300px;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 300px;
+}
 
+/*Transparent Content Box*/
+div.profiletransbox {
+  margin: 60px;
+  padding: 30px;
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+}
 
+/*----------------------------------------------------*/
+
+/*Register*/
 
 /*----------------------------------------------------*/
 

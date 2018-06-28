@@ -32,7 +32,7 @@ const APP_ROUTES : Routes = [
   { path : '', component: HomeComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent},
-  { path : 'user/:uid' , component: ProfileComponent},
+  { path : 'user' , component: ProfileComponent},
 
   // Business
   { path : 'home' , component: HomeComponent},

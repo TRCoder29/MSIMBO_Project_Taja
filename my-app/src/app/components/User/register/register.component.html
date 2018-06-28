@@ -28,8 +28,123 @@
 	</div>
 </div>
 
+<!-- Assignment Register Layout -->
+<div class="container float-left" style="width: 50%">
+	<!-- Register Header -->
+	<h3>Register</h3>
+
+	<!-- Register Form -->
+	<form (ngSubmit)="register()" #f="ngForm">
+		<!-- Username -->
+		<div class="form-group">
+			<label>Username</label>
+			<br>
+			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel #username="ngModel">
+		</div>
+
+		<!-- Missing/Invalid username alert -->
+		<div class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</div>
+
+		<!-- Alert if username is taken -->
+		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
+
+		<!-- Password -->
+		<div class="form-group">
+			<label>Password</label>
+			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel #password="ngModel">
+		</div>
+
+		<!-- Missing/Invalid password alert -->
+		<div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
+
+		<!-- Verify Password -->
+		<div class="form-group">
+			<label>Verify Password</label>
+			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" required ngModel #verifyPassword="ngModel" >
+		</div>
+
+		<!-- Missing/Invalid verify password alert -->
+		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div>
+
+		<!-- Alert if password and verify password don't match) -->
+		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+
+		<div class="form-group">
+			<label>First Name</label>
+			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel #firstName="ngModel">
+		</div>
+
+		<!-- Missing/Invalid First Namne alert -->
+		<div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">Please enter first name!</div>
+
+		<div class="form-group">
+			<label>Last Name</label>
+			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel #lastName="ngModel">
+		</div>
+
+		<!-- Missing/Invalid Last Name alert -->
+		<div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">Please enter last name!</div>
+
+		<div class="form-group">
+			<label>DOB</label>
+			<input class="form-control" name="DOB" type="DOB" placeholder="Date of Birth (dd/mm/year)" required ngModel #DOB="ngModel">
+		</div>
+
+		<!-- Missing/Invalid DOB alert -->
+		<div class="alert alert-danger" *ngIf="DOB.invalid && DOB.touched">Please enter DOB!</div>
+
+		<div class="form-group">
+			<label>Phone Number</label>
+			<input class="form-control" name="phoneNumber" type="text" placeholder="Phone Number" required ngModel #phoneNumber="ngModel">
+		</div>
+
+		<!-- Missing/Invalid Phone Number alert -->
+		<div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">Please enter phone number!</div>
+
+		<div class="form-group">
+			<label>E-Mail</label>
+			<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel #email="ngModel">
+		</div>
+
+		<!-- Missing/Invalid E-Mail alert -->
+		<div class="alert alert-danger" *ngIf="email.invalid && email.touched">Please enter e-mail address!</div>
+
+		<!-- Will be a check box, can choose one -->
+		<div class="form-group">
+			<label>Preferred Contact Method (Choose One):</label>
+			<div class="container">Phone
+			<input class="form-control" name="PCMPhone" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMPhone="ngModel">
+			<span class="checkmark"></span>
+			</div>
+
+			<div class="container">E-Mail
+			<input class="form-control" name="PCMEmail" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMEmail="ngModel">
+			<span class="checkmark"></span>
+			</div>
+		</div>
+
+		<div>
+			<!-- Register Button Profile Link-->
+			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
+			<!-- Cancel Button Login Link-->
+			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
+		</div>
+	</form>
+</div>
+
+
+
+
+<!-- Nav Footer -->
+<nav class="navbar navbar-dark fixed-bottom">
+	<!-- Admin Login (Button) -->
+	<div class="sw-width">
+		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
+	</div>
+</nav>
+
 <!-- Desired Content -->
-<body>
+<!-- <body>
 	<p>
 		Account Info:
 		Username
@@ -48,92 +163,4 @@
 		Travel Preferences
 		Preferred Port of Departure
 	</p>
-</body>
-
-<!-- Assignment Register Layout -->
-<div class="container">
-	<!-- Register Header -->
-	<h1>Register</h1>
-
-	<!-- This is the register form. It has the username, password and verify password fields. -->
-	<form (ngSubmit)="register()" #f="ngForm">
-		<!-- Username -->
-		<div class="form-group">
-			<label>Username</label>
-			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel #username="ngModel">
-		</div>
-
-		<!-- Missing/Invalid username alert -->
-		<span class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</span>
-
-		<!-- Alert if username is taken -->
-		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
-
-		<!-- Password -->
-		<div class="form-group">
-			<label>Password</label>
-			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel #password="ngModel">
-		</div>
-
-		<!-- Missing/Invalid password alert -->
-		<span class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</span>
-
-		<!-- Verify Password -->
-		<div class="form-group">
-			<label>Verify Password</label>
-			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" required ngModel #verifyPassword="ngModel" >
-		</div>
-
-		<!-- Missing/Invalid verify password alert -->
-		<span class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</span>
-
-		<!-- Alert if password and verify password don't match) -->
-		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
-
-		<div class="form-group">
-			<label>First Name</label>
-			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel #firstName="ngModel">
-		</div>
-
-		<div class="form-group">
-			<label>Last Name</label>
-			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel #lastName="ngModel">
-		</div>
-
-		<div class="form-group">
-			<label>DOB</label>
-			<input class="form-control" name="DOB" type="DOB" placeholder="Date of Birth (dd/mm/year)" required ngModel #DOB="ngModel">
-		</div>
-
-		<div class="form-group">
-			<label>Phone Number</label>
-			<input class="form-control" name="phoneNumber" type="text" placeholder="Phone Number" required ngModel #phoneNumber="ngModel">
-		</div>
-
-		<div class="form-group">
-			<label>E-Mail</label>
-			<input class="form-control" name="email" type="text" placeholder="email" required ngModel #email="ngModel">
-		</div>
-
-		<!-- Will be a check box, can choose one -->
-		<div class="form-group">
-			<label>Preferred Contact Method</label>
-			<input class="form-control" name="PCM" type="text" placeholder="Choose One" required ngModel #PCM="ngModel">
-		</div>
-
-		<div>
-			<!-- Register Button Profile Link-->
-			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
-			<!-- Cancel Button Login Link-->
-			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
-		</div>
-	</form>
-</div>
-
-<!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom">
-	<!-- Admin Login (Button) -->
-	<div class="sw-width">
-		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
-	</div>
-</nav>
+</body> -->
