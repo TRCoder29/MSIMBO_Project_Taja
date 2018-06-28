@@ -1,8 +1,10 @@
+
 /* You can add global styles to this file, and also import other style files */
 
 /*Sources:*/
 /* (Hoverable) "Dropdown Menu in Navbar" - https://www.w3schools.com/howto/howto_css_dropdown.asp*/
 /*"Group Buttons" https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_group_justified*/
+/*"Hover Picture" https://www.w3schools.com/howto/howto_css_image_overlay.asp*/
 /*"Blog Layout" https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blog_layout*/
 
 /*Navbar Style (General)*/
@@ -94,32 +96,30 @@ div.homebackground {
     height: 100%; 
 
     /*Padding around the outside of the buttons*/
-    padding-top: 400px;
+    padding-top: 200px;
     padding-left: 400px;
     padding-right: 400px;
-    padding-bottom: 260px;
+    padding-bottom: 200px;
 }
 
 
 /*Transparent Buttons (General)*/
-div.homebutton {
-  margin: 20px;
-  padding: 30px;
-  background-color: #000000;
+.homebutton {
+  margin: 10px;
+  padding: 20px;
   border: 1px solid black;
   opacity: .8;
 }
 
 
-div.homebutton h6 {
+.homebutton h6 {
   margin: 2%;
   font-weight: bold;
   color: #ffffff;
 }
 
-div.homebutton a {
+.homebutton a {
   margin: 2%;
-  font-weight: bold;
   color: #ffffff;
 }
 
@@ -252,10 +252,10 @@ div.genservbackground {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 100px;
+    padding-top: 200px;
     padding-left: 450px;
     padding-right: 450px;
-    padding-bottom: 50px;
+    padding-bottom: 250px;
 }
 
 
@@ -339,7 +339,7 @@ div.dobiztransbox h6 {
 /*Background Image*/
 div.itinbackground { 
     /* The image used */
-    background-image: url("./media/PoolSide.jpg");
+    background-image: url("./media/CancunView.jpg");
 
     /* Full height */
     height: 100%; 
@@ -383,13 +383,130 @@ div.itintransbox h6 {
 
 /*Blog*/
 
+/*Background Image*/
+div.blogbackground { 
+    /* The image used */
+    background-image: url("./media/FlowerTree.jpg");
 
+    /* Full height */
+    height: 100%; 
 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 300px;
+    padding-left: 450px;
+    padding-right: 450px;
+    padding-bottom: 280px;
+}
+
+/*Transparent Content Box*/
+div.blogtransbox {
+  margin: 20px;
+  padding: 30px;
+/*  background-color: #ffffff;*/
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.blogtransbox p, ul {
+  margin: 2%;
+/*  font-weight: bold;*/
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+div.blogtransbox h6 {
+  margin: 2%;
+  font-weight: bold;
+/*  color: #000000;*/
+  color: #ffffff;
+}
 
 /*----------------------------------------------------*/
 /*Contact*/
 
+/*Background Image*/
+div.contactbackground { 
+    /* The image used */
+    background-image: url("./media/GardenWalkway.jpg");
 
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    padding-left: 400px;
+    padding-right: 250px;
+    padding-bottom: 250px;
+}
+
+/*Transparent Content Box*/
+div.contacttransbox {
+  margin: 20px;
+  padding: 30px;
+  width: 80%;
+/*  background-color: #ffffff;*/
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.contacttransbox p, ul {
+  margin: 2%;
+/*  font-weight: bold;*/
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+div.contacttransbox h6 {
+  margin: 2%;
+  font-weight: bold;
+/*  color: #000000;*/
+  color: #ffffff;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 /*----------------------------------------------------*/
 
