@@ -25,6 +25,7 @@ import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
 
 import { Routing } from './app.routing';
+import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { Routing } from './app.routing';
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,29 +28,12 @@
 	</div>
 </div>
 
-<!-- Desired Content -->
-<body>
-	<p>
-		Create Left and Right Half
-		Left Half: Login
-		Username
-		Password
-		Forgot Username
-		Forgot Password
-
-		Right Half: Register
-		First Name
-		Last Name
-		Username
-		Password
-	</p>
-</body>
 
 <!-- Assignment Login Layout -->
 <div class="row container">
 	<div class="col-sm-6 d-none d-sm-block float-left">
 	<!-- Login Header -->
-	<h1>Login</h1>
+	<h3>Login</h3>
 
 	<!-- Invalid Username/Password Alert -->
 	<div class="alert alert-danger" *ngIf="errorFlag" >Invalid username or password!</div>
@@ -76,6 +59,9 @@
 		<div>
 			<!-- Login Button Profile Link-->
 			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Login</button>
+			<a href="#">Forgot Username?</a>
+			<br>
+			<a href="#">Forgot Password?</a>
 		</div>
 	</form>
 </div>
@@ -84,7 +70,7 @@
 <div class="container-fluid">
 	<div class="col-sm-6 d-none d-sm-block float-right">
 	<!-- Register Header -->
-	<h1>Register</h1>
+	<h3>Register</h3>
 
 	<!-- This is the register form. It has the username, password and verify password fields. -->
 	<form (ngSubmit)="register()" #f="ngForm">
@@ -122,11 +108,8 @@
 		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
 
 		<div>
-			<!-- Login Button Profile Link-->
-			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Login</button>
-			
 			<!-- Register Button Register Link-->
-			<button class="btn btn-success btn-block" routerLink="/register">Register</button>
+			<button class="btn btn-secondary btn-block" routerLink="/register">Register</button>
 		</div>
 	</form>
 </div>

@@ -1,0 +1,468 @@
+<!-- Assignment Register Layout -->
+<div class="container float-left" style="width: 50%">
+
+       <!-- Register Form (ngSubmit)="register()" #f="ngForm" -->
+       <form>
+              <label><b><u>Register:</u></b></label>
+
+              <br><br>
+
+              <div class="form-group">
+                     <label><b>Username:</b></label>
+                     <input type="text" name="username">
+              </div>
+
+              <!-- Missing/Invalid username alert -->
+              <div class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</div>
+              <!-- Alert if username is taken -->
+              <div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Password:</b></label>
+                     <input type="password" name="password">
+              </div>
+
+              <!-- Missing/Invalid password alert -->
+              <div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Verify Password:</b></label>
+                     <input type="password" name="verifyPassword">
+              </div>
+              <!-- Missing/Invalid verify password alert -->
+              <div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div>
+
+              <!-- Alert if password and verify password don't match) -->
+              <div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+
+              <br><br>
+
+              <div class="form-group">
+                     <label><b>First Name:</b></label>
+                     <input type="text" name="firstName">
+              </div>
+
+              <!-- Missing/Invalid First Name alert -->
+              <div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">Please enter first name!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Last Name:</b></label>
+                     <input type="text" name="lastName">
+              </div>
+
+              <!-- Missing/Invalid Last Name alert -->
+              <div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">Please enter last name!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>DOB:</b></label>
+                     <input type="date" name="dob">
+              </div>
+
+              <!-- Missing/Invalid DOB alert -->
+              <div class="alert alert-danger" *ngIf="dob.invalid && dob">Please enter DOB!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Gender:</b></label>
+                     <input type="text" name="gender">
+              </div>
+
+              <!-- Missing/Invalid Gender alert -->
+              <div class="alert alert-danger" *ngIf="gender.invalid && gender.touched">Please enter gender!</div>
+              <br>
+
+              <div class="form-group">
+                     <label><b>Country:</b></label>
+                     <input type="text" name="citizen">
+              </div>
+
+              <!-- Missing/Invalid Country alert -->
+              <div class="alert alert-danger" *ngIf="country.invalid && country.touched">Please enter country!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>State:</b></label>
+                     <input type="text" name="state">
+              </div>
+
+              <!-- Missing/Invalid State alert -->
+              <div class="alert alert-danger" *ngIf="state.invalid && state.touched">Please enter state!</div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>City:</b></label>
+                     <input type="text" name="city">
+              </div>
+
+              <!-- Missing/Invalid City alert -->
+              <div class="alert alert-danger" *ngIf="city.invalid && city.touched">Please enter state!</div>
+
+              <br><br>
+
+              <div class="form-group">
+                     <label><b>ID/License/Passport Number:</b></label>
+                     <input type="text" name="idNum">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>ID/License/Passport Type:</b></label>
+                     <input type="text" name="idType">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Expiration Date:</b></label>
+                     <input type="date" name="idDate">
+              </div>
+              <br>
+
+              <div class="form-group">
+                     <label><b>Issuing Country:</b></label>
+                     <input type="text" name="idCountry">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Issuing State:</b></label>
+                     <input type="text" name="idState">
+              </div>
+
+              <br><br>
+
+              <div class="form-group">
+                     <label><b>Redress Number:</b></label>
+                     <input type="text" name="redress">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Known Traveler Number:</b></label>
+                     <input type="text" name="knownTravelNum">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Frequent Flyer Information:</b></label>
+                     <input type="text" name="freqFlyer">
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                     <label><b>Customer Loyalty Information:</b></label>
+                     <input type="text" name="custLoyal">
+              </div>
+
+              <br>
+
+              <button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Submit</button>
+              <button class="btn btn-secondary btn-block" routerLink="/login">Cancel</button>
+    </form>
+</div>
+
+
+<!-- Nav Footer -->
+<nav class="navbar navbar-dark fixed-bottom">
+       <!-- Admin Login (Button) -->
+       <div class="sw-width">
+              <a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
+       </div>
+</nav>
+
+<!-- Desired Content -->
+<!-- <body>
+       <p>
+              Account Info:
+              Username
+              Password
+              Confirm/Verify Password
+
+              Customer Info:
+              First Name
+              Last Name
+              DOB
+              Phone
+              E-Mail
+              Preferred Contact Method (E-Mail, Phone, Text, Any)
+
+              Travel Info:
+              Travel Preferences
+              Preferred Port of Departure
+       </p>
+</body> -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+       <div class="container-fluid">
+        <form (ngSubmit)="register()" #f="ngForm">
+            <fieldset *ngif="clicked()">
+              <label><b><u>Travel Request:</b></u></label><br><br>
+              
+              <div>
+              <label><b>Username:</b></label>
+              <input type="text" name="username"><br><br>
+  
+              <label><b>Password:</b></label>
+              <input type="password" name="password"><br><br>
+              
+              <label><b>Verify Password:</b></label>
+              <input type="password" name="verifyPassword">
+              </div>
+              
+              <br><br>
+              
+              <div>
+              <label><b>First Name:</b></label>
+              <input type="text" name="firstName"><br><br>
+              <label><b>Last Name:</b></label>
+              <input type="text" name="lastName"><br><br>
+              <label><b>DOB:</b></label>
+              <input type="date" name="dob"><br><br>
+              <label><b>Gender:</b></label>
+              <input type="text" name="gender"><br><br>
+              <label><b>Country:</b></label>
+              <input type="text" name="citizen"><br><br>
+              <label><b>State:</b></label>
+              <input type="text" name="state"><br><br>
+              <label><b>City:</b></label>
+              <input type="text" name="city"><br><br>
+              </div>
+              
+              <br><br>
+              
+              <div>
+              <label><b>ID/License/Passport Number:</b></label>
+              <input type="text" name="idNum"><br><br>
+              <label><b>ID/License/Passport Type:</b></label>
+              <input type="text" name="idType"><br><br>
+              <label><b>Expiration Date:</b></label>
+              <input type="date" name="idDate"><br><br>
+              <label><b>Issuing Country:</b></label>
+              <input type="text" name="idCountry"><br><br>
+              <label><b>Issuing State:</b></label>
+              <input type="text" name="idState"><br><br>
+              </div>
+
+              <br><br>
+              
+              <div>
+              <label><b>Redress Number:</b></label>
+              <input type="text" name="redress"><br><br>
+              <label><b>Known Traveler Number:</b></label>
+              <input type="text" name="knownTravelNum"><br><br>
+              <label><b>Frequent Flyer Information:</b></label>
+              <input type="text" name="freqFlyer"><br><br>
+              <label><b>Customer Loyalty Information:</b></label>
+              <input type="text" name="custLoyal"><br><br>
+              </div>
+              
+              <button class="btn btn-secondary btn-block" type="submit"             [disabled]="f.invalid">Submit</button>
+          <button class="btn btn-secondary btn-block" routerLink="/login">Cancel</button>
+            </fieldset>
+        </form>
+       </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+       <div class="container-fluid">
+        <form (ngSubmit)="register()" #f="ngForm">
+            <fieldset *ngif="clicked()">
+              <label><b><u>Travel Request:</b></u></label><br><br>
+              
+              <div class="form-group">
+              <label><b>Username:</b></label>
+              <input type="text" name="username">
+              </div>
+              
+              <!-- Missing/Invalid username alert -->
+                    <div class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</div>
+                       <!-- Alert if username is taken -->
+                       <div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
+
+              <br>
+
+              <div class="form-group">
+              <label><b>Password:</b></label>
+              <input type="password" name="password">
+              </div>
+              
+                       <!-- Missing/Invalid password alert -->
+                       <div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Verify Password:</b></label>
+              <input type="password" name="verifyPassword">
+              </div>
+              
+                       <!-- Missing/Invalid verify password alert -->
+                       <div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div>
+
+                       <!-- Alert if password and verify password don't match) -->
+                       <div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+
+              <br><br>
+              
+              <div class="form-group">
+              <label><b>First Name:</b></label>
+              <input type="text" name="firstName">
+              </div>
+              
+              <!-- Missing/Invalid First Name alert -->
+                    <div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">Please enter first name!</div>
+
+              <br>
+              
+              <div class="form-group">
+              <label><b>Last Name:</b></label>
+              <input type="text" name="lastName">
+              </div>
+              
+              <!-- Missing/Invalid Last Name alert -->
+                    <div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">Please enter last name!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>DOB:</b></label>
+              <input type="date" name="dob">
+              </div>
+
+              <!-- Missing/Invalid DOB alert -->
+                    <div class="alert alert-danger" *ngIf="dob.invalid && dob">Please enter DOB!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Gender:</b></label>
+              <input type="text" name="gender">
+              </div>
+
+              <!-- Missing/Invalid Gender alert -->
+                    <div class="alert alert-danger" *ngIf="gender.invalid && gender.touched">Please enter gender!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Country:</b></label>
+              <input type="text" name="citizen">
+              </div>
+
+              <!-- Missing/Invalid Country alert -->
+                    <div class="alert alert-danger" *ngIf="country.invalid && country.touched">Please enter country!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>State:</b></label>
+              <input type="text" name="state">
+              </div>
+
+              <!-- Missing/Invalid State alert -->
+                    <div class="alert alert-danger" *ngIf="state.invalid && state.touched">Please enter state!</div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>City:</b></label>
+              <input type="text" name="city">
+              </div>
+              
+                       <!-- Missing/Invalid City alert -->
+                    <div class="alert alert-danger" *ngIf="city.invalid && city.touched">Please enter state!</div>
+              
+              <br><br>
+              
+              <div class="form-group">
+              <label><b>ID/License/Passport Number:</b></label>
+              <input type="text" name="idNum">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>ID/License/Passport Type:</b></label>
+              <input type="text" name="idType">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Expiration Date:</b></label>
+              <input type="date" name="idDate">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Issuing Country:</b></label>
+              <input type="text" name="idCountry">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Issuing State:</b></label>
+              <input type="text" name="idState">
+              </div>
+
+              <br><br>
+              
+              <div class="form-group">
+              <label><b>Redress Number:</b></label>
+              <input type="text" name="redress">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Known Traveler Number:</b></label>
+              <input type="text" name="knownTravelNum">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Frequent Flyer Information:</b></label>
+              <input type="text" name="freqFlyer">
+              </div>
+              
+              <br>
+              
+              <div class="form-group">
+              <label><b>Customer Loyalty Information:</b></label>
+              <input type="text" name="custLoyal">
+              </div>
+              
+              <br>
+              
+              <button class="btn btn-secondary btn-block" type="submit"             [disabled]="f.invalid">Submit</button>
+          <button class="btn btn-secondary btn-block" routerLink="/login">Cancel</button>
+            </fieldset>
+        </form>
+       </div>
+</body>
+</html>

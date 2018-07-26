@@ -1,0 +1,213 @@
+<!-- Nav Bar -->
+<div class="navbar">
+       <a href="home">Home</a>
+       <a href="about">About</a>
+       <div class="dropdown">
+              <button class="dropbtn">Services
+                     <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                     <a href="services">General Services</a>
+                     <a href="doing-business">Doing Business</a>
+                     <a href="itinerary-request">Request Services</a>
+              </div>
+       </div>
+       <a href="blog-main">Blog</a>
+       <a href="contact">Contact</a>
+       <div class="dropdown">
+              <button class="dropbtn">Profile
+                     <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                     <!-- Make My Account and Log Out disappear when not logged in -->
+                     <a class="user" href="user/{{uid}}">My Account</a>
+                     <a class="user" href="login">Log Out</a>
+                     <a class="guest" href="login">Login</a>
+                     <a class="guest" href="register">Register</a>
+              </div>
+       </div>
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+	<div class="container-fluid">
+        <form>
+            <fieldset *ngif="clicked()">
+            <label><b><u>Travel Request:</b></u></label><br><br>
+              <label><b>First Name:</b></label>
+              <input type="text" name="firstName"><br><br>
+              <label><b>Last Name:</b></label>
+              <input type="text" name="lastName"><br><br>
+                          
+              <label><b>Departure City:</b></label>
+              <input type="text" name="departureCity"><br><br>
+              <label><b>Destination(s):</b></label>
+              <input type="text" name="destination"><br><br>
+              
+              <label><b>Number of Guests:</b></label>
+              <input type="text" name="numGuest"><br><br>
+              <label><b>Number of Adults:</b></label>
+              <input type="text" name="numAdult"><br><br>
+              <label><b>Number of Children:</b></label>
+              <input type="text" name="numChild"><br><br>
+              <label><b>Ages (Children):</b></label>
+              <input *ngIf="numChild" type="text" name="childAge"><br><br>
+              
+              <label><b>Travel Dates:</b></label><br>
+              <label>Depart:</label>
+              <input type="date" name="departDate"><br>
+              <label>Return:</label>
+              <input type="date" name="returnDate"><br>
+              <label>Flexible?:</label>
+              <label>Yes</label>
+              <input type="checkbox" name="flexible1" value="Yes">
+              <label>No</label>
+              <input type="checkbox" name="flexible2" value="No"><br><br>
+              
+              <label><b>Preferred Departure Time(s):</b></label><br>
+              <label>Morning (5:00AM-11:59AM)</label>
+              <input type="checkbox" name="morning" value="morning"><br>
+              <label>Afternoon (12:00PM-5:59PM)</label>
+              <input type="checkbox" name="afternoon" value="afternoon"><br>
+              <label>Evening (6:00PM-7:59PM)</label>
+              <input type="checkbox" name="evening" value="evening"><br>
+              <label>Night (8:0PM:-4:59AM)</label>
+              <input type="checkbox" name="night" value="night"><br>
+              <label>No Preference:</label>
+              <input type="checkbox" name="noPreference" value="noPreference"><br><br>
+              
+              <label><b>Preferred Return Time(s):</b></label><br>
+              <label>Morning (5:00AM-11:59AM)</label>
+              <input type="checkbox" name="morning" value="morning"><br>
+              <label>Afternoon (12:00PM-5:59PM)</label>
+              <input type="checkbox" name="afternoon" value="afternoon"><br>
+              <label>Evening (6:00PM-7:59PM)</label>
+              <input type="checkbox" name="evening" value="evening"><br>
+              <label>Night (8:0PM:-4:59AM)</label>
+              <input type="checkbox" name="night" value="night"><br>
+              <label>No Preference:</label>
+              <input type="checkbox" name="noPreference" value="noPreference"><br><br>
+              
+              <label><b>Desired Method of Travel:</b></label><br>
+              <label>Flight</label>
+              <input type="checkbox" name="flight" value="flight"><br>
+              <label>Rental Car</label>
+              <input type="checkbox" name="car" value="car"><br>
+              <label>Bus (i.e. Greyhound, etc.)</label>
+              <input type="checkbox" name="bus" value="bus"><br>
+              <label>Rail (i.e. Amtrak, etc.)</label>
+              <input type="checkbox" name="rail" value="rail"><br>
+              <label>Hotel/Cruise Transfer</label>
+              <input type="checkbox" name="hotelTransfer" value="hotelTransfer"><br>
+              <label>Chauffer</label>
+              <input type="checkbox" name="chauffer" value="chauffer"><br>
+              <label>No Preference:</label>
+              <input type="checkbox" name="noPreference" value="noPreference"><br>
+<br>
+
+              <label><b>Desired Accommodations:</b></label><br>
+              <label>Hotel</label>
+              <input type="checkbox" name="hotel" value="hotel"><br>
+              <label># of Rooms: </label>
+              <input type="text" name="hotelRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="hotelRoomNum"><br>
+              <label>Double</label>
+              <input type="checkbox" name="hotelDouble" value="hotelDouble">
+              <label>Queen</label>
+              <input type="checkbox" name="hotelQueen" value="hotelQueen">
+              <label>King</label>
+              <input type="checkbox" name="hotelKing" value="hotelKing">
+              <label>Suite</label>
+              <input type="checkbox" name="hotelSuite" value="hotelSuite"><br><br>
+              <label>Home Share (i.e. AirBNB, Innclusive, etc.)</label>
+              <input type="checkbox" name="homeApt" value="homeApt"><br>
+              <label># of Rooms: </label>
+              <input type="text" name="hotelRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="hotelRoomNum"><br><br>
+              <label>All-Inclusive Resort</label>
+              <input type="checkbox" name="allInclusive" value="allInclusive"><br>
+              <label># of Rooms: </label>
+              <input type="text" name="allIncRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="allIncRoomNum"><br><br>
+              <label>Cruise</label>
+              <input type="checkbox" name="cruise" value="cruise"><br>
+              <label># of Cabins: </label>
+              <input type="text" name="cruiseRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="cruiseRoomNum"><br><br>
+              <label>Pre-Cruise Hotel</label>
+              <input type="checkbox" name="preCruise" value="preCruise"><br>
+              <label># of Rooms: </label>
+              <input type="text" name="cruiseRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="cruiseRoomNum"><br><br>
+              <label>Post-Cruise Hotel</label>
+              <input type="checkbox" name="postCruise" value="postCruise"><br>
+              <label># of Rooms: </label>
+              <input type="text" name="postCruiseRooms"><br>
+              <label># of Guests per Room: </label>
+              <input type="text" name="postCruiseRoomNum"><br><br>
+              <label>No Preference/Surprise Me!:</label>
+              <input type="checkbox" name="noPreference" value="noPreference"><br>
+<br>
+
+              <label><b>Desired Amenities/Features:</b></label><br>
+              <label>Air Conditioning</label>
+              <input type="checkbox" name="aircondition" value="aircondition"><br>
+              <label>Hair Dryer</label>
+              <input type="checkbox" name="hairDryer" value="hairDryer"><br>
+              <label>Clothes Iron</label>
+              <input type="checkbox" name="clothesIron" value="clothesIron"><br>
+              <label>Mini-Fridge</label>
+              <input type="checkbox" name="miniFridge" value="miniFridge"><br>
+             <label>Coffeemaker</label>
+              <input type="checkbox" name="coffee" value="coffee"><br>
+              <label>Mini-Bar</label>
+              <input type="checkbox" name="miniBar" value="miniBar"><br>
+              <label>Microwave</label>
+              <input type="checkbox" name="microwave" value="microwave"><br>
+              <label>Kitchenette</label>
+              <input type="checkbox" name="kitchenette" value="kitchenette"><br>
+              <label>Concierge</label>
+              <input type="checkbox" name="consierge" value="consierge"><br>
+              <label>Laundry Service</label>
+              <input type="checkbox" name="laundry" value="laundry"><br>
+              <label>Room Service</label>
+              <input type="checkbox" name="roomService" value="roomService"><br>
+              <label>Business Center</label>
+              <input type="checkbox" name="businessCenter" value="businessCenter"><br>
+
+              <label>Spa</label>
+              <input type="checkbox" name="spa" value="spa"><br>
+              <label>Swimming Pool</label>
+              <input type="checkbox" name="coffee" value="coffee"><br>
+              <label>Restaurant in Hotel</label>
+              <input type="checkbox" name="restaurant" value="restaurant"><br>
+              <label>Breakfast Included</label>
+              <input type="checkbox" name="breakfast" value="breakfast"><br><br>
+              
+              <label>Free Parking</label>
+              <input type="checkbox" name="parking" value="parking"><br>
+              <label>Shuttle Transportation</label>
+              <input type="checkbox" name="shuttle" value="shuttle"><br><br>
+              
+              <label>No Preference:</label>
+              <input type="checkbox" name="noPreference" value="noPreference"><br>
+<br>
+
+              <label><b>Travel Budget:</b></label>
+              <input type="text" name="budget" placeholder="$"><br><br>
+
+              <button class="btn btn-secondary btn-block" type="submit" 		[disabled]="f.invalid">Submit</button>
+          <button class="btn btn-secondary btn-block" routerLink="/login">Cancel</button>
+            </fieldset>
+        </form>
+	</div>
+</body>
+</html>
+

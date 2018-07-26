@@ -29,12 +29,15 @@
 </div>
 
 <!-- Assignment Register Layout -->
-<div class="container float-left" style="width: 50%">
-	<!-- Register Header -->
-	<h3>Register</h3>
+<div class="container float-left registerBackground" style="width: 50%">
+	<h4 align="center">Register:</h4>
+
+	<br>
 
 	<!-- Register Form -->
 	<form (ngSubmit)="register()" #f="ngForm">
+		<h6>Account Info:</h6>
+
 		<!-- Username -->
 		<div class="form-group">
 			<label>Username</label>
@@ -69,6 +72,10 @@
 		<!-- Alert if password and verify password don't match) -->
 		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
 
+		<br><br>
+
+		<h6>Account Info:</h6>
+		<!-- First Name -->
 		<div class="form-group">
 			<label>First Name</label>
 			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel #firstName="ngModel">
@@ -77,6 +84,7 @@
 		<!-- Missing/Invalid First Namne alert -->
 		<div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">Please enter first name!</div>
 
+		<!-- Last Name -->
 		<div class="form-group">
 			<label>Last Name</label>
 			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel #lastName="ngModel">
@@ -85,14 +93,52 @@
 		<!-- Missing/Invalid Last Name alert -->
 		<div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">Please enter last name!</div>
 
+		<!-- DOB -->
 		<div class="form-group">
 			<label>DOB</label>
-			<input class="form-control" name="DOB" type="DOB" placeholder="Date of Birth (dd/mm/year)" required ngModel #DOB="ngModel">
+			<input class="form-control" name="DOB" type="date" placeholder="Date of Birth (dd/mm/year)" required ngModel #DOB="ngModel">
 		</div>
 
 		<!-- Missing/Invalid DOB alert -->
 		<div class="alert alert-danger" *ngIf="DOB.invalid && DOB.touched">Please enter DOB!</div>
 
+		<!-- Gender -->
+		<div class="form-group">
+			<label>Gender</label>
+			<input class="form-control" name="gender" type="text" placeholder="Gender" required ngModel #gender="ngModel">
+		</div>
+
+		<!-- Missing/Invalid Gender alert -->
+		<div class="alert alert-danger" *ngIf="gender.invalid && gender.touched">Please enter gender!</div>
+
+		<!-- Country -->
+		<div class="form-group">
+			<label>Country</label>
+			<input class="form-control" name="country" type="text" placeholder="Country" required ngModel #country="ngModel">
+		</div>
+
+		<!-- Missing/Invalid Country alert -->
+		<div class="alert alert-danger" *ngIf="country.invalid && country.touched">Please enter country!</div>
+
+		<!-- State -->
+		<div class="form-group">
+			<label>State</label>
+			<input class="form-control" name="state" type="text" placeholder="State" required ngModel #state="ngModel">
+		</div>
+
+		<!-- Missing/Invalid State alert -->
+		<div class="alert alert-danger" *ngIf="state.invalid && state.touched">Please enter state!</div>
+
+		<!-- City -->
+		<div class="form-group">
+			<label>City</label>
+			<input class="form-control" name="city" type="text" placeholder="City" required ngModel #city="ngModel">
+		</div>
+
+		<!-- Missing/Invalid City alert -->
+		<div class="alert alert-danger" *ngIf="city.invalid && city.touched">Please enter city!</div>
+
+		<!-- Phone Number -->
 		<div class="form-group">
 			<label>Phone Number</label>
 			<input class="form-control" name="phoneNumber" type="text" placeholder="Phone Number" required ngModel #phoneNumber="ngModel">
@@ -101,6 +147,7 @@
 		<!-- Missing/Invalid Phone Number alert -->
 		<div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">Please enter phone number!</div>
 
+		<!-- E-Mail -->
 		<div class="form-group">
 			<label>E-Mail</label>
 			<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel #email="ngModel">
@@ -109,23 +156,78 @@
 		<!-- Missing/Invalid E-Mail alert -->
 		<div class="alert alert-danger" *ngIf="email.invalid && email.touched">Please enter e-mail address!</div>
 
-		<!-- Will be a check box, can choose one -->
+		<!-- Preferred Contact Method -->
 		<div class="form-group">
 			<label>Preferred Contact Method (Choose One):</label>
 			<div class="container">Phone
 			<input class="form-control" name="PCMPhone" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMPhone="ngModel">
 			<span class="checkmark"></span>
 			</div>
-
 			<div class="container">E-Mail
 			<input class="form-control" name="PCMEmail" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMEmail="ngModel">
 			<span class="checkmark"></span>
 			</div>
 		</div>
 
+		<br><br>
+
+		<h6>Account Info:</h6>
+		<!-- ID/License/Passport Number -->
+		<div class="form-group">
+			<label>ID/License/Passport Number</label>
+			<input class="form-control" name="idNum" type="text" placeholder="ID/License/Passport Number" required ngModel #idNum="ngModel">
+		</div>
+
+		<div class="form-group">
+			<label>ID/License/Passport Type</label>
+			<input class="form-control" name="idType" type="text" placeholder="ID/License/Passport Type" required ngModel #idType="ngModel">
+		</div>
+
+		<!-- Expiration Date -->
+		<div class="form-group">
+			<label>Expiration Date</label>
+			<input class="form-control" name="idNum" type="date" placeholder="Expiration Date (MM/DD/YYY)" required ngModel #idNum="ngModel">
+		</div>
+
+		<!-- Issuing Country -->
+		<div class="form-group">
+			<label>Issuing Country</label>
+			<input class="form-control" name="idCountry" type="text" placeholder="ID/License/Passport Type" required ngModel #idCountry="ngModel">
+		</div>
+
+		<!-- Issuing State -->
+		<div class="form-group">
+			<label>Issuing State</label>
+			<input class="form-control" name="idState" type="text" placeholder="Issuing State" required ngModel #idState="ngModel">
+		</div>
+
+		<!-- Redress Number -->
+		<div class="form-group">
+			<label>Redress Number</label>
+			<input class="form-control" name="redress" type="text" placeholder="Redress Number" required ngModel #redress="ngModel">
+		</div>
+
+		<!-- Known Traveler Number -->
+		<div class="form-group">
+			<label>Known Traveler Number</label>
+			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" required ngModel #knownTravelNum="ngModel">
+		</div>
+
+		<!-- Frequent Flyer Information -->
+		<div class="form-group">
+			<label>Frequent Flyer Information</label>
+			<input class="form-control" name="freqFlyer" type="text" placeholder="Frequent Flyer Information" required ngModel #freqFlyer="ngModel">
+		</div>
+
+		<!-- Customer Loyalty Information -->
+		<div class="form-group">
+			<label>Customer Loyalty Information</label>
+			<input class="form-control" name="custLoyal" type="text" placeholder="Customer Loyalty Information" required ngModel #custLoyal="ngModel">
+		</div>
+
 		<div>
 			<!-- Register Button Profile Link-->
-			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
+			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Register</button>
 			<!-- Cancel Button Login Link-->
 			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
 		</div>
@@ -142,25 +244,3 @@
 		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
 	</div>
 </nav>
-
-<!-- Desired Content -->
-<!-- <body>
-	<p>
-		Account Info:
-		Username
-		Password
-		Confirm/Verify Password
-
-		Customer Info:
-		First Name
-		Last Name
-		DOB
-		Phone
-		E-Mail
-		Preferred Contact Method (E-Mail, Phone, Text, Any)
-
-		Travel Info:
-		Travel Preferences
-		Preferred Port of Departure
-	</p>
-</body> -->
