@@ -7,9 +7,9 @@
 			<i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-content">
-			<a href="services">General Services</a>
+			<a href="services-main">General Services</a>
 			<a href="doing-business">Doing Business</a>
-			<a href="itinerary-request">Request Services</a>
+			<a href="service-request">Request Services</a>
 		</div>
 	</div>
 	<a href="blog-main">Blog</a>
@@ -20,43 +20,46 @@
 		</button>
 		<div class="dropdown-content">
 			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="user" href="user/{{uid}}">My Account</a>
-			<a class="user" href="login">Log Out</a>
 			<a class="guest" href="login">Login</a>
 			<a class="guest" href="register">Register</a>
+			<a class="user" href="user/{{uid}}">My Account</a>
+			<a class="user" href="login">Log Out</a>
 		</div>
 	</div>
 </div>
 
-<!-- Assignment Register Layout -->
-<div class="container-fluid">
-	<!-- Register Header -->
-	<h3>Register</h3>
+<!-- Assignment Login Layout -->
+<div class="row adminBackground">
+	<!-- This is the login form. It has the username and password fields. -->
+	<form class="container-fluid" (ngSubmit)="login()" #f="ngForm">
+		<!-- Login Header -->
+		<h4 align="left">Admin Login</h4>
 
-	<!-- This is the register form. It has the username, password and verify password fields. -->
-	<form (ngSubmit)="register()" #f="ngForm">
+		<!-- Invalid Username/Password Alert -->
+		<div class="alert alert-danger" *ngIf="errorFlag" >Invalid username or password!</div>
+
 		<!-- Username -->
 		<div class="form-group">
-			<label>Username</label>
-			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel #username="ngModel">
+			<input class="form-control" name="username" type="text" placeholder="Admin" required ngModel #username="ngModel">
 		</div>
 
-		<!-- Missing/Invalid username alert -->
+		<!-- Missing username alert -->
 		<span class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</span>
-
 
 		<!-- Password -->
 		<div class="form-group">
-			<label>Password</label>
 			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel #password="ngModel">
 		</div>
 
-		<!-- Missing/Invalid password alert -->
+		<!-- Missing password alert -->
 		<span class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</span>
 
 		<div>
-			<!-- Register Button Register Link-->
-			<button class="btn btn-secondary btn-block" routerLink="/register">Register</button>
+			<!-- Login Button Profile Link-->
+			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Login</button>
+			<a href="#">Forgot Username?</a>
+			<br>
+			<a href="#">Forgot Password?</a>
 		</div>
 	</form>
 </div>

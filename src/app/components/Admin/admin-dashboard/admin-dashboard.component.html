@@ -7,9 +7,9 @@
 			<i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-content">
-			<a href="services">General Services</a>
+			<a href="services-main">General Services</a>
 			<a href="doing-business">Doing Business</a>
-			<a href="itinerary-request">Request Services</a>
+			<a href="service-request">Request Services</a>
 		</div>
 	</div>
 	<a href="blog-main">Blog</a>
@@ -20,31 +20,37 @@
 		</button>
 		<div class="dropdown-content">
 			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="user" href="user/{{uid}}">My Account</a>
-			<a class="user" href="login">Log Out</a>
 			<a class="guest" href="login">Login</a>
 			<a class="guest" href="register">Register</a>
+			<a class="user" href="user/{{uid}}">My Account</a>
+			<a class="user" href="login">Log Out</a>
 		</div>
 	</div>
 </div>
 
-<body>
-	<p>
-		Admin Log-In Page - Subpage
-		Manage Customers (Add, Delete, Update) - Subpage
-		Manage Trip Details - Subpage
-		Manage Payments - Subpage
-		View New Itinerary Requests - Subpage
-		Manage Messages (from Clients and System) - Subpage
-		Add Blog Post - Subpage
-		Edit/Delete Blog Post - Subpage
-	</p>
-</body>
+<div class="profileBackground">
+	<div class="profileTransbox container-fluid">
+		<a class="user" href="user/{{uid}}">Manage Customers (Add, Update, Delete)</a><br>
+		<a class="user" href="login">Manage Trip Details</a><br>
+		<a class="guest" href="login">Manage Payments</a><br>
+		<a class="guest" href="register">Itinerary Requests</a><br>
+		<a class="user" href="user/{{uid}}">Messages</a><br>
+		<a class="user" href="login">Blog Management (Add, Update, Delete)</a><br>
+		<a class="guest" href="login">Log-Out</a><br>
+	</div>
+</div>
+
 
 <!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom">
-	<!-- Admin Login (Button) -->
-	<div class="sw-width">
-		<a class="sw-font-white float-right" href="admin.html"><i class="fas fa-user"></i></a>
-	</div>
-</nav>
+<nav class="navbar navbar-dark fixed-bottom"></nav>
+
+<!-- 	<p>
+		Admin Log-In Page - Subpage Created
+		Manage Customers (Add, Delete, Update) - Subpage Created
+		Manage Trip Details - Subpage
+		Manage Payments - Subpage
+		View New Itinerary Requests - Subpage Created
+		Manage Messages (from Clients and System) - Subpage
+		Add Blog Post - Subpage Created (In Blog Component)
+		Edit/Delete Blog Post - Subpage (In Blog Component)
+	</p> -->

@@ -5,46 +5,53 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-// Admin Components
-import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
-
 // Business Components
 import { HomeComponent } from './components/Business/home/home.component';
 import { AboutComponent } from './components/Business/about/about.component';
-import { ServicesComponent } from './components/Business/travel-services/services-main/services-main.component';
+import { ContactComponent } from './components/Business/contact/contact.component';
+import { ServicesMainComponent } from './components/Business/travel-services/services-main/services-main.component';
 import { DoingBusinessComponent } from './components/Business/travel-services/doing-business/doing-business.component';
-import { ItineraryComponent } from './components/Business/travel-services/itinerary-request/itinerary-request.component';
+import { ServiceRequestComponent } from './components/Business/travel-services/service-request/service-request.component';
+import { TravelRequestComponent } from './components/Business/travel-services/travel-request/travel-request.component';
+
 import { BlogMainComponent } from './components/Business/blog/blog-main/blog-main.component';
 import { BlogNewComponent } from './components/Business/blog/blog-new/blog-new.component';
 import { BlogEditComponent } from './components/Business/blog/blog-edit/blog-edit.component';
-import { ContactComponent } from './components/Business/contact/contact.component';
 
 // User Components
-import { ProfileComponent } from './components/User/profile/profile.component';
 import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
+import { ProfileComponent } from './components/User/profile/profile.component';
+
+// Admin Components
+import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
+import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
+import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
 
 import { Routing } from './app.routing';
-import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminDashboardComponent,
     HomeComponent,
     AboutComponent,
-    BlogMainComponent,
     ContactComponent,
-    ItineraryComponent,
-    ServicesComponent,
+    ServicesMainComponent,
     DoingBusinessComponent,
+    ServiceRequestComponent,
+    TravelRequestComponent,
     BlogMainComponent,
     BlogNewComponent,
     BlogEditComponent,
-    ProfileComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
+    AdminDashboardComponent,
     AdminLoginComponent,
+    AdminClientsComponent,
+    AdminItineraryComponent,
   ],
   imports: [
     BrowserModule,
