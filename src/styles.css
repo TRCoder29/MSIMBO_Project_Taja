@@ -550,6 +550,15 @@
 }
 /*----------------------------------------------------*/
 
+/*Background*/
+.loginBackground { 
+    margin-top: 300px;
+    margin-left: 800px;
+    margin-right: 500px;
+    margin-bottom: 300px;
+}
+/*----------------------------------------------------*/
+
 /*Admin-Login*/
 
 /*Background*/

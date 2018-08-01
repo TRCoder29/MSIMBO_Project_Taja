@@ -27,6 +27,8 @@ import { ProfileComponent } from './components/User/profile/profile.component';
 import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
+import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
+import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
 
 
@@ -48,13 +50,15 @@ const APP_ROUTES : Routes = [
   { path : 'travel-request' , component: TravelRequestComponent},
 
   { path : 'blog-main', component : BlogMainComponent},
-  { path : 'admin/:aid/blog/new' , component: BlogNewComponent},
-  { path : 'admin/:aid/blog/:bgid/edit' , component: BlogEditComponent},
+  { path : 'blog-new' , component: BlogNewComponent},
+  { path : 'blog-edit' , component: BlogEditComponent},
 
   // Admin
   { path : 'admin-login' , component: AdminLoginComponent},
   { path : 'admin-main' , component: AdminDashboardComponent},
   { path : 'admin/:aid/admin-clients' , component: AdminClientsComponent},
+  { path : 'admin/:aid/admin-clients/new' , component: AdminClientsNewComponent},
+  { path : 'admin/:aid/admin-clients/edit' , component: AdminClientsEditComponent},
   { path : 'admin/:aid/admin-itinerary' , component: AdminItineraryComponent},
 ];
 

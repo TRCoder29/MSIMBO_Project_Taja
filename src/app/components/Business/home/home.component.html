@@ -31,15 +31,13 @@
 				<br>
 				<a class="guest" href="register">Register</a>
 				<br>
-				<a class="user" href="user/{{uid}}">My Account</a>
+				<a class="user" href="user" *ngIf="loggedIn()">My Account</a>
 				<br>
-				<a class="user" href="login">Log Out</a>
+				<a class="user" (click)= "logout()" *ngIf="loggedIn()">Log Out</a>
 			</button>
 		</div>
 	</div>
 </div>
-
-
 
 
 <!-- Nav Footer -->

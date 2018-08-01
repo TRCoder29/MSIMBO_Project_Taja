@@ -22,8 +22,8 @@
                      <!-- Make My Account and Log Out disappear when not logged in -->
                      <a class="guest" href="login">Login</a>
                      <a class="guest" href="register">Register</a>
-                     <a class="user" href="user/{{uid}}">My Account</a>
-                     <a class="user" href="login">Log Out</a>
+                     <a class="user" href="user" *ngIf="loggedIn()">My Account</a>
+                     <a class="user" (click)= "logout()" *ngIf="loggedIn()">Log Out</a>
               </div>
        </div>
 </div>

@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
+import { Routing } from './app.routing';
 
 // Business Components
 import { HomeComponent } from './components/Business/home/home.component';
@@ -27,9 +27,20 @@ import { ProfileComponent } from './components/User/profile/profile.component';
 import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
+import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
+import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
 
-import { Routing } from './app.routing';
+// Client Services
+// import { AdminService } from './client_side_services/admin.service.client';
+import { UserService } from './client_side_services/user.service.client';
+import { TravelService } from './client_side_services/travel.service.client';
+import { BlogService } from './client_side_services/blog.service.client';
+
+// Add Quill, Shared, AuthGuard
+import { QuillEditorModule } from 'ngx-quill-editor';
+import { SharedService } from './client_side_services/shared.service.client';
+import { AuthGuard } from './client_side_services/auth-guard.service';
 
 
 @NgModule({
@@ -52,14 +63,19 @@ import { Routing } from './app.routing';
     AdminLoginComponent,
     AdminClientsComponent,
     AdminItineraryComponent,
+    AdminClientsNewComponent,
+    AdminClientsEditComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    QuillEditorModule
   ],
-  providers: [],
+  providers: [ UserService, TravelService, BlogService, SharedService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

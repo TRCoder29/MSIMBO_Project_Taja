@@ -1,0 +1,47 @@
+<!-- Assignment Register Layout -->
+<div class="container-fluid">
+	<div class="col-sm-6 d-none d-sm-block float-right">
+	<!-- Register Header -->
+	<h3>Register</h3>
+
+	<!-- This is the register form. It has the username, password and verify password fields. -->
+	<form (ngSubmit)="register()" #f="ngForm">
+		<!-- Username -->
+		<div class="form-group">
+			<label>Username</label>
+			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel #username="ngModel">
+		</div>
+
+		<!-- Missing/Invalid username alert -->
+		<span class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</span>
+
+		<!-- Alert if username is taken -->
+		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
+
+		<!-- Password -->
+		<div class="form-group">
+			<label>Password</label>
+			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel #password="ngModel">
+		</div>
+
+		<!-- Missing/Invalid password alert -->
+		<span class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</span>
+
+		<!-- Verify Password -->
+		<div class="form-group">
+			<label>Verify Password</label>
+			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" required ngModel #verifyPassword="ngModel" >
+		</div>
+
+		<!-- Missing/Invalid verify password alert -->
+		<span class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</span>
+
+		<!-- Alert if password and verify password don't match) -->
+		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+
+		<div>
+			<!-- Register Button Register Link-->
+			<button class="btn btn-secondary btn-block" routerLink="/register">Register</button>
+		</div>
+	</form>
+</div>

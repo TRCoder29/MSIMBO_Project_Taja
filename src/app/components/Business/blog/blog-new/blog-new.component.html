@@ -20,15 +20,52 @@
 		</button>
 		<div class="dropdown-content">
 			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="guest" href="login">Login</a>
-			<a class="guest" href="register">Register</a>
-			<a class="user" href="user/{{uid}}">My Account</a>
-			<a class="user" href="login">Log Out</a>
+			<a class="user" href="admin-main">My Account</a>
+			<a class="user" (click)="logout()">Log Out</a>
 		</div>
 	</div>
 </div>
 
-<body></body>
+
+<div>
+<!-- Back Button (To Blog Page)-->
+<a style="color: #000000" routerLink="/blog-main"><b>Back</b></a>
+</div>
+
+
+<!-- New Blog Form -->
+<div>
+	<div class="container">
+		<form id="blogForm" (ngSubmit)="create()" #f="ngForm">
+			<!-- Blog Title -->
+			<div class="form-group">
+				<label for="blog-title"><b>Title</b></label>
+				<input class="form-control" type="text" name="title" placeholder="Title" required ngModel #title="ngModel">
+			</div>
+
+			<!-- Missing Title Alert -->
+			<div class="alert alert-danger" *ngIf="title.invalid && title.touched">Title cannot be empty.</div>
+
+			<!-- Blog Entry -->
+			<div class="form-group">
+				<label for="blog-entry"><b>Entry</b></label>
+				<quill-editor class="form-control" name="entry" rows="5" required ngModel #entry="ngModel"></quill-editor>
+			</div>
+
+			<!-- Missing Entry Alert -->
+			<div class="alert alert-danger" *ngIf="entry.invalid && entry.touched">Entry cannot be empty.</div>
+
+			<!-- Submit Button -->
+			<button class="btn btn-primary btn-block float-right" type="submit" [disabled]="f.invalid">Submit</button>
+
+			<br>
+			<br>
+
+			<!-- Cancel Button, Nav to Blog List -->
+			<button class="btn btn-danger btn-block" routerLink="/admin/{{aid}}/blog">Cancel</button>
+		</form>
+	</div>
+</div>
 
 <!-- Nav Footer -->
 <nav class="navbar navbar-dark fixed-bottom"></nav>

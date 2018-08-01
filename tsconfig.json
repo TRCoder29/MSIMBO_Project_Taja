@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -14,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
-  }
+     ]
+  },
+
+   "include": [
+    "src/**/*",
+    "node_modules/ngx-quill-editor/quillEditor.component.ts",
+    "node_modules/ngx-quill-editor/quillEditor.module.ts",
+    "node_modules/ngx-quill-editor/index.ts"
+  ]
 }
+

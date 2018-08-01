@@ -20,15 +20,74 @@
     </button>
     <div class="dropdown-content">
       <!-- Make My Account and Log Out disappear when not logged in -->
-      <a class="guest" href="login">Login</a>
-      <a class="guest" href="register">Register</a>
-      <a class="user" href="user/{{uid}}">My Account</a>
-      <a class="user" href="login">Log Out</a>
+      <a class="user" href="admin-main">My Account</a>
+      <a class="user" (click)="logout()">Log Out</a>
     </div>
   </div>
 </div>
 
-<body></body>
+<div class=blogbackground>
+  <div class=blogtransbox>
+    <div class="header">
+
+    <div>
+    <a class="float-right" href="blog-new">New Blog</a>
+    </div>
+
+    <br>
+
+    <div>
+    <a class="float-right" href="blog-edit">Edit Blog</a>
+    </div>
+
+  <h2>Blog Name</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
 
 <!-- Nav Footer -->
 <nav class="navbar navbar-dark fixed-bottom"></nav>
+
+
+  <!-- Blog List and Cogs -->
+  <nav>
+    <div>
+      <!-- Edit Blog List-->
+      <ul class="list-group">
+        <!-- Blog List -->
+        <li class="list-group-item" *ngFor = "let blog of blogs">
+          <!-- Blog-List Link -->
+          <a class="text-primary sw-no-underline" routerLink="/admin/{{aid}}/blog/{{blog._id}}">{{blog.title}}</a>
+          <!-- Blog-Edit Cogs -->
+          <a class="float-right" routerLink="admin/{{aid}}/blog/{{bid}}/edit"><i class="fas fa-cog"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>

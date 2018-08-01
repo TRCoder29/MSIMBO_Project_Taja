@@ -22,8 +22,6 @@
 			<!-- Make My Account and Log Out disappear when not logged in -->
 			<a class="guest" href="login">Login</a>
 			<a class="guest" href="register">Register</a>
-			<a class="user" href="user/{{uid}}">My Account</a>
-			<a class="user" href="login">Log Out</a>
 		</div>
 	</div>
 </div>
@@ -78,7 +76,7 @@
 		<!-- First Name -->
 		<div class="form-group">
 			<label>First Name</label>
-			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel #firstName="ngModel">
+			<input class="form-control" name="firstName" type="text" placeholder="First Name" ngModel #firstName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid First Namne alert -->
@@ -87,7 +85,7 @@
 		<!-- Last Name -->
 		<div class="form-group">
 			<label>Last Name</label>
-			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel #lastName="ngModel">
+			<input class="form-control" name="lastName" type="text" placeholder="Last Name" ngModel #lastName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Last Name alert -->
@@ -96,16 +94,16 @@
 		<!-- DOB -->
 		<div class="form-group">
 			<label>DOB</label>
-			<input class="form-control" name="DOB" type="date" placeholder="Date of Birth (dd/mm/year)" required ngModel #DOB="ngModel">
+			<input class="form-control" name="dob" type="date" placeholder="Date of Birth (dd/mm/year)" ngModel #dob="ngModel">
 		</div>
 
 		<!-- Missing/Invalid DOB alert -->
-		<div class="alert alert-danger" *ngIf="DOB.invalid && DOB.touched">Please enter DOB!</div>
+		<div class="alert alert-danger" *ngIf="dob.invalid && dob.touched">Please enter date of birth!</div>
 
 		<!-- Gender -->
 		<div class="form-group">
 			<label>Gender</label>
-			<input class="form-control" name="gender" type="text" placeholder="Gender" required ngModel #gender="ngModel">
+			<input class="form-control" name="gender" type="text" placeholder="Gender" ngModel #gender="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Gender alert -->
@@ -114,7 +112,7 @@
 		<!-- Country -->
 		<div class="form-group">
 			<label>Country</label>
-			<input class="form-control" name="country" type="text" placeholder="Country" required ngModel #country="ngModel">
+			<input class="form-control" name="country" type="text" placeholder="Country" ngModel #country="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Country alert -->
@@ -123,7 +121,7 @@
 		<!-- State -->
 		<div class="form-group">
 			<label>State</label>
-			<input class="form-control" name="state" type="text" placeholder="State" required ngModel #state="ngModel">
+			<input class="form-control" name="state" type="text" placeholder="State" ngModel #state="ngModel">
 		</div>
 
 		<!-- Missing/Invalid State alert -->
@@ -132,7 +130,7 @@
 		<!-- City -->
 		<div class="form-group">
 			<label>City</label>
-			<input class="form-control" name="city" type="text" placeholder="City" required ngModel #city="ngModel">
+			<input class="form-control" name="city" type="text" placeholder="City" ngModel #city="ngModel">
 		</div>
 
 		<!-- Missing/Invalid City alert -->
@@ -141,16 +139,16 @@
 		<!-- Phone Number -->
 		<div class="form-group">
 			<label>Phone Number</label>
-			<input class="form-control" name="phoneNumber" type="text" placeholder="Phone Number" required ngModel #phoneNumber="ngModel">
+			<input class="form-control" name="phone" type="text" placeholder="Phone Number" ngModel #phone="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Phone Number alert -->
-		<div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">Please enter phone number!</div>
+		<div class="alert alert-danger" *ngIf="phone.invalid && phone.touched">Please enter phone number!</div>
 
 		<!-- E-Mail -->
 		<div class="form-group">
 			<label>E-Mail</label>
-			<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel #email="ngModel">
+			<input class="form-control" name="email" type="text" placeholder="E-Mail" ngModel #email="ngModel">
 		</div>
 
 		<!-- Missing/Invalid E-Mail alert -->
@@ -160,11 +158,11 @@
 		<div class="form-group">
 			<label>Preferred Contact Method (Choose One):</label>
 			<div class="container">Phone
-			<input class="form-control" name="PCMPhone" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMPhone="ngModel">
+			<input class="form-control" name="prefPhone" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefPhone="ngModel">
 			<span class="checkmark"></span>
 			</div>
 			<div class="container">E-Mail
-			<input class="form-control" name="PCMEmail" type="checkbox" check="checked" placeholder="Choose One" required ngModel #PCMEmail="ngModel">
+			<input class="form-control" name="prefEmail" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefEmail="ngModel">
 			<span class="checkmark"></span>
 			</div>
 		</div>
@@ -175,55 +173,55 @@
 		<!-- ID/License/Passport Number -->
 		<div class="form-group">
 			<label>ID/License/Passport Number</label>
-			<input class="form-control" name="idNum" type="text" placeholder="ID/License/Passport Number" required ngModel #idNum="ngModel">
+			<input class="form-control" name="idNum" type="text" placeholder="ID/License/Passport Number" ngModel #idNum="ngModel">
 		</div>
 
 		<div class="form-group">
 			<label>ID/License/Passport Type</label>
-			<input class="form-control" name="idType" type="text" placeholder="ID/License/Passport Type" required ngModel #idType="ngModel">
+			<input class="form-control" name="idType" type="text" placeholder="ID/License/Passport Type" ngModel #idType="ngModel">
 		</div>
 
 		<!-- Expiration Date -->
 		<div class="form-group">
 			<label>Expiration Date</label>
-			<input class="form-control" name="idNum" type="date" placeholder="Expiration Date (MM/DD/YYY)" required ngModel #idNum="ngModel">
+			<input class="form-control" name="idDate" type="date" placeholder="Expiration Date (MM/DD/YYY)" ngModel #idDate="ngModel">
 		</div>
 
 		<!-- Issuing Country -->
 		<div class="form-group">
 			<label>Issuing Country</label>
-			<input class="form-control" name="idCountry" type="text" placeholder="ID/License/Passport Type" required ngModel #idCountry="ngModel">
+			<input class="form-control" name="idCountry" type="text" placeholder="ID/License/Passport Type" ngModel #idCountry="ngModel">
 		</div>
 
 		<!-- Issuing State -->
 		<div class="form-group">
 			<label>Issuing State</label>
-			<input class="form-control" name="idState" type="text" placeholder="Issuing State" required ngModel #idState="ngModel">
+			<input class="form-control" name="idState" type="text" placeholder="Issuing State" ngModel #idState="ngModel">
 		</div>
 
 		<!-- Redress Number -->
 		<div class="form-group">
 			<label>Redress Number</label>
-			<input class="form-control" name="redress" type="text" placeholder="Redress Number" required ngModel #redress="ngModel">
+			<input class="form-control" name="redress" type="text" placeholder="Redress Number" ngModel #redress="ngModel">
 		</div>
 
 		<!-- Known Traveler Number -->
 		<div class="form-group">
 			<label>Known Traveler Number</label>
-			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" required ngModel #knownTravelNum="ngModel">
+			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" ngModel #knownTravelNum="ngModel">
 		</div>
 
 		<!-- Frequent Flyer Information -->
-		<div class="form-group">
+<!-- 		<div class="form-group">
 			<label>Frequent Flyer Information</label>
-			<input class="form-control" name="freqFlyer" type="text" placeholder="Frequent Flyer Information" required ngModel #freqFlyer="ngModel">
-		</div>
+			<input class="form-control" name="freqFlyer" type="text" placeholder="Frequent Flyer Information" ngModel #freqFlyer="ngModel">
+		</div> -->
 
 		<!-- Customer Loyalty Information -->
-		<div class="form-group">
+<!-- 		<div class="form-group">
 			<label>Customer Loyalty Information</label>
-			<input class="form-control" name="custLoyal" type="text" placeholder="Customer Loyalty Information" required ngModel #custLoyal="ngModel">
-		</div>
+			<input class="form-control" name="custLoyal" type="text" placeholder="Customer Loyalty Information" ngModel #custLoyal="ngModel">
+		</div> -->
 
 		<div>
 			<!-- Register Button Profile Link-->
