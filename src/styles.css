@@ -145,10 +145,10 @@
 }
 
 /* Add a background color on hover */
-.btn-group button:hover {
+/*.btn-group button:hover {
     background-color: #000000;
     opacity: 0.2;
-}
+}*/
 
 /*Hide links unless hover*/
 .btn-group button a {
@@ -570,6 +570,3 @@
 }
 
 /*----------------------------------------------------*/
-
-/*Admin-Dashboard(Main)*/
-

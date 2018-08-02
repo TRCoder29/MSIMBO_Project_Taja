@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from "../../../client_side_services/user.service.client"
+import { UserService } from "../../client_side_services/user.service.client"
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HomeComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   constructor(public userService: UserService, private router: Router) { }
 
@@ -32,5 +32,4 @@ export class HomeComponent implements OnInit {
 			}
 		);
 	}
-
 }

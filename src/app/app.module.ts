@@ -24,7 +24,6 @@ import { RegisterComponent } from './components/User/register/register.component
 import { ProfileComponent } from './components/User/profile/profile.component';
 
 // Admin Components
-import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
@@ -41,6 +40,8 @@ import { BlogService } from './client_side_services/blog.service.client';
 import { QuillEditorModule } from 'ngx-quill-editor';
 import { SharedService } from './client_side_services/shared.service.client';
 import { AuthGuard } from './client_side_services/auth-guard.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AccountInfoComponent } from './components/User/profile/account-info/account-info.component';
 
 
 @NgModule({
@@ -60,11 +61,12 @@ import { AuthGuard } from './client_side_services/auth-guard.service';
     RegisterComponent,
     ProfileComponent,
     AdminDashboardComponent,
-    AdminLoginComponent,
     AdminClientsComponent,
     AdminItineraryComponent,
     AdminClientsNewComponent,
     AdminClientsEditComponent,
+    NavbarComponent,
+    AccountInfoComponent,
 
   ],
   imports: [

@@ -3,37 +3,37 @@
 		<div class="btn-group" style="width: 200%">
 			<button class="homebutton homebutton1" style="width: 40%">
 				<h6>About</h6>
-				<a href="about">Learn more!</a>
+				<a routerLink="/about">Learn more!</a>
 			</button>
 
 			<button class="homebutton homebutton2" style="width: 40%">
 				<h6>Services</h6>
-				<a href="services-main">General Services</a>
+				<a routerLink="/services-main">General Services</a>
 				<br>
-				<a href="doing-business">Doing Business</a>
+				<a routerLink="/doing-business">Doing Business</a>
 				<br>
-				<a href="service-request">Request Services</a>
+				<a routerLink="/service-request">Request Services</a>
 			</button>
 
 			<button class="homebutton homebutton3" style="width: 40%">
 				<h6>Blog</h6>
-				<a href="blog-main">Be inspired!</a>
+				<a routerLink="/blog-main">Be inspired!</a>
 			</button>
 
 			<button class="homebutton homebutton4" style="width: 40%">
 				<h6>Contact</h6>
-				<a href="contact">Reach out!</a>
+				<a routerLink="/contact">Reach out!</a>
 			</button>
 
 			<button class="homebutton homebutton5" style="width: 40%">
 				<h6>Profile</h6>
-				<a class="guest" href="login">Login</a>
+				<a routerLink="/login" *ngIf="!loggedIn">Login</a>
 				<br>
-				<a class="guest" href="register">Register</a>
+				<a routerLink="/register" *ngIf="!loggedIn">Register</a>
 				<br>
-				<a class="user" href="user" *ngIf="loggedIn()">My Account</a>
+				<a routerLink="/user" *ngIf="loggedIn">My Account</a>
 				<br>
-				<a class="user" (click)= "logout()" *ngIf="loggedIn()">Log Out</a>
+				<a (click)= "logout()" *ngIf="loggedIn">Log Out</a>
 			</button>
 		</div>
 	</div>
@@ -41,9 +41,4 @@
 
 
 <!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom">
-	<!-- Admin Login (Button) -->
-	<div class="sw-width">
-		<a class="sw-font-white float-right" href="admin-login"><i class="fas fa-user"></i></a>
-	</div>
-</nav>
+<nav class="navbar navbar-dark fixed-bottom"></nav>

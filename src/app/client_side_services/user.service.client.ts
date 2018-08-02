@@ -76,6 +76,16 @@ loggedIn() {
    ));
 }
 
+publicLoggedIn() {
+ this.options.withCredentials = true;
+ return this.http.post(this.baseUrl + '/api/loggedIn', '', this.options).pipe(map(
+   (res: Response) => {
+     const user = res.json();
+     return (user !== 0)
+   }
+   ));
+}
+
 logout() {
  this.options.withCredentials = true;
  return this.http.post(this.baseUrl + '/api/logout', '', this.options).pipe(map(

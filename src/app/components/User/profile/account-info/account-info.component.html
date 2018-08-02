@@ -1,14 +1,14 @@
 <!-- Nav Bar -->
 <app-navbar></app-navbar>
 
-<!-- Assignment Register Layout -->
+<!-- User Account -->
 <div class="container float-left registerBackground" style="width: 50%">
-	<h4 align="center">Register:</h4>
+	<h4 align="center">Profile:</h4>
 
 	<br>
 
-	<!-- Register Form -->
-	<form (ngSubmit)="register()" #f="ngForm">
+	<!-- Update Information Form -->
+	<form (ngSubmit)="update()" #f="ngForm">
 		<h6>Account Info:</h6>
 
 		<!-- Username -->
@@ -200,10 +200,12 @@
 
 		<div>
 			<!-- Register Button Profile Link-->
-			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Register</button>
+			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Update</button>
 			<!-- Cancel Button Login Link-->
 			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
 		</div>
 	</form>
 </div>
+
+
 

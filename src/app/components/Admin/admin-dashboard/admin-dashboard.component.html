@@ -1,53 +1,19 @@
 <!-- Nav Bar -->
-<div class="navbar">
-	<a href="home">Home</a>
-	<a href="about">About</a>
-	<div class="dropdown">
-		<button class="dropbtn">Services
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a href="services-main">General Services</a>
-			<a href="doing-business">Doing Business</a>
-			<a href="service-request">Request Services</a>
-		</div>
-	</div>
-	<a href="blog-main">Blog</a>
-	<a href="contact">Contact</a>
-	<div class="dropdown">
-		<button class="dropbtn">Profile
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a class="user" href="admin-main">My Account</a>
-			<a class="user" (click)="logout()">Log Out</a>
-		</div>
-	</div>
-</div>
+<app-navbar></app-navbar>
 
 <div class="profileBackground">
 	<div class="profileTransbox container-fluid">
-		<a class="user" href="admin-main">Manage Customers (Add, Update, Delete)</a><br>
-		<a class="user" href="admin-main">Manage Trip Details</a><br>
-		<a class="guest" href="admin-main">Manage Payments</a><br>
-		<a class="guest" href="admin-main">Itinerary Requests</a><br>
-		<a class="user" href="admin-main">Messages</a><br>
-		<a class="user" href="admin-main">Blog Management (Add, Update, Delete)</a><br>
-		<a class="guest" href="login">Log-Out</a><br>
+		<a class="user" routerLink="/admin-clients">Manage Customers</a><br>
+		<a class="user" routerLink="/admin-clients/new">Add Customers</a><br>
+		<a class="user" routerLink="/admin-clients/edit">Update/Delete Customers</a><br>
+		<a class="user" routerLink="/blog-new">Add Blog</a><br>
+		<a class="user" routerLink="/blog-edit">Edit Blog</a><br>
+		<!-- Pages to Be Created Later -->
+		<a class="user" routerLink="/admin-main">Manage Trip Details</a><br>
+		<a class="guest" routerLink="/admin-main">Manage Payments</a><br>
+		<a class="guest" routerLink="/admin-main">Itinerary Requests</a><br>
+		<a class="user" routerLink="/admin-main">Messages</a><br>
+		
+		<a class="user" (click)= "logout()">Log Out</a>
 	</div>
 </div>
-
-
-<!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom"></nav>
-
-<!-- 	<p>
-		Admin Log-In Page - Subpage Created
-		Manage Customers (Add, Delete, Update) - Subpage Created
-		Manage Trip Details - Subpage
-		Manage Payments - Subpage
-		View New Itinerary Requests - Subpage Created
-		Manage Messages (from Clients and System) - Subpage
-		Add Blog Post - Subpage Created (In Blog Component)
-		Edit/Delete Blog Post - Subpage (In Blog Component)
-	</p> -->

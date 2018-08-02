@@ -1,0 +1,33 @@
+<!-- Nav Bar -->
+<div class="navbar">
+	<a routerLink="/home">Home</a>
+	<a routerLink="/about">About</a>
+	<div class="dropdown">
+		<button class="dropbtn">Services
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a routerLink="/services-main">General Services</a>
+			<a routerLink="/doing-business">Doing Business</a>
+			<a routerLink="/service-request">Request Services</a>
+		</div>
+	</div>
+	<a routerLink="/blog-main">Blog</a>
+	<a routerLink="/contact">Contact</a>
+	<div class="dropdown">
+		<button class="dropbtn">Profile
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<!-- Make My Account and Log Out disappear when not logged in -->
+			<a class="guest" routerLink="/login" *ngIf="!loggedIn">Login</a>
+			<a class="guest" routerLink="/register" *ngIf="!loggedIn">Register</a>
+			<a class="user" routerLink="/user" *ngIf="loggedIn">My Account</a>
+			<a class="user" (click)="logout()" *ngIf="loggedIn">Log Out</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- Nav Footer -->
+<nav class="navbar navbar-dark fixed-bottom"></nav>

@@ -1,31 +1,15 @@
 <!-- Nav Bar -->
-<div class="navbar">
-	<a href="home">Home</a>
-	<a href="about">About</a>
-	<div class="dropdown">
-		<button class="dropbtn">Services
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a href="services-main">General Services</a>
-			<a href="doing-business">Doing Business</a>
-			<a href="service-request">Request Services</a>
-		</div>
-	</div>
-	<a href="blog-main">Blog</a>
-	<a href="contact">Contact</a>
-	<div class="dropdown">
-		<button class="dropbtn">Profile
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a class="user" href="admin-main">My Account</a>
-			<a class="user" (click)="logout()">Log Out</a>
-		</div>
-	</div>
+<app-navbar></app-navbar>
+
+
+<!-- Customer List and Cogs -->
+<div>
+	<!-- Edit Customer List-->
+	<ul class="list-group">
+		<!-- Customer List -->
+		<li class="list-group-item" *ngFor = "let user of users">
+			<!-- Customer-List Link -->
+			<a class="text-primary sw-no-underline" routerLink="/user/{{user._id}}">{{user.username}}</a>
+		</li>
+	</ul>
 </div>
-
-<body></body>
-
-<!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom"></nav>

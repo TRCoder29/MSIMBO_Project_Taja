@@ -1,50 +1,21 @@
 <!-- Nav Bar -->
-<div class="navbar">
-	<a href="home">Home</a>
-	<a href="about">About</a>
-	<div class="dropdown">
-		<button class="dropbtn">Services
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a href="services-main">General Services</a>
-			<a href="doing-business">Doing Business</a>
-			<a href="service-request">Request Services</a>
-		</div>
-	</div>
-	<a href="blog-main">Blog</a>
-	<a href="contact">Contact</a>
-	<div class="dropdown">
-		<button class="dropbtn">Profile
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="user" href="user">My Account</a>
-			<a class="user" (click)= "logout()">Log Out</a>
-		</div>
-	</div>
-</div>
+<app-navbar></app-navbar>
 
 <div class="profileBackground">
 	<h4 align="center">Profile</h4>
 	<div class="profileTransbox container-fluid">
-		<a href="#account">Manage Account Info (Name, Preferred Port of Departure, E-Mail, Phone, Preferences, etc.)</a>
+		<a routerLink="/account-info">Manage Account Info (Name, Preferred Port of Departure, E-Mail, Phone, Preferences, etc.)</a>
+
 		<br>
-		<a href="#messages">Messages (from Agent and System)</a>
+		<a routerLink="#messages">Messages (from Agent and System)</a>
 		<br>
-		<a href="#itineraries">Access Itineraries (Proposed, Purchased)</a>
+		<a routerLink="#itineraries">Access Itineraries (Proposed, Purchased)</a>
 		<br>
-		<a href="#new-request">New Itinerary Request</a>
+		<a routerLink="/travel-request">New Itinerary Request</a>
 		<br>
-		<a href="#payment">Make Payment</a>
+		<a routerLink="#payment">Make Payment</a>
+		<br>
+		<a (click)= "logout()">Log Out</a>
 	</div>
 </div>
 
-<!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom">
-	<!-- Admin Login (Button) -->
-	<div class="sw-width">
-		<a class="sw-font-white float-right" href="admin-main"><i class="fas fa-user"></i></a>
-	</div>
-</nav>

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     var delay = document.querySelector(".sw-delay");
     
+    
   }
 
   login() {
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.errorFlag = false;
         this.sharedService.user = user;
+        console.log(this.sharedService.user);
         this.router.navigate(['user'])
       }
     },

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from "@angular/router";
 import { ModuleWithProviders} from "@angular/core";
+import { AuthGuard } from './client_side_services/auth-guard.service';
 
 import { AppComponent } from './app.component';
 
@@ -22,9 +23,9 @@ import { BlogEditComponent } from './components/Business/blog/blog-edit/blog-edi
 import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
 import { ProfileComponent } from './components/User/profile/profile.component';
+import { AccountInfoComponent } from './components/User/profile/account-info/account-info.component';
 
 // Admin Components
-import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
@@ -35,12 +36,14 @@ import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admi
 const APP_ROUTES : Routes = [
   // User (More Profile Components to Come)
   { path : '', component: HomeComponent},
+  { path : 'home' , component: HomeComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent},
-  { path : 'user' , component: ProfileComponent},
+  { path : 'user' , component:  ProfileComponent, canActivate: [AuthGuard]},
+  { path : 'account-info' , component:  AccountInfoComponent, canActivate: [AuthGuard]},
 
   // Business
-  { path : 'home' , component: HomeComponent},
+  
   { path : 'about', component : AboutComponent},
   { path : 'contact' , component: ContactComponent},
 
@@ -50,16 +53,15 @@ const APP_ROUTES : Routes = [
   { path : 'travel-request' , component: TravelRequestComponent},
 
   { path : 'blog-main', component : BlogMainComponent},
-  { path : 'blog-new' , component: BlogNewComponent},
-  { path : 'blog-edit' , component: BlogEditComponent},
+  { path : 'blog-new' , component: BlogNewComponent, canActivate: [AuthGuard]},
+  { path : 'blog-edit' , component: BlogEditComponent, canActivate: [AuthGuard]},
 
   // Admin
-  { path : 'admin-login' , component: AdminLoginComponent},
-  { path : 'admin-main' , component: AdminDashboardComponent},
-  { path : 'admin/:aid/admin-clients' , component: AdminClientsComponent},
-  { path : 'admin/:aid/admin-clients/new' , component: AdminClientsNewComponent},
-  { path : 'admin/:aid/admin-clients/edit' , component: AdminClientsEditComponent},
-  { path : 'admin/:aid/admin-itinerary' , component: AdminItineraryComponent},
+  { path : 'admin' , component: AdminDashboardComponent, canActivate: [AuthGuard]},
+  { path : 'admin-clients' , component: AdminClientsComponent, canActivate: [AuthGuard]},
+  { path : 'admin-clients/new' , component: AdminClientsNewComponent, canActivate: [AuthGuard]},
+  { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AuthGuard]},
+  { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AuthGuard]},
 ];
 
 // admin/:aid/admin-dashboard

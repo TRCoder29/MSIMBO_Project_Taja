@@ -1,32 +1,5 @@
 <!-- Nav Bar -->
-<div class="navbar">
-	<a href="home">Home</a>
-	<a href="about">About</a>
-	<div class="dropdown">
-		<button class="dropbtn">Services
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a href="services-main">General Services</a>
-			<a href="doing-business">Doing Business</a>
-			<a href="service-request">Request Services</a>
-		</div>
-	</div>
-	<a href="blog-main">Blog</a>
-	<a href="contact">Contact</a>
-	<div class="dropdown">
-		<button class="dropbtn">Profile
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="guest" href="login">Login</a>
-			<a class="guest" href="register">Register</a>
-			<a class="user" href="user" *ngIf="loggedIn()">My Account</a>
-			<a class="user" (click)= "logout()" *ngIf="loggedIn()">Log Out</a>
-		</div>
-	</div>
-</div>
+<app-navbar></app-navbar>
 
 <!-- Services Provided, Doing Business -->
 <div class="genservbackground">
@@ -39,10 +12,3 @@
 	</div>
 </div>
 
-<!-- Nav Footer -->
-<nav class="navbar navbar-dark fixed-bottom">
-	<!-- Admin Login (Button) -->
-	<div class="sw-width">
-		<a class="sw-font-white float-right" href="admin-login"><i class="fas fa-user"></i></a>
-	</div>
-</nav>
