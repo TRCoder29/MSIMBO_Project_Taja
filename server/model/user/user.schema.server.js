@@ -12,6 +12,7 @@ var UserSchema = mongoose.Schema({
 	city: String,
 	phone: String,
 	email: String,
+	isAdmin: {type:Boolean, default: false },
 	dateCreated: {type: Date, default: Date.now}
 }, {collection: 'user'})
 

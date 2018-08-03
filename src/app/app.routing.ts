@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from "@angular/router";
 import { ModuleWithProviders} from "@angular/core";
 import { AuthGuard } from './client_side_services/auth-guard.service';
+import { AdminGuard } from './client_side_services/admin-guard.service';
 
 import { AppComponent } from './app.component';
 
@@ -57,11 +58,11 @@ const APP_ROUTES : Routes = [
   { path : 'blog-edit' , component: BlogEditComponent, canActivate: [AuthGuard]},
 
   // Admin
-  { path : 'admin' , component: AdminDashboardComponent, canActivate: [AuthGuard]},
-  { path : 'admin-clients' , component: AdminClientsComponent, canActivate: [AuthGuard]},
-  { path : 'admin-clients/new' , component: AdminClientsNewComponent, canActivate: [AuthGuard]},
-  { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AuthGuard]},
-  { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AuthGuard]},
+  { path : 'admin' , component: AdminDashboardComponent, canActivate: [AdminGuard]},
+  { path : 'admin-clients' , component: AdminClientsComponent, canActivate: [AdminGuard]},
+  { path : 'admin-clients/new' , component: AdminClientsNewComponent, canActivate: [AdminGuard]},
+  { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AdminGuard]},
+  { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AdminGuard]},
 ];
 
 // admin/:aid/admin-dashboard

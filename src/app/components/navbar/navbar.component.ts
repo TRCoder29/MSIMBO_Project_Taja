@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "../../client_side_services/user.service.client"
 import { Router } from '@angular/router';
+import { SharedService } from "../../client_side_services/shared.service.client"
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +10,14 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private sharedService: SharedService) { }
 
   loggedIn: boolean;
+  isAdmin: boolean;
 
   ngOnInit() {
   	this.isLoggedIn();
+    this.isAdmin = this.sharedService.user.isAdmin;
   }
 
   isLoggedIn() {

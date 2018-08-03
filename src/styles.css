@@ -15,6 +15,20 @@
 /*Add Google Search: http://www.developerdrive.com/2012/08/add-a-simple-google-yahoo-or-bing-search-box-to-your-website/*/
 /*Country List Dropdown: https://gist.github.com/soul-wish/8030172*/
 
+/*Screen resizing*/
+/*@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}*/
+
+
+/*Default margins for all pages*/
+.my-auto{
+margin-top: auto;
+margin-bottom: auto;
+}
+
 /*Navbar Style (General)*/
 .navbar {
     overflow: hidden;
@@ -96,22 +110,19 @@
 /*Home*/
 
 /*Background*/
-.homebackground {
+.homeBackground {
     background-color: #000000;
-    height: 100%; 
-    padding-top: 380px;
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-bottom: 380px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 
 /*Transparent Buttons (General)*/
 .homebutton {
-  margin: 10px;
-  padding: 20px;
+  margin: 10px; /* Space between buttons */
   border: 1px solid black;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 
@@ -129,7 +140,7 @@
 .btn-group button {
     border: 1px solid black; /* Black border */
     color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
+    /*padding: 10px 24px;*/ /* Some padding */
     float: left; /* Float the buttons side by side */
 }
 
@@ -198,21 +209,20 @@
 /*Background Image*/
 .aboutbackground { 
     background-image: url("./media/GildedMarket.jpg");
-    height: 100%; 
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 80px;
-    padding-left: 450px;
-    padding-right: 450px;
-    padding-bottom: 80px;
 }
 
 
 /*Transparent Content Box*/
 .abouttransbox {
   margin: 20px;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
@@ -521,17 +531,15 @@
 /*Background*/
 .profileBackground {
     background-color: #F2C2B7;
-    height: 100%; 
-    padding-top: 280px;
-    padding-left: 500px;
-    padding-right: 500px;
-    padding-bottom: 280px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 /*Transparent Content Box*/
 .profileTransbox {
-  margin: 60px;
-  padding: 30px;
+ /* margin: 60px;*/
+  /*padding: 30px;*/
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;

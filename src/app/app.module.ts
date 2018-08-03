@@ -40,6 +40,7 @@ import { BlogService } from './client_side_services/blog.service.client';
 import { QuillEditorModule } from 'ngx-quill-editor';
 import { SharedService } from './client_side_services/shared.service.client';
 import { AuthGuard } from './client_side_services/auth-guard.service';
+import { AdminGuard } from './client_side_services/admin-guard.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AccountInfoComponent } from './components/User/profile/account-info/account-info.component';
 
@@ -76,7 +77,7 @@ import { AccountInfoComponent } from './components/User/profile/account-info/acc
     Routing,
     QuillEditorModule
   ],
-  providers: [ UserService, TravelService, BlogService, SharedService, AuthGuard],
+  providers: [ UserService, TravelService, BlogService, SharedService, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

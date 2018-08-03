@@ -41,8 +41,11 @@ export class LoginComponent implements OnInit {
       } else {
         this.errorFlag = false;
         this.sharedService.user = user;
-        console.log(this.sharedService.user);
-        this.router.navigate(['user'])
+        if(user.isAdmin){
+          this.router.navigate(['admin'])
+        } else {
+          this.router.navigate(['user'])
+        }
       }
     },
     (error: any) => {

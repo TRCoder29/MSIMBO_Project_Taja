@@ -2,20 +2,26 @@
 <app-navbar></app-navbar>
 
 <div class="profileBackground">
-	<h4 align="center">Profile</h4>
-	<div class="profileTransbox container-fluid">
-		<a routerLink="/account-info">Manage Account Info (Name, Preferred Port of Departure, E-Mail, Phone, Preferences, etc.)</a>
+	<div class='row h-100'>
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 my-auto">
+			<h4 align="center">Profile</h4>
+			<div class="profileTransbox container-fluid">
+				<a routerLink="/account-info">Manage Account Info (Name, Preferred Port of Departure, E-Mail, Phone, Preferences, etc.)</a>
 
-		<br>
-		<a routerLink="#messages">Messages (from Agent and System)</a>
-		<br>
-		<a routerLink="#itineraries">Access Itineraries (Proposed, Purchased)</a>
-		<br>
-		<a routerLink="/travel-request">New Itinerary Request</a>
-		<br>
-		<a routerLink="#payment">Make Payment</a>
-		<br>
-		<a (click)= "logout()">Log Out</a>
+				<br>
+				<a routerLink="#messages">Messages (from Agent and System)</a>
+				<br>
+				<a routerLink="#itineraries">Access Itineraries (Proposed, Purchased)</a>
+				<br>
+				<a routerLink="/travel-request">New Itinerary Request</a>
+				<br>
+				<a routerLink="#payment">Make Payment</a>
+				<br>
+				<a routerLink="#" (click)= "logout()">Log Out</a>
+			</div>
+		</div>
+		<div class="col-sm-4"></div>
 	</div>
 </div>
 

@@ -69,19 +69,43 @@ loggedIn() {
        this.sharedService.user = user; // setting user so as to share with all components
        return true;
        } else {
-         this.router.navigate(['/login']);
+         this.router.navigate(['login']);
          return false;
        }
      }
    ));
 }
 
+
+adminLoggedIn() {
+ this.options.withCredentials = true;
+ return this.http.post(this.baseUrl + '/api/loggedIn', '', this.options).pipe(map(
+   (res: Response) => {
+     const user = res.json();
+     if (user !== 0 && user.isAdmin) {
+       this.sharedService.user = user; // setting user so as to share with all components
+       return true;
+       } else {
+         alert("You have no permission to visit admin page");
+         this.router.navigate(['user']);
+         return false;
+       }
+     }
+   ));
+}
+
+
 publicLoggedIn() {
  this.options.withCredentials = true;
  return this.http.post(this.baseUrl + '/api/loggedIn', '', this.options).pipe(map(
    (res: Response) => {
      const user = res.json();
-     return (user !== 0)
+     if (user !== 0) {
+       this.sharedService.user = user;
+       return true;
+     } else {
+       return false;
+     }
    }
    ));
 }

@@ -20,6 +20,7 @@ export class User {
 	idState?: string;
 	redress?: string;
 	knownTravelNum?: string;
+	isAdmin?: boolean;
 
 	// Do I need variables to represent the passport details and the contact preference
 
