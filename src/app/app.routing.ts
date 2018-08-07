@@ -54,8 +54,8 @@ const APP_ROUTES : Routes = [
   { path : 'travel-request' , component: TravelRequestComponent},
 
   { path : 'blog-main', component : BlogMainComponent},
-  { path : 'blog-new' , component: BlogNewComponent, canActivate: [AuthGuard]},
-  { path : 'blog-edit' , component: BlogEditComponent, canActivate: [AuthGuard]},
+  { path : 'blog-new' , component: BlogNewComponent, canActivate: [AdminGuard]},
+  { path : 'blog-edit' , component: BlogEditComponent, canActivate: [AdminGuard]},
 
   // Admin
   { path : 'admin' , component: AdminDashboardComponent, canActivate: [AdminGuard]},
@@ -64,8 +64,6 @@ const APP_ROUTES : Routes = [
   { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AdminGuard]},
   { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AdminGuard]},
 ];
-
-// admin/:aid/admin-dashboard
 
 // Export the routes as module providers
 export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

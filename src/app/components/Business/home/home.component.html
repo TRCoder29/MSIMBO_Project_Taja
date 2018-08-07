@@ -30,13 +30,12 @@
 
 					<button class="homebutton homebutton5" style="width: 20%">
 						<h6>Profile</h6>
+						<!-- Make My Account and Log Out disappear when not logged in -->
 						<a routerLink="/login" *ngIf="!loggedIn">Login</a>
-						<br>
 						<a routerLink="/register" *ngIf="!loggedIn">Register</a>
-						<br>
-						<a routerLink="/user" *ngIf="loggedIn">My Account</a>
-						<br>
-						<a routerLink="#" (click)= "logout()" *ngIf="loggedIn">Log Out</a>
+						<a routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
+						<a routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
+						<a routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
 					</button>
 				</div>
 			</div>

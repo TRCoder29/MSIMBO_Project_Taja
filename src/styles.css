@@ -1,4 +1,3 @@
-
 /* You can add global styles to this file, and also import other style files */
 
 /*Sources:*/
@@ -37,6 +36,7 @@ margin-bottom: auto;
     height: 30px;
     z-index: 1;
     margin-bottom: 0;
+    position: !important;
 }
 
 /*Navbar Button/Content Style*/
@@ -222,7 +222,6 @@ margin-bottom: auto;
 .abouttransbox {
   margin: 20px;
   padding-top: 30px;
-  padding-bottom: 30px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
@@ -246,14 +245,12 @@ margin-bottom: auto;
 /*Background Image*/
 .genservbackground {
     background-image: url("./media/BlueAlley.jpg");
+    position: fixed;
     height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 300px;
-    padding-left: 600px;
-    padding-right: 600px;
-    padding-bottom: 380px;
 }
 
 /*Transparent Content Box*/
@@ -283,16 +280,13 @@ margin-bottom: auto;
 /*Background Image*/
 .dobizbackground { 
     background-image: url("./media/FortressGarden.jpg");
-    height: 100%; 
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 50px;
-    padding-left: 450px;
-    padding-right: 450px;
-    padding-bottom: 50px;
 }
-
 
 /*Transparent Content Box*/
 .dobiztransbox {
@@ -321,24 +315,21 @@ margin-bottom: auto;
 /*Background Image*/
 .itinbackground { 
     background-image: url("./media/CancunView.jpg");
-    height: 100%; 
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 100px;
-    padding-left: 450px;
-    padding-right: 450px;
-    padding-bottom: 250px;
 }
 
 /*Transparent Content Box*/
 .itintransbox {
-  margin: 50px;
+  margin: 20px;
   padding: 30px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
-  white-space: nowrap;
 }
 
 .itintransbox label {
@@ -463,14 +454,12 @@ margin-bottom: auto;
 /*Background Image*/
 .contactbackground { 
     background-image: url("./media/GardenWalkway.jpg");
-    height: 100%; 
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 25px;
-    padding-left: 600px;
-    padding-right: 100px;
-    padding-bottom: 0px;
 }
 
 /*Transparent Content Box*/
@@ -558,6 +547,8 @@ margin-bottom: auto;
 }
 /*----------------------------------------------------*/
 
+/*Login*/
+
 /*Background*/
 .loginBackground { 
     margin-top: 300px;
@@ -578,3 +569,14 @@ margin-bottom: auto;
 }
 
 /*----------------------------------------------------*/
+
+/*Admin New Clients*/
+
+/*Background*/
+.clientBackground { 
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+

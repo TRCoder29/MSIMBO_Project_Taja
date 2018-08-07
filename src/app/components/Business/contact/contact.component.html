@@ -1,8 +1,8 @@
 <!-- Nav Bar -->
 <app-navbar></app-navbar>
 
-<div class="contactbackground">
-	<div class="contacttransbox">
+<div class="contactbackground" align="center">
+	<div class="contacttransbox" style="width: 50%" align="left">
 		<!-- Central Top: Contact Info -->
 		<div>
 			<ul style="list-style-type:none">
@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<div class="contacttransbox">
+	<div class="contacttransbox" style="width: 50%" align="left">
 		<!-- Central Botton: Contact Form (Label and Input Boxes) -->
 		<!-- <form (ngSubmit)="reqinfo()" #f="ngForm"> -->
 		<form>
@@ -36,11 +36,12 @@
 
 			<div class="form-group">
 				<label>Question/Comment:</label>
-				<textarea class="form-control" name="comment" type="text" placeholder="Enter your question or comment here." rows="4" cols="50"></textarea>
+				<textarea class="form-control" name="comment" type="text" rows="4" cols="50" placeholder="Enter your question or comment here." required ngModel #comment="ngModel"></textarea>
 			</div>
+
+<!-- 			<button type="submit" [disabled]="f.invalid">Submit</button> -->
+
 		</form>
 	</div>
 </div>
-
-
 

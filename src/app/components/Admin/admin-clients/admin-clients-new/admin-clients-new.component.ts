@@ -12,7 +12,7 @@ import { SharedService } from '../../../../client_side_services/shared.service.c
 })
 export class AdminClientsNewComponent implements OnInit {
 
-@ViewChild('f') registerForm: NgForm;
+@ViewChild('f') adminClientsNewForm: NgForm;
 
   username: string;
   password: string;
@@ -47,20 +47,28 @@ export class AdminClientsNewComponent implements OnInit {
 
   register() {
     this.ngOnInit();
-  	this.username = this.registerForm.value.username;
-  	this.password = this.registerForm.value.password;
-  	this.verifyPassword = this.registerForm.value.verifyPassword;
-  	this.firstName = this.registerForm.value.firstName;
-  	this.lastName = this.registerForm.value.lastName;
-  	this.dob = this.registerForm.value.dob;
-  	this.gender = this.registerForm.value.gender;
-  	this.country = this.registerForm.value.country;
-  	this.state = this.registerForm.value.state;
-  	this.city = this.registerForm.value.city;
-  	this.phone = this.registerForm.value.phone;
-  	this.email = this.registerForm.value.email;
-
-    if(this.password !== this.verifyPassword) {
+    this.username = this.adminClientsNewForm.value.username;
+    this.password = this.adminClientsNewForm.value.password;
+    this.verifyPassword = this.adminClientsNewForm.value.verifyPassword;
+    this.firstName = this.adminClientsNewForm.value.firstName;
+    this.lastName = this.adminClientsNewForm.value.lastName;
+    this.dob = this.adminClientsNewForm.value.dob;
+    this.gender = this.adminClientsNewForm.value.gender;
+    this.country = this.adminClientsNewForm.value.country;
+    this.state = this.adminClientsNewForm.value.state;
+    this.city = this.adminClientsNewForm.value.city;
+    this.phone = this.adminClientsNewForm.value.phone;
+    this.email = this.adminClientsNewForm.value.email;
+    this.prefPhone =  false;
+    this.prefEmail =  false;
+    this.idNum =  this.adminClientsNewForm.value.idNum;
+    this.idType =  this.adminClientsNewForm.value.idType;
+    this.idDate =  this.adminClientsNewForm.value.idDate;
+    this.idCountry =  this.adminClientsNewForm.value.idCountry;
+    this.idState =  this.adminClientsNewForm.value.idState;
+    this.redress =  this.adminClientsNewForm.value.redress;
+    this.knownTravelNum =  this.adminClientsNewForm.value.knownTravelNum;
+    if(this.password !== this.adminClientsNewForm.value.verifyPassword) {
       this.passwordError = true;
     } else {
       this.passwordError = false;
@@ -70,7 +78,7 @@ export class AdminClientsNewComponent implements OnInit {
           this.userService.register(this.username, this.password).subscribe(
             (data: User) => {
               this.sharedService.user = data;
-              this.router.navigate(['user']);
+              this.router.navigate(['admin']);
             },
             (error: any) => {
               this.usernameError = false;

@@ -14,10 +14,15 @@ export class AdminDashboardComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
 
 	}
 
+	logout() {
+	this.userService.logout().subscribe(
+     (data: any) => this.router.navigate(['/login'])
+   		);
+	}
 }

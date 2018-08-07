@@ -12,7 +12,7 @@ import { SharedService } from '../../../../client_side_services/shared.service.c
 })
 export class AccountInfoComponent implements OnInit {
 
-	@ViewChild('f') profileForm: NgForm;
+	@ViewChild('f') accountInfoForm: NgForm;
 
 	uid: string;
 	username: string;
@@ -66,12 +66,12 @@ export class AccountInfoComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
-  	console.log(this.sharedService.user);
   	this.usernameTaken = false;
   	this.submitSuccess = false;
   	this.user = this.sharedService.user;
   	this.uid = this.user._id;
 	this.username = this.user.username;
+	console.log(this.username);
 	this.firstName = this.user.firstName;
 	this.lastName = this.user.lastName;
 	this.dob = this.user.dob;
@@ -94,17 +94,27 @@ export class AccountInfoComponent implements OnInit {
 	}
 
 	update(){
-		this.username = this.profileForm.value.username;
+		this.username = this.accountInfoForm.value.username;
 		this.password = 
-		this.firstName = this.profileForm.value.firstName;
-		this.lastName = this.profileForm.value.lastName;
-		this.dob = this.profileForm.value.dob;
-		this.gender = this.profileForm.value.gender;
-		this.country = this.profileForm.value.country;
-		this.state = this.profileForm.value.state;
-		this.city = this.profileForm.value.city;
-		this.phone = this.profileForm.value.phone;
-		this.email = this.profileForm.value.email;
+		this.firstName = this.accountInfoForm.value.firstName;
+		this.lastName = this.accountInfoForm.value.lastName;
+		this.dob = this.accountInfoForm.value.dob;
+		this.gender = this.accountInfoForm.value.gender;
+		this.country = this.accountInfoForm.value.country;
+		this.state = this.accountInfoForm.value.state;
+		this.city = this.accountInfoForm.value.city;
+		this.phone = this.accountInfoForm.value.phone;
+		this.email = this.accountInfoForm.value.email;
+		this.prefPhone =  false;
+		this.prefEmail =  false;
+		this.idNum =  this.idNum;
+		this.idType =  this.idType;
+		this.idDate =  this.idDate;
+		this.idCountry =  this.idCountry;
+		this.idState =  this.idState;
+		this.redress =  this.redress;
+		this.knownTravelNum =  this.knownTravelNum;
+		this.oldUsername = this.user.username;
 		this.userService.findUserByUsername(this.username).subscribe(
 			(user: User) => {
 				this.aUser = user;
@@ -139,11 +149,19 @@ export class AccountInfoComponent implements OnInit {
 						(res: any) => {
 							this.usernameTaken = false;
 							this.submitSuccess = true;
+                      		this.router.navigate(['/user']);
 						}
 					);
 				}
 			}
 		);
 		
+	}
+
+	logout() {
+		this.userService.logout().subscribe(
+	     (data: any) => this.router.navigate(['/login'])
+	   );
+
 	}
 }

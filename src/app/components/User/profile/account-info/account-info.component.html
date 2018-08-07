@@ -15,7 +15,7 @@
 		<div class="form-group">
 			<label>Username</label>
 			<br>
-			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel #username="ngModel">
+			<input class="form-control" name="username" type="text" placeholder="Username" required ngModel="{{user.username}}" #username="ngModel">
 		</div>
 
 		<!-- Missing/Invalid username alert -->
@@ -27,7 +27,7 @@
 		<!-- Password -->
 		<div class="form-group">
 			<label>Password</label>
-			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel #password="ngModel">
+			<input class="form-control" name="password" type="password" placeholder="Password" required ngModel="{{user.password}}" #password="ngModel">
 		</div>
 
 		<!-- Missing/Invalid password alert -->
@@ -36,7 +36,7 @@
 		<!-- Verify Password -->
 		<div class="form-group">
 			<label>Verify Password</label>
-			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" required ngModel #verifyPassword="ngModel" >
+			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" ngModel="{{user.verifyPassword}}" #verifyPassword="ngModel" >
 		</div>
 
 		<!-- Missing/Invalid verify password alert -->
@@ -51,7 +51,7 @@
 		<!-- First Name -->
 		<div class="form-group">
 			<label>First Name</label>
-			<input class="form-control" name="firstName" type="text" placeholder="First Name" ngModel #firstName="ngModel">
+			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel="{{user.firstName}}" #firstName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid First Namne alert -->
@@ -60,7 +60,7 @@
 		<!-- Last Name -->
 		<div class="form-group">
 			<label>Last Name</label>
-			<input class="form-control" name="lastName" type="text" placeholder="Last Name" ngModel #lastName="ngModel">
+			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel="{{user.lastName}}" #lastName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Last Name alert -->
@@ -69,7 +69,7 @@
 		<!-- DOB -->
 		<div class="form-group">
 			<label>DOB</label>
-			<input class="form-control" name="dob" type="date" placeholder="Date of Birth (dd/mm/year)" ngModel #dob="ngModel">
+			<input class="form-control" name="dob" type="date" placeholder="Date of Birth (dd/mm/year)" required ngModel="{{user.dob}}" #dob="ngModel">
 		</div>
 
 		<!-- Missing/Invalid DOB alert -->
@@ -78,7 +78,7 @@
 		<!-- Gender -->
 		<div class="form-group">
 			<label>Gender</label>
-			<input class="form-control" name="gender" type="text" placeholder="Gender" ngModel #gender="ngModel">
+			<input class="form-control" name="gender" type="text" placeholder="Gender" required ngModel="{{user.gender}}" #gender="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Gender alert -->
@@ -87,7 +87,7 @@
 		<!-- Country -->
 		<div class="form-group">
 			<label>Country</label>
-			<input class="form-control" name="country" type="text" placeholder="Country" ngModel #country="ngModel">
+			<input class="form-control" name="country" type="text" placeholder="Country" required ngModel="{{user.country}}" #country="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Country alert -->
@@ -96,7 +96,7 @@
 		<!-- State -->
 		<div class="form-group">
 			<label>State</label>
-			<input class="form-control" name="state" type="text" placeholder="State" ngModel #state="ngModel">
+			<input class="form-control" name="state" type="text" placeholder="State" required ngModel="{{user.state}}" #state="ngModel">
 		</div>
 
 		<!-- Missing/Invalid State alert -->
@@ -105,7 +105,7 @@
 		<!-- City -->
 		<div class="form-group">
 			<label>City</label>
-			<input class="form-control" name="city" type="text" placeholder="City" ngModel #city="ngModel">
+			<input class="form-control" name="city" type="text" placeholder="City" required ngModel="{{user.city}}" #city="ngModel">
 		</div>
 
 		<!-- Missing/Invalid City alert -->
@@ -114,7 +114,7 @@
 		<!-- Phone Number -->
 		<div class="form-group">
 			<label>Phone Number</label>
-			<input class="form-control" name="phone" type="text" placeholder="Phone Number" ngModel #phone="ngModel">
+			<input class="form-control" name="phone" type="text" placeholder="Phone Number" required ngModel="{{user.phone}}" #phone="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Phone Number alert -->
@@ -123,7 +123,7 @@
 		<!-- E-Mail -->
 		<div class="form-group">
 			<label>E-Mail</label>
-			<input class="form-control" name="email" type="text" placeholder="E-Mail" ngModel #email="ngModel">
+			<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel="{{user.email}}" #email="ngModel">
 		</div>
 
 		<!-- Missing/Invalid E-Mail alert -->
@@ -133,11 +133,11 @@
 		<div class="form-group">
 			<label>Preferred Contact Method (Choose One):</label>
 			<div class="container">Phone
-			<input class="form-control" name="prefPhone" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefPhone="ngModel">
+			<input class="form-control" name="prefPhone" type="checkbox" check="checked" placeholder="Choose One" ngModel="{{user.prefPhone}}" #prefPhone="ngModel">
 			<span class="checkmark"></span>
 			</div>
 			<div class="container">E-Mail
-			<input class="form-control" name="prefEmail" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefEmail="ngModel">
+			<input class="form-control" name="prefEmail" type="checkbox" check="checked" placeholder="Choose One" ngModel="{{user.prefEmail}}" #prefEmail="ngModel">
 			<span class="checkmark"></span>
 			</div>
 		</div>
@@ -148,42 +148,42 @@
 		<!-- ID/License/Passport Number -->
 		<div class="form-group">
 			<label>ID/License/Passport Number</label>
-			<input class="form-control" name="idNum" type="text" placeholder="ID/License/Passport Number" ngModel #idNum="ngModel">
+			<input class="form-control" name="idNum" type="text" placeholder="ID/License/Passport Number" ngModel="{{user.idNum}}" #idNum="ngModel">
 		</div>
 
 		<div class="form-group">
 			<label>ID/License/Passport Type</label>
-			<input class="form-control" name="idType" type="text" placeholder="ID/License/Passport Type" ngModel #idType="ngModel">
+			<input class="form-control" name="idType" type="text" placeholder="ID/License/Passport Type" ngModel="{{user.idType}}" #idType="ngModel">
 		</div>
 
 		<!-- Expiration Date -->
 		<div class="form-group">
 			<label>Expiration Date</label>
-			<input class="form-control" name="idDate" type="date" placeholder="Expiration Date (MM/DD/YYY)" ngModel #idDate="ngModel">
+			<input class="form-control" name="idDate" type="date" placeholder="Expiration Date (MM/DD/YYY)" ngModel="{{user.idDate}}" #idDate="ngModel">
 		</div>
 
 		<!-- Issuing Country -->
 		<div class="form-group">
 			<label>Issuing Country</label>
-			<input class="form-control" name="idCountry" type="text" placeholder="ID/License/Passport Type" ngModel #idCountry="ngModel">
+			<input class="form-control" name="idCountry" type="text" placeholder="ID/License/Passport Type" ngModel="{{user.idCountry}}" #idCountry="ngModel">
 		</div>
 
 		<!-- Issuing State -->
 		<div class="form-group">
 			<label>Issuing State</label>
-			<input class="form-control" name="idState" type="text" placeholder="Issuing State" ngModel #idState="ngModel">
+			<input class="form-control" name="idState" type="text" placeholder="Issuing State" ngModel="{{user.idState}}" #idState="ngModel">
 		</div>
 
 		<!-- Redress Number -->
 		<div class="form-group">
 			<label>Redress Number</label>
-			<input class="form-control" name="redress" type="text" placeholder="Redress Number" ngModel #redress="ngModel">
+			<input class="form-control" name="redress" type="text" placeholder="Redress Number" ngModel="{{user.redress}}" #redress="ngModel">
 		</div>
 
 		<!-- Known Traveler Number -->
 		<div class="form-group">
 			<label>Known Traveler Number</label>
-			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" ngModel #knownTravelNum="ngModel">
+			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" ngModel="{{user.knownTravelNum}}" #knownTravelNum="ngModel">
 		</div>
 
 		<!-- Frequent Flyer Information -->
@@ -199,10 +199,10 @@
 		</div> -->
 
 		<div>
-			<!-- Register Button Profile Link-->
+			<!-- Update Button Profile Link-->
 			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Update</button>
-			<!-- Cancel Button Login Link-->
-			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
+			<!-- Cancel Button User Profile Link -->
+			<button class="btn btn-danger btn-block" routerLink="/user">Cancel</button>
 		</div>
 	</form>
 </div>

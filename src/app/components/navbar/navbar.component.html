@@ -20,11 +20,11 @@
 		</button>
 		<div class="dropdown-content">
 			<!-- Make My Account and Log Out disappear when not logged in -->
-			<a class="guest" routerLink="/login" *ngIf="!loggedIn">Login</a>
-			<a class="guest" routerLink="/register" *ngIf="!loggedIn">Register</a>
-			<a class="user" routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
-			<a class="user" routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
-			<a class="user" routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
+			<a routerLink="/login" *ngIf="!loggedIn">Login</a>
+			<a routerLink="/register" *ngIf="!loggedIn">Register</a>
+			<a routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
+			<a routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
+			<a routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
 		</div>
 	</div>
 </div>
