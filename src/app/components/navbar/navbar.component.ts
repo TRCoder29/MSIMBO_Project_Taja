@@ -17,7 +17,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   	this.isLoggedIn();
-    this.isAdmin = this.sharedService.user.isAdmin;
+    if (this.sharedService.user) {
+      this.isAdmin = this.sharedService.user.isAdmin;
+    } else {
+      this.isAdmin = false;
+    }
   }
 
   isLoggedIn() {

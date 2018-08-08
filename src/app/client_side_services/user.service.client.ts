@@ -22,6 +22,14 @@ export class UserService {
 // {_id: "123", username: "jane", password: "jane", firstName: "Jane", lastName: "Smith", dob: 1/1/1990, gender: Female, country: USA, state: Orlando, city: Florida, phone: 123-555-8910, email: "jane@gmail.com"},
 // ];
 
+findUsers() {
+  const url = this.baseUrl + '/api/user';
+  return this.http.get(url).pipe(map(
+    (response: Response) => {
+      return response.json();
+    }
+  ))
+}
 
 createUser(user: User) {
   const url = this.baseUrl + '/api/user';

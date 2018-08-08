@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
 import { UserService } from '../../../../client_side_services/user.service.client'
 import { User } from '../../../../models/user.model.client'
-import { SharedService } from '../../../../client_side_services/shared.service.client';
+import { SharedService } from '../../../../client_side_services/shared.service.client'
 
 @Component({
   selector: 'app-account-info',
@@ -38,6 +38,7 @@ export class AccountInfoComponent implements OnInit {
 	oldUsername: string;
 	usernameTaken: boolean;
 	submitSuccess: boolean;
+	isAdmin: boolean;
 	user: User = {
 		username: '',
 		password: '',
@@ -60,42 +61,52 @@ export class AccountInfoComponent implements OnInit {
 		redress: '',
 		knownTravelNum: ''
 	};
-
 	aUser: User;
+	users: User [];
 
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private sharedService: SharedService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, public sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
-  	this.usernameTaken = false;
-  	this.submitSuccess = false;
-  	this.user = this.sharedService.user;
-  	this.uid = this.user._id;
-	this.username = this.user.username;
-	console.log(this.username);
-	this.firstName = this.user.firstName;
-	this.lastName = this.user.lastName;
-	this.dob = this.user.dob;
-	this.gender = this.user.gender;
-	this.country = this.user.country;
-	this.state = this.user.state;
-	this.city = this.user.city;
-	this.phone = this.user.phone;
-	this.email = this.user.email;
-	this.prefPhone =  false;
-	this.prefEmail =  false;
-	this.idNum =  this.idNum;
-	this.idType =  this.idType;
-	this.idDate =  this.idDate;
-	this.idCountry =  this.idCountry;
-	this.idState =  this.idState;
-	this.redress =  this.redress;
-	this.knownTravelNum =  this.knownTravelNum;
-	this.oldUsername = this.user.username;
-	}
+	  this.activatedRoute.params.subscribe(params => {
+  		this.uid = params['uid'];
+  		this.userService.findUserByUsername(this.username).subscribe(
+        (users: User[]) => {
+          this.users = users;
+        }
+       );
+  		this.userService.findUserById(this.uid).subscribe(
+        (user: User) => {
+          this.user = user;
+          	this.username = this.user.username;
+			console.log(this.username);
+			this.firstName = this.user.firstName;
+			this.lastName = this.user.lastName;
+			this.dob = this.user.dob;
+			this.gender = this.user.gender;
+			this.country = this.user.country;
+			this.state = this.user.state;
+			this.city = this.user.city;
+			this.phone = this.user.phone;
+			this.email = this.user.email;
+			this.prefPhone =  false;
+			this.prefEmail =  false;
+			this.idNum =  this.idNum;
+			this.idType =  this.idType;
+			this.idDate =  this.idDate;
+			this.idCountry =  this.idCountry;
+			this.idState =  this.idState;
+			this.redress =  this.redress;
+			this.knownTravelNum =  this.knownTravelNum;
+			this.oldUsername = this.user.username;
+
+        }
+      );
+    })
+  }
 
 	update(){
 		this.username = this.accountInfoForm.value.username;
-		this.password = 
+		this.password = this.accountInfoForm.value.password;
 		this.firstName = this.accountInfoForm.value.firstName;
 		this.lastName = this.accountInfoForm.value.lastName;
 		this.dob = this.accountInfoForm.value.dob;
@@ -145,23 +156,35 @@ export class AccountInfoComponent implements OnInit {
 						redress: this.redress,
 						knownTravelNum: this.knownTravelNum
 					};
-					this.userService.updateUser(this.user._id, updatedUser).subscribe(
+					this.userService.updateUser(this.username, updatedUser).subscribe(
 						(res: any) => {
+							if (updatedUser.isAdmin) {
 							this.usernameTaken = false;
 							this.submitSuccess = true;
-                      		this.router.navigate(['/user']);
+							this.router.navigate(['admin-clients'])
+							} else {
+					         this.router.navigate(['user']);
+							}
 						}
 					);
 				}
 			}
 		);
-		
 	}
 
-	logout() {
-		this.userService.logout().subscribe(
-	     (data: any) => this.router.navigate(['/login'])
-	   );
-
+	delete(){
+		console.log("delete");
+    this.userService.deleteUser(this.uid).subscribe(
+      (users: User[]) => {
+      	if (this.sharedService.user.isAdmin) {
+			this.router.navigate(['admin-clients'])
+			} else {
+			this.userService.logout().subscribe(
+				(res: any) => {
+					this.router.navigate(['home']);
+				}
+				)
+	    	}
+	    });
 	}
 }

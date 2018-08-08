@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../client_side_services/user.service.client'
 import { User } from '../../../models/user.model.client'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 
 @Component({
@@ -15,16 +15,19 @@ export class AdminClientsComponent implements OnInit {
 uid: string;
 users: User[];
 
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   	this.activatedRoute.params.subscribe(params => {
   		this.uid = params['uid'];
-  		this.userService.findUserById(this.uid).subscribe(
+  		this.userService.findUsers().subscribe(
         (users: User[]) => {
           this.users = users;
+          console.log(this.users);
+          // console.log(this.users);
         }
       );
     });
   }
+
 }

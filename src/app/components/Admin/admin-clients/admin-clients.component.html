@@ -1,26 +1,49 @@
 <!-- Nav Bar -->
 <app-navbar></app-navbar>
 
-<!-- Back Button (<) Profile Link-->
-<div class="container float-left clientBackground" style="width: 50%">
-	<button class="sw-font-white float-left" routerLink="/admin">Back</button>
+<br><br>
+<!-- Back Button (<) and New Client (+) -->
+<div align="right" style="width: 95%">
+	<!-- Back Button (<) Profile Link-->
+	<button routerLink="/admin">Back</button>
+	<br><br>
+	<button routerLink="/admin-clients/new">New Client</button>
 </div>
 
-<!-- (+) New Client -->
-<div class="container float-left clientBackground" style="width: 50%">
-	<button class="sw-font-white float right" routerLink="/admin-clients/new">New Client</button>
+<br>
+<!-- Search Bar (User Search) -->
+<div class="container" align="left">
+<!-- Search Box -->
+<input id="search" name="search" type="text" class=form-control placeholder="Search Users...">
 </div>
+<br>
 
-<!-- Customer List and Cogs -->
-<div>
-	<!-- Edit Customer List-->
-	<ul class="list-group">
-		<!-- Customer List -->
-		<li class="list-group-item" *ngFor = "let user of users">
-			<!-- Customer-List Link -->
-			<a class="text-primary sw-no-underline" routerLink="{{user._id}}">{{user.name}}</a>
-			<!-- Customer-Edit Cogs -->
-			<a class="float-right" routerLink="admin-clients/edit/{{user._id}}"><i class="fas fa-cog"></i></a>
+<!-- Client List and Cogs -->
+<div class="container" align="left">
+	<!-- Edit Client List-->
+	<ul class="list-group" align="center">
+		<!-- Client List -->
+		<li class="list-group-item" *ngFor="let user of users">
+			<!-- Client-List Link -->
+			<a class="text-primary" routerLink="#">{{user.username}}</a>
+			<!-- Client-Edit Cogs -->
+			<a class="float-right" routerLink="/account-info/{{user._id}}"><i class="fas fa-cog"></i></a>
 		</li>
 	</ul>
 </div>
+
+
+<!-- function filterNames(){
+	var filterInput = document.querySelector('#search');
+	filterInput.addEventListener('keyup', filterNames);
+	var filterValue = filterInput.value.toUpperCase();
+	var li = document.querySelectorAll('li.list-group-item');
+	for (var i=0; i<li.length; i++){
+		var a = li[i].querySelector('a');
+		if(a.innerHTML.toUpperCase().includes(filterValue)){
+			li[i].style.display = 'block';
+		} else{
+			li[i].style.display = 'none';
+		}
+	}
+} -->

@@ -15,7 +15,7 @@ module.exports = function(app){
 	// {_id: "123", username: "tom", password: "tom", firstName: "Tom", lastName: "Guy", dob: 1/1/1980, gender: Male, country: USA, state: New York, city: New York, phone: 123-555-4567, email: "tom@gmail.com"},
 	// {_id: "123", username: "jane", password: "jane", firstName: "Jane", lastName: "Smith", dob: 1/1/1990, gender: Female, country: USA, state: Orlando, city: Florida, phone: 123-555-8910, email: "jane@gmail.com"},
 	// ];
-
+	app.get('/api/user', findUser);
 	app.post('/api/user', createUser);
 	app.post('/api/register', register);
 	app.post  ('/api/login', passport.authenticate('local'), login);
@@ -24,7 +24,7 @@ module.exports = function(app){
 	app.get('/api/user/:uid', findUserById);
 	app.get('/api/user', findUser);
 	app.put('/api/user/:uid', updateUser);
-	app.delete('api/user/:uid', deleteUser);
+	app.delete('/api/user/:uid', deleteUser);
 
 
 	function serializeUser(user, done) {
@@ -125,7 +125,11 @@ module.exports = function(app){
 			);
 			return
 		}
-		res.json(users);
+		userModel.findUsers().then(
+			data => {
+				res.json(data)
+			}
+		)
 	}
 
 
@@ -152,3 +156,4 @@ module.exports = function(app){
 	}
 
 }
+
