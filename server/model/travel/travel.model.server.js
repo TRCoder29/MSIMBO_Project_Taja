@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var TravelSchema = require ('./user.schema.server.js');
+var TravelSchema = require ('./travel.schema.server.js');
 var TravelModel = mongoose.model('TravelModel', TravelSchema);
 
 TravelModel.createTripRequest = createTripRequest;
@@ -8,7 +8,7 @@ TravelModel.findTripById = findTripById;
 TravelModel.findTripByUser = findTripByUser;
 TravelModel.updateTripRequest = updateTripRequest;
 TravelModel.deleteTripRequest = deleteTripRequest;
-TravelModel.findTrips = findTrips;
+// TravelModel.findTrips = findTrips;
 
 function createTripRequest(trip){
 	return TravelModel.create(trip);

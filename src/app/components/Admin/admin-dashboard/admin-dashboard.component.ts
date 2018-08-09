@@ -16,9 +16,10 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private sharedService: SharedService, private router: Router) { }
 
+  uid: string;
   ngOnInit() {
-
-	}
+    this.uid = this.sharedService.user._id;
+  }
 
 	logout() {
 	this.userService.logout().subscribe(

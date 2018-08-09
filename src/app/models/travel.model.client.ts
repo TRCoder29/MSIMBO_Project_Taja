@@ -1,49 +1,52 @@
 export class Travel {
-	_id?: string;
-	username: string,
-	password: string,
-	firstName: string,
-	lastName: string,
-	departureCity: string,
-	destination: string,
-	numGuest: string,
-	numAdult: string,
-	numChild: string,
-	childAge: "",
-	departDate: "",
-	returnDate: "",
-	flexible: boolean, // Two Choices
-	departTime: boolean, // Many Choices (See Below)
-	returnTime: boolean, // Many Choices (See Below)
-	travelMethod: boolean, // Many Choices (See Below)
-	hotel: boolean,  // Choose or Not
-	hotelRooms: string,
-	hotelGuestNum: string,
-	roomType: boolean, // Many Choices (See Below)
-	homeShare: boolean, // Choose or Not
-	homeRooms: string,
-	homeGuests: string,
-	allInclusive: boolean, // Choose or Not
-	allIncRooms: string,
-	allIncGuests: string,
-	allIncType: boolean, // Many Choices (See Below)
-	cruise: boolean, // Choose or Not
-	cruiseCabins: string,
-	cruiseGuests: string,
-	preCruise: boolean, // Choose or Not
-	preCruiseRooms: string,
-	preCruiseGuests: string,
-	preCruiseType: boolean,  // Many Choices (See Below)
-	postCruise: boolean, // Choose or Not
-	postCruiseRooms: string,
-	postCruiseGuests: string,
-	postCruiseType: boolean,   // Many Choices (See Below)
-	amenity: boolean, // Many Choices (See Below)
-	budget: string,
+	_id?
+	username
+	password
+	firstName
+	lastName
+	departureCity
+	destination
+	numGuest
+	numAdult
+	numChild
+	childAge
+	departDate
+	returnDate
+	flexible
+	departTime: boolean; // Many Choices (See Below)
+	returnTime: boolean; // Many Choices (See Below)
+	travelMethod: boolean; // Many Choices (See Below)
+	hotel: boolean;  // Choose or Not
+	hotelRooms
+	hotelGuestNum
+	roomType: boolean; // Many Choices (See Below)
+	homeShare: boolean; // Choose or Not
+	homeRooms
+	homeGuests
+	allInclusive: boolean; // Choose or Not
+	allIncRooms
+	allIncGuests
+	allIncType: boolean; // Many Choices (See Below)
+	cruise: boolean; // Choose or Not
+	cruiseCabins
+	cruiseGuests
+	preCruise: boolean; // Choose or Not
+	preCruiseRooms
+	preCruiseGuests
+	preCruiseType: boolean;  // Many Choices (See Below)
+	postCruise: boolean; // Choose or Not
+	postCruiseRooms
+	postCruiseGuests
+	postCruiseType: boolean;   // Many Choices (See Below)
+	amenity: boolean; // Many Choices (See Below)
+	budget
 
-	// Do I need variables to represent the travel details/preferences, passport details and the contact preference
+	// Do I need variables to represent the travel details/preferences; passport details and the contact preference
 
-	constructor(_id, username, password, firstName, lastName, dob, gender, country, state, city, phone, email) {
+	constructor(_id, username, password, firstName, lastName, departureCity, destination, numGuest, numAdult, numChild, childAge,
+		departDate, returnDate, flexible, departTime, returnTime, travelMethod, hotel, hotelRooms, hotelGuestNum, roomType, homeShare, homeRooms, homeGuests, allInclusive, allIncRooms, allIncGuests, allIncType, cruise, cruiseCabins,
+		cruiseGuests, preCruise, preCruiseRooms, preCruiseGuests, preCruiseType, postCruise, postCruiseRooms, postCruiseGuests, postCruiseType,
+		amenity, budget) {
 		this._id = _id;
 		this.username = username;
 		this.password = password;
@@ -87,3 +90,5 @@ export class Travel {
 		this.budget = budget;
 	}
 }
+
+	

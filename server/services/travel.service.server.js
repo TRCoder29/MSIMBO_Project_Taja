@@ -6,14 +6,14 @@ module.exports = function(app){
 
  var travelModel = require ('../model/travel/travel.model.server.js');
 
-	app.post('/api/user/:uid/travel/new', createTravel);
+	app.post('/api/user/:uid/travel/new', createTrip);
  	app.get('/api/user/:uid/travel/:tid', findTripByUser);
 	app.get('/api/travel/:tid', findTripById);
-	app.put('/api/travel/:tid/edit', updateTravel);
-	app.delete('/api/travel/:tid', deleteTravel)
+	app.put('/api/travel/:tid/edit', updateTripRequest);
+	app.delete('/api/travel/:tid', deleteTripRequest)
 
 
-	function createTravel(req, res) {
+	function createTrip(req, res) {
   	var travel = req.body;
     travelModel.createTravelForUser(travel).then(
       (data) => {
@@ -25,7 +25,7 @@ module.exports = function(app){
 
   function findTripByUser(req, res){
   	var uid = req.params['uid'];
-    travelModel.findTravelByUser(uid).then(
+    travelModel.findTripByUser(uid).then(
       (travels) => {
         res.json(travels);
       }
@@ -35,7 +35,7 @@ module.exports = function(app){
 
   function findTripById(req, res) {
   	var bid = req.params['tid'];
-    travelModel.findTravelById(tid).then(
+    travelModel.findTripById(tid).then(
       (travel) => {
         res.json(travel);
       }
@@ -46,7 +46,7 @@ module.exports = function(app){
   function updateTripRequest(req, res) {
   	var tid = req.params['tid'];
   	var travel = req.body;
-    travelModel.updateTravel(tid, travel).then(
+    travelModel.updateTrip(tid, travel).then(
       data => {
         res.json(data);
       }
@@ -56,7 +56,7 @@ module.exports = function(app){
 
   function deleteTripRequest(req, res) {
   	var tid = req.params['tid'];
-    travelModel.deleteTravel(tid).then(
+    travelModel.deleteTrip(tid).then(
       data => {
         res.json(data);
       }

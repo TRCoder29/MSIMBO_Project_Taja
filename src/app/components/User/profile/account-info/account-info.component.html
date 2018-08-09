@@ -186,25 +186,16 @@
 			<input class="form-control" name="knownTravelNum" type="text" placeholder="Known Traveler Number" ngModel="{{user.knownTravelNum}}" #knownTravelNum="ngModel">
 		</div>
 
-		<!-- Frequent Flyer Information -->
-<!-- 		<div class="form-group">
-			<label>Frequent Flyer Information</label>
-			<input class="form-control" name="freqFlyer" type="text" placeholder="Frequent Flyer Information" ngModel #freqFlyer="ngModel">
-		</div> -->
-
-		<!-- Customer Loyalty Information -->
-<!-- 		<div class="form-group">
-			<label>Customer Loyalty Information</label>
-			<input class="form-control" name="custLoyal" type="text" placeholder="Customer Loyalty Information" ngModel #custLoyal="ngModel">
-		</div> -->
 
 		<div>
 			<!-- Update Button Profile Link-->
 			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Update</button>
 			<!-- Delete Button Website-List-->
-			<button class="btn btn-danger btn-block" (click)="delete()" type="button" *ngIf="loggedIn && !isAdmin">Delete</button>
+			<button class="btn btn-danger btn-block" (click)="delete()" type="button">Delete</button>
 			<!-- Cancel Button User Profile Link -->
-			<button class="btn btn-primary btn-block" routerLink="/user">Cancel</button>
+			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button>
+			<!-- Cancel Button User Profile Link -->
+			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button>
 		</div>
 	</form>
 </div>

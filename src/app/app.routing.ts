@@ -39,8 +39,9 @@ const APP_ROUTES : Routes = [
   { path : 'home' , component: HomeComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent},
-  { path : 'user' , component:  ProfileComponent, canActivate: [AuthGuard]},
-  { path : 'account-info/:uid' , component:  AccountInfoComponent, canActivate: [AuthGuard]},
+  { path : 'user/:uid' , component:  ProfileComponent, canActivate: [AuthGuard]},
+  { path : 'account-info' , component:  AccountInfoComponent, canActivate: [AuthGuard]},
+  // { path : 'account-info/:uid' , component:  CustomerItineraryComponent, canActivate: [AuthGuard]},
 
   // Business
   
