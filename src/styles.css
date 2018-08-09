@@ -13,6 +13,7 @@
 /*Viewport (Mobile Ratio): https://www.w3schools.com/css/css_rwd_viewport.asp*/
 /*Add Google Search: http://www.developerdrive.com/2012/08/add-a-simple-google-yahoo-or-bing-search-box-to-your-website/*/
 /*Country List Dropdown: https://gist.github.com/soul-wish/8030172*/
+/*Red "Required" Asterisk: https://codepen.io/thewebtech/pen/grLQpp*/
 
 /*Screen resizing*/
 /*@media only screen and (max-width: 600px) {
@@ -27,6 +28,16 @@
 margin-top: auto;
 margin-bottom: auto;
 }
+
+/*Required asterisk*/
+.required:before{
+  content:"*";
+  font-weight:bold;
+  color: red;
+}
+
+/*Where does this go?*/
+/*$("input[required]").parent("label").addClass("required");*/
 
 /*Navbar Style (General)*/
 .navbar {
@@ -209,7 +220,7 @@ margin-bottom: auto;
 /*Background Image*/
 .aboutbackground { 
     background-image: url("./media/GildedMarket.jpg");
-    position: fixed;
+/*    position: fixed;*/
     height: 100%;
     width: 100%;
     background-position: center;
@@ -220,8 +231,8 @@ margin-bottom: auto;
 
 /*Transparent Content Box*/
 .abouttransbox {
-  margin: 20px;
-  padding-top: 30px;
+/*  margin: 20px;*/
+  padding: 30px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
@@ -237,6 +248,7 @@ margin-bottom: auto;
   font-weight: bold;
   color: #ffffff;
 }
+
 
 /*----------------------------------------------------*/
 
@@ -280,7 +292,7 @@ margin-bottom: auto;
 /*Background Image*/
 .dobizbackground { 
     background-image: url("./media/FortressGarden.jpg");
-    /*position: fixed;*/
+/*    position: fixed;*/
     height: 100%;
     width: 100%;
     background-position: center;
@@ -290,7 +302,7 @@ margin-bottom: auto;
 
 /*Transparent Content Box*/
 .dobiztransbox {
-  /*margin: 20px;*/
+/*  margin: 20px;*/
   padding: 30px;
   background-color: #000000;
   border: 1px solid black;
@@ -579,4 +591,3 @@ margin-bottom: auto;
     margin-right: 100px;
     margin-bottom: 100px;
 }
-

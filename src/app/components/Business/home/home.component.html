@@ -1,46 +1,40 @@
 <div class="homeBackground">
-	<div class='row h-100'>
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4 my-auto">
-			<div class="container-fluid btn-group">
-				<div class="btn-group" style="width: 100%">
-					<button class="homebutton homebutton1" style="width: 20%">
-						<h6>About</h6>
-						<a routerLink="/about">Learn more!</a>
-					</button>
+	<div class="container-fluid btn-group my-auto" align="center">
+		<div class="btn-group" style="width: 100%">
+			<button class="homebutton homebutton1" style="width: 20%">
+				<h6>About</h6>
+				<a routerLink="/about">Learn more!</a>
+			</button>
 
-					<button class="homebutton homebutton2" style="width: 20%">
-						<h6>Services</h6>
-						<a routerLink="/services-main">General Services</a>
-						<br>
-						<a routerLink="/doing-business">Doing Business</a>
-						<br>
-						<a routerLink="/service-request">Request Services</a>
-					</button>
+			<button class="homebutton homebutton2" style="width: 20%">
+				<h6>Services</h6>
+				<a routerLink="/services-main">General Services</a>
+				<br>
+				<a routerLink="/doing-business">Doing Business</a>
+				<br>
+				<a routerLink="/service-request">Request Services</a>
+			</button>
 
-					<button class="homebutton homebutton3" style="width: 20%">
-						<h6>Blog</h6>
-						<a routerLink="/blog-main">Be inspired!</a>
-					</button>
+			<button class="homebutton homebutton3" style="width: 20%">
+				<h6>Blog</h6>
+				<a routerLink="/blog-main">Be inspired!</a>
+			</button>
 
-					<button class="homebutton homebutton4" style="width: 20%">
-						<h6>Contact</h6>
-						<a routerLink="/contact">Reach out!</a>
-					</button>
+			<button class="homebutton homebutton4" style="width: 20%">
+				<h6>Contact</h6>
+				<a routerLink="/contact">Reach out!</a>
+			</button>
 
-					<button class="homebutton homebutton5" style="width: 20%">
-						<h6>Profile</h6>
-						<!-- Make My Account and Log Out disappear when not logged in -->
-						<a routerLink="/login" *ngIf="!loggedIn">Login</a>
-						<a routerLink="/register" *ngIf="!loggedIn">Register</a>
-						<a routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
-						<a routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
-						<a routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
-					</button>
-				</div>
-			</div>
+			<button class="homebutton homebutton5" style="width: 20%">
+				<h6>Profile</h6>
+				<!-- Make My Account and Log Out disappear when not logged in -->
+				<a routerLink="/login" *ngIf="!loggedIn">Login</a>
+				<a routerLink="/register" *ngIf="!loggedIn">Register</a>
+				<a routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
+				<a routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
+				<a routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
+			</button>
 		</div>
-		<div class="col-sm-4"></div>
 	</div>
 </div>
 

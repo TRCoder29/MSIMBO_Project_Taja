@@ -38,8 +38,8 @@ export class TravelService {
   }
 
 
-  findTravelById(websiteId: string) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  findTravelById(travelId: string) {
+    const url = this.baseUrl + '/api/website/' + travelId;
     return this.http.get(url).pipe(map(
       (response: Response) => {
         return response.json();
@@ -48,8 +48,8 @@ export class TravelService {
   }
 
 
-  updateTravel(websiteId: string, travel: Travel) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  updateTravel(travelId: string, travel: Travel) {
+    const url = this.baseUrl + '/api/website/' + travelId;
     return this.http.put(url, travel).pipe(map(
       (response: Response) => {
         return response.json();
@@ -58,8 +58,8 @@ export class TravelService {
   }
 
 
-  deleteTravel(websiteId: string) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  deleteTravel(travelId: string) {
+    const url = this.baseUrl + '/api/website/' + travelId;
     return this.http.delete(url).pipe(map(
       (response: Response) => {
         return response.json();

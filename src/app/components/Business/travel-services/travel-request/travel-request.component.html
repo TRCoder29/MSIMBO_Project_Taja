@@ -4,7 +4,7 @@
 
 <!-- Travel Request Form -->
 <div class="container requestBackground">
-	<form>
+	<form (ngSubmit)="create()" #f="ngForm">
 	    <fieldset>
 	    <label><b><u>Travel Request:</u></b></label><br><br>
 	      <label><b>First Name:</b></label>
@@ -33,21 +33,21 @@
 	      <input type="date" name="returnDate"><br>
 	      <label>Flexible?:</label>
 	      <label>Yes</label>
-	      <input type="checkbox" name="flexible1" value="Yes">
+	      <input type="checkbox" name="flexible" value="Yes">
 	      <label>No</label>
-	      <input type="checkbox" name="flexible2" value="No"><br><br>
+	      <input type="checkbox" name="flexible" value="No"><br><br>
 	      
 	      <label><b>Preferred Departure Time(s):</b></label><br>
 	      <label>Morning (5:00AM-11:59AM)</label>
-	      <input type="checkbox" name="morning" value="morning"><br>
+	      <input type="checkbox" name="departTime" value="morning"><br>
 	      <label>Afternoon (12:00PM-5:59PM)</label>
-	      <input type="checkbox" name="afternoon" value="afternoon"><br>
+	      <input type="checkbox" name="departTime" value="afternoon"><br>
 	      <label>Evening (6:00PM-7:59PM)</label>
-	      <input type="checkbox" name="evening" value="evening"><br>
+	      <input type="checkbox" name="departTime" value="evening"><br>
 	      <label>Night (8:0PM:-4:59AM)</label>
-	      <input type="checkbox" name="night" value="night"><br>
+	      <input type="checkbox" name="departTime" value="night"><br>
 	      <label>No Preference:</label>
-	      <input type="checkbox" name="noPreference" value="noPreference"><br><br>
+	      <input type="checkbox" name="departTime" value="noPreference"><br><br>
 	      
 
 		<!-- Formatted Check Box -->
@@ -70,19 +70,19 @@
 	      
 	      <label><b>Desired Method of Travel:</b></label><br>
 	      <label>Flight</label>
-	      <input type="checkbox" name="flight" value="flight"><br>
+	      <input type="checkbox" name="travelMethod" value="flight"><br>
 	      <label>Rental Car</label>
-	      <input type="checkbox" name="car" value="car"><br>
+	      <input type="checkbox" name="travelMethod" value="car"><br>
 	      <label>Bus (i.e. Greyhound, etc.)</label>
-	      <input type="checkbox" name="bus" value="bus"><br>
+	      <input type="checkbox" name="travelMethod" value="bus"><br>
 	      <label>Rail (i.e. Amtrak, etc.)</label>
-	      <input type="checkbox" name="rail" value="rail"><br>
+	      <input type="checkbox" name="travelMethod" value="rail"><br>
 	      <label>Hotel/Cruise Transfer</label>
-	      <input type="checkbox" name="hotelTransfer" value="hotelTransfer"><br>
+	      <input type="checkbox" name="travelMethod" value="hotelTransfer"><br>
 	      <label>Chauffer</label>
-	      <input type="checkbox" name="chauffer" value="chauffer"><br>
+	      <input type="checkbox" name="travelMethod" value="chauffer"><br>
 	      <label>No Preference:</label>
-	      <input type="checkbox" name="noPreference" value="noPreference"><br><br>
+	      <input type="checkbox" name="travelMethod" value="noPreference"><br><br>
 
 	      <label><b>Desired Accommodations:</b></label><br>
 	      <label>Hotel</label>
@@ -90,98 +90,128 @@
 	      <label># of Rooms: </label>
 	      <input type="text" name="hotelRooms"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="hotelRoomNum"><br>
+	      <input type="text" name="hotelGuestNum"><br>
 	      <label>Double</label>
-	      <input type="checkbox" name="hotelDouble" value="hotelDouble">
+	      <input type="checkbox" name="roomType" value="hotelDouble">
 	      <label>Queen</label>
-	      <input type="checkbox" name="hotelQueen" value="hotelQueen">
+	      <input type="checkbox" name="roomType" value="hotelQueen">
 	      <label>King</label>
-	      <input type="checkbox" name="hotelKing" value="hotelKing">
+	      <input type="checkbox" name="roomType" value="hotelKing">
 	      <label>Suite</label>
-	      <input type="checkbox" name="hotelSuite" value="hotelSuite"><br><br>
+	      <input type="checkbox" name="roomType" value="hotelSuite"><br><br>
+
 	      <label>Home Share (i.e. AirBNB, Innclusive, etc.)</label>
-	      <input type="checkbox" name="homeApt" value="homeApt"><br>
+	      <input type="checkbox" name="homeShare" value="homeApt"><br>
 	      <label># of Rooms: </label>
-	      <input type="text" name="hotelRooms"><br>
+	      <input type="text" name="homeRooms"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="hotelRoomNum"><br><br>
+	      <input type="text" name="homeGuests"><br><br>
+
 	      <label>All-Inclusive Resort</label>
 	      <input type="checkbox" name="allInclusive" value="allInclusive"><br>
 	      <label># of Rooms: </label>
 	      <input type="text" name="allIncRooms"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="allIncRoomNum"><br><br>
+	      <input type="text" name="allIncGuests">
+	      <label>Double</label>
+	      <input type="checkbox" name="allIncType" value="hotelDouble">
+	      <label>Queen</label>
+	      <input type="checkbox" name="allIncType" value="hotelQueen">
+	      <label>King</label>
+	      <input type="checkbox" name="allIncType" value="hotelKing">
+	      <label>Suite</label>
+	      <input type="checkbox" name="allIncType" value="hotelSuite"><br><br>
+
 	      <label>Cruise</label>
 	      <input type="checkbox" name="cruise" value="cruise"><br>
 	      <label># of Cabins: </label>
-	      <input type="text" name="cruiseRooms"><br>
+	      <input type="text" name="cruiseCabins"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="cruiseRoomNum"><br><br>
+	      <input type="text" name="cruiseGuests"><br><br>
+
 	      <label>Pre-Cruise Hotel</label>
 	      <input type="checkbox" name="preCruise" value="preCruise"><br>
 	      <label># of Rooms: </label>
-	      <input type="text" name="cruiseRooms"><br>
+	      <input type="text" name="preCruiseRooms"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="cruiseRoomNum"><br><br>
+	      <input type="text" name="preCruiseGuests">
+	      <label>Double</label>
+	      <input type="checkbox" name="preCruiseType" value="hotelDouble">
+	      <label>Queen</label>
+	      <input type="checkbox" name="preCruiseType" value="hotelQueen">
+	      <label>King</label>
+	      <input type="checkbox" name="preCruiseType" value="hotelKing">
+	      <label>Suite</label>
+	      <input type="checkbox" name="preCruiseType" value="hotelSuite"><br><br>
+
 	      <label>Post-Cruise Hotel</label>
 	      <input type="checkbox" name="postCruise" value="postCruise"><br>
 	      <label># of Rooms: </label>
 	      <input type="text" name="postCruiseRooms"><br>
 	      <label># of Guests per Room: </label>
-	      <input type="text" name="postCruiseRoomNum"><br><br>
+	      <input type="text" name="postCruiseGuests">
+	      <label>Double</label>
+	      <input type="checkbox" name="postCruiseType" value="hotelDouble">
+	      <label>Queen</label>
+	      <input type="checkbox" name="postCruiseType" value="hotelQueen">
+	      <label>King</label>
+	      <input type="checkbox" name="postCruiseType" value="hotelKing">
+	      <label>Suite</label>
+	      <input type="checkbox" name="postCruiseType" value="hotelSuite"><br><br>
+
 	      <label>No Preference/Surprise Me!:</label>
 	      <input type="checkbox" name="noPreference" value="noPreference"><br><br>
 
 	      <label><b>Desired Amenities/Features:</b></label><br>
 	      <label>Air Conditioning</label>
-	      <input type="checkbox" name="aircondition" value="aircondition"><br>
+	      <input type="checkbox" name="amenity" value="aircondition"><br>
 	      <label>Hair Dryer</label>
-	      <input type="checkbox" name="hairDryer" value="hairDryer"><br>
+	      <input type="checkbox" name="amenity" value="hairDryer"><br>
 	      <label>Clothes Iron</label>
-	      <input type="checkbox" name="clothesIron" value="clothesIron"><br>
+	      <input type="checkbox" name="amenity" value="clothesIron"><br>
 	      <label>Mini-Fridge</label>
-	      <input type="checkbox" name="miniFridge" value="miniFridge"><br>
+	      <input type="checkbox" name="amenity" value="miniFridge"><br>
 	      <label>Coffeemaker</label>
-	      <input type="checkbox" name="coffee" value="coffee"><br>
+	      <input type="checkbox" name="amenity" value="coffee"><br>
 	      <label>Mini-Bar</label>
-	      <input type="checkbox" name="miniBar" value="miniBar"><br>
+	      <input type="checkbox" name="amenity" value="miniBar"><br>
 	      <label>Microwave</label>
-	      <input type="checkbox" name="microwave" value="microwave"><br>
+	      <input type="checkbox" name="amenity" value="microwave"><br>
 	      <label>Kitchenette</label>
-	      <input type="checkbox" name="kitchenette" value="kitchenette"><br>
+	      <input type="checkbox" name="amenity" value="kitchenette"><br>
 	      <label>Concierge</label>
-	      <input type="checkbox" name="consierge" value="consierge"><br>
+	      <input type="checkbox" name="amenity" value="consierge"><br>
 	      <label>Laundry Service</label>
-	      <input type="checkbox" name="laundry" value="laundry"><br>
+	      <input type="checkbox" name="amenity" value="laundry"><br>
 	      <label>Room Service</label>
-	      <input type="checkbox" name="roomService" value="roomService"><br>
+	      <input type="checkbox" name="amenity" value="roomService"><br>
 	      <label>Business Center</label>
-	      <input type="checkbox" name="businessCenter" value="businessCenter"><br>
-
+	      <input type="checkbox" name="amenity" value="businessCenter"><br>
 	      <label>Spa</label>
-	      <input type="checkbox" name="spa" value="spa"><br>
+	      <input type="checkbox" name="amenity" value="spa"><br>
 	      <label>Swimming Pool</label>
-	      <input type="checkbox" name="coffee" value="coffee"><br>
+	      <input type="checkbox" name="amenity" value="coffee"><br>
 	      <label>Restaurant in Hotel</label>
-	      <input type="checkbox" name="restaurant" value="restaurant"><br>
+	      <input type="checkbox" name="amenity" value="restaurant"><br>
 	      <label>Breakfast Included</label>
-	      <input type="checkbox" name="breakfast" value="breakfast"><br><br>
+	      <input type="checkbox" name="amenity" value="breakfast"><br><br>
 	      
 	      <label>Free Parking</label>
-	      <input type="checkbox" name="parking" value="parking"><br>
+	      <input type="checkbox" name="amenity" value="parking"><br>
 	      <label>Shuttle Transportation</label>
-	      <input type="checkbox" name="shuttle" value="shuttle"><br><br>
+	      <input type="checkbox" name="amenity" value="shuttle"><br><br>
 	      
 	      <label>No Preference:</label>
-	      <input type="checkbox" name="noPreference" value="noPreference"><br><br>
+	      <input type="checkbox" name="amenity" value="noPreference"><br><br>
 
 	      <label><b>Travel Budget:</b></label>
 	      <input type="text" name="budget" placeholder="$"><br><br>
 
 	      <button class="btn btn-secondary btn-block" type="submit">Submit</button>
 	      <!-- [disabled]="f.invalid" -->
-	      <button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
+	      <button class="btn btn-danger btn-block" routerLink="/service-request">Cancel</button>
 	    </fieldset>
 	</form>
 </div>
 
+<!-- Checkbox Formatting Example: https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms -->

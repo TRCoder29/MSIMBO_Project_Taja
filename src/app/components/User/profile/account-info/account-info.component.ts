@@ -173,7 +173,6 @@ export class AccountInfoComponent implements OnInit {
 	}
 
 	delete(){
-		console.log("delete");
     this.userService.deleteUser(this.uid).subscribe(
       (users: User[]) => {
       	if (this.sharedService.user.isAdmin) {
