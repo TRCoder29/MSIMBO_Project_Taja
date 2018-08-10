@@ -32,7 +32,7 @@ import { AdminClientsComponent } from './components/Admin/admin-clients/admin-cl
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
 import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
-
+import { AdminContactComponent } from './components/Admin/admin-contact/admin-contact.component';
 
 const APP_ROUTES : Routes = [
   // User (More Profile Components to Come)
@@ -63,6 +63,7 @@ const APP_ROUTES : Routes = [
   { path : 'admin-clients/new' , component: AdminClientsNewComponent, canActivate: [AdminGuard]},
   { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AdminGuard]},
   { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AdminGuard]},
+  { path : 'admin-contacts' , component: AdminContactComponent, canActivate: [AdminGuard]},
 ];
 
 // Export the routes as module providers

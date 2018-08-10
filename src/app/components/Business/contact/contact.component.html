@@ -2,7 +2,8 @@
 <app-navbar></app-navbar>
 
 <div class="contactbackground" align="center">
-	<div class="contacttransbox" style="width: 50%" align="left">
+	<br><br>
+	<div class="contacttransbox1" style="width: 50%" align="left">
 		<!-- Central Top: Contact Info -->
 		<div>
 			<ul style="list-style-type:none">
@@ -17,7 +18,7 @@
 	<div class="contacttransbox" style="width: 50%" align="left">
 		<!-- Central Botton: Contact Form (Label and Input Boxes) -->
 		<!-- <form (ngSubmit)="reqinfo()" #f="ngForm"> -->
-		<form>
+		<form (ngSubmit)="create()" #f="ngForm">
 			<div class="form-group">
 				<label>First Name</label>
 				<input class="form-control" name="name" type="text" placeholder="Name" required ngModel #name="ngModel">
@@ -25,7 +26,7 @@
 
 			<div class="form-group">
 				<label>Phone Number</label>
-				<input class="form-control" name="phoneNumber" type="text" placeholder="Phone Number" required ngModel #phoneNumber="ngModel">
+				<input class="form-control" name="phone" type="text" placeholder="Phone Number" required ngModel #phone="ngModel">
 			</div>
 
 			<div class="form-group">
@@ -33,15 +34,22 @@
 				<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel #email="ngModel">
 			</div>
 
+			<div class="form-group">
+				<label>Subject</label>
+				<input class="form-control" name="subject" type="text" placeholder="Subject" required ngModel #subject="ngModel">
+			</div>
 
 			<div class="form-group">
 				<label>Question/Comment:</label>
 				<textarea class="form-control" name="comment" type="text" rows="4" cols="50" placeholder="Enter your question or comment here." required ngModel #comment="ngModel"></textarea>
 			</div>
 
-<!-- 			<button type="submit" [disabled]="f.invalid">Submit</button> -->
+			<div>
+			<button type="submit" [disabled]="f.invalid">Submit</button>
+			</div>
 
 		</form>
 	</div>
+	<br>
 </div>
 

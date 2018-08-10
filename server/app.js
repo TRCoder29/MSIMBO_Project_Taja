@@ -3,4 +3,5 @@ module.exports = function(app) {
 	require("./services/user.service.server.js")(app);
 	require("./services/blog.service.server.js")(app);
 	// require("./services/travel.service.server.js")(app);
+	require("./services/contact.service.server.js")(app);
 }

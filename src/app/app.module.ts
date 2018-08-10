@@ -22,6 +22,7 @@ import { BlogEditComponent } from './components/Business/blog/blog-edit/blog-edi
 import { LoginComponent } from './components/User/login/login.component';
 import { RegisterComponent } from './components/User/register/register.component';
 import { ProfileComponent } from './components/User/profile/profile.component';
+import { AccountInfoComponent } from './components/User/profile/account-info/account-info.component';
 
 // Admin Components
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
@@ -29,12 +30,14 @@ import { AdminClientsComponent } from './components/Admin/admin-clients/admin-cl
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
 import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
+import { AdminContactComponent } from './components/Admin/admin-contact/admin-contact.component';
 
 // Client Services
 // import { AdminService } from './client_side_services/admin.service.client';
 import { UserService } from './client_side_services/user.service.client';
 import { TravelService } from './client_side_services/travel.service.client';
 import { BlogService } from './client_side_services/blog.service.client';
+import { ContactService } from './client_side_services/contact.service.client';
 
 // Add Quill, Shared, AuthGuard
 import { QuillEditorModule } from 'ngx-quill-editor';
@@ -42,7 +45,8 @@ import { SharedService } from './client_side_services/shared.service.client';
 import { AuthGuard } from './client_side_services/auth-guard.service';
 import { AdminGuard } from './client_side_services/admin-guard.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AccountInfoComponent } from './components/User/profile/account-info/account-info.component';
+
+
 
 
 @NgModule({
@@ -68,6 +72,7 @@ import { AccountInfoComponent } from './components/User/profile/account-info/acc
     AdminClientsEditComponent,
     NavbarComponent,
     AccountInfoComponent,
+    AdminContactComponent,
 
   ],
   imports: [
@@ -77,7 +82,7 @@ import { AccountInfoComponent } from './components/User/profile/account-info/acc
     Routing,
     QuillEditorModule
   ],
-  providers: [ UserService, TravelService, BlogService, SharedService, AuthGuard, AdminGuard],
+  providers: [ UserService, TravelService, BlogService, ContactService, SharedService, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

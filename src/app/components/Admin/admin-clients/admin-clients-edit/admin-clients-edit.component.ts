@@ -38,6 +38,8 @@ export class AdminClientsEditComponent implements OnInit {
 	oldUsername: string;
 	usernameTaken: boolean;
 	submitSuccess: boolean;
+	usernameError: boolean;
+	passwordError: boolean;
 	users: User[];
 	user: User = {
 		username: '',

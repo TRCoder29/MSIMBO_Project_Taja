@@ -49,18 +49,3 @@
 
 
 
-  <!-- Blog List and Cogs -->
-  <nav>
-    <div>
-      <!-- Edit Blog List-->
-      <ul class="list-group">
-        <!-- Blog List -->
-        <li class="list-group-item" *ngFor = "let blog of blogs">
-          <!-- Blog-List Link -->
-          <a class="text-primary sw-no-underline" routerLink="/admin/{{aid}}/blog/{{blog._id}}">{{blog.title}}</a>
-          <!-- Blog-Edit Cogs -->
-          <a class="float-right" routerLink="admin/{{aid}}/blog/{{bid}}/edit"><i class="fas fa-cog"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>

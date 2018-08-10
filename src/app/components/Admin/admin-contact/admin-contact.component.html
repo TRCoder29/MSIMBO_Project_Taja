@@ -1,0 +1,44 @@
+<!-- Nav Bar -->
+<app-navbar></app-navbar>
+
+<br><br>
+<!-- Back Button (<) and New Client (+) -->
+<div align="right" style="width: 95%">
+	<!-- Back Button (<) Profile Link-->
+	<button routerLink="/admin">Back</button>
+	<br><br>
+	<button routerLink="#">New Message</button>
+</div>
+
+<br>
+<!-- Search Bar (Contact/Message Search) -->
+<div class="container" align="left">
+<!-- Search Box -->
+<input class="form-control" type="text" name="search"   placeholder="Search Messages..." [(ngModel)]="search">
+
+</div>
+<br>
+
+<!-- Client List and Cogs -->
+<div class="container" align="left">
+	<!-- Edit Client List-->
+	<ul class="list-group" align="center">
+		<!-- Client List -->
+		<li class="list-group-item" *ngFor="let contact of contacts">
+			<!-- Client-List Link -->
+			<a class="text-primary" routerLink="#">{{contact.subject}}</a>
+			<!-- Client Delete -->
+			<a class="float-right" routerLink="#"><i class="fas fa-times"></i></a>
+			<!-- Client-Edit Cogs -->
+			<a class="float-right" routerLink="#"><i class="fas fa-cog"></i></a>
+		</li>
+	</ul>
+</div>
+
+<!-- Will Eventually Use -->
+<!-- <a class="float-right" routerLink="/contact-content/{{contact._id}}"><i class="fas fa-cog"></i></a> -->
+<!-- This will open up to a new page where admin can read and respond to messages that will go to user email provided -->
+
+<!-- Sidenote: Should admin-content be renamed as "messages" to make things easier and more coherent? There's already a "Message" link on the admin-main for this list of messages that have been created, which is ultimately what admin-contact is, so it's probably worth-while to change it from admin-contact to messages. Eventually, we can also change the name of "contact-content" to "message-content", which will open up messages to their own individual screen.  -->
+
+<!-- For the Search feature, I'll eventually have the option to search by name, email, and phone, but for now, it's by subject -->

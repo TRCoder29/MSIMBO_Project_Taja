@@ -209,7 +209,7 @@ margin-bottom: auto;
 /*Background Image*/
 .aboutbackground { 
     background-image: url("./media/GildedMarket.jpg");
-    position: fixed;
+/*    position: fixed;*/
     height: 100%;
     width: 100%;
     background-position: center;
@@ -220,8 +220,9 @@ margin-bottom: auto;
 
 /*Transparent Content Box*/
 .abouttransbox {
-  margin: 20px;
+/*  margin: 20px;*/
   padding-top: 30px;
+  padding-bottom: 130px;
   background-color: #000000;
   border: 1px solid black;
   opacity: 0.8;
@@ -446,6 +447,7 @@ margin-bottom: auto;
   margin: 2%;
   font-weight: bold;
   color: #ffffff;
+  
 }
 
 /*----------------------------------------------------*/
@@ -454,7 +456,7 @@ margin-bottom: auto;
 /*Background Image*/
 .contactbackground { 
     background-image: url("./media/GardenWalkway.jpg");
-    position: fixed;
+    /*position: fixed;*/
     height: 100%;
     width: 100%;
     background-position: center;
@@ -463,6 +465,15 @@ margin-bottom: auto;
 }
 
 /*Transparent Content Box*/
+.contacttransbox1 {
+/*  margin: 60px;*/
+  padding: 30px;
+  width: 600px;
+  background-color: #000000;
+  border: 1px solid black;
+  opacity: 0.8;
+}
+
 .contacttransbox {
   margin: 60px;
   padding: 30px;
@@ -478,40 +489,6 @@ margin-bottom: auto;
 }
 
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-    float: left;
-    width: 75%;
-}
-
-/* Right column */
-.rightcolumn {
-    float: left;
-    width: 25%;
-    padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-     background-color: white;
-     padding: 20px;
-     margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 /*----------------------------------------------------*/
 
@@ -580,3 +557,39 @@ margin-bottom: auto;
     margin-bottom: 100px;
 }
 
+
+/*Scrapped Contact Styling*/
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   isAdmin: boolean;
 
   ngOnInit() {
-  	this.isLoggedIn();
+    this.isLoggedIn();
     if (this.sharedService.user) {
       this.isAdmin = this.sharedService.user.isAdmin;
     } else {
@@ -25,18 +25,18 @@ export class NavbarComponent implements OnInit {
   }
 
   isLoggedIn() {
-  	this.userService.publicLoggedIn().subscribe(
-  		(isLoggedIn) => {
-  			this.loggedIn = isLoggedIn;
-  		}	
-  	);
+    this.userService.publicLoggedIn().subscribe(
+      (isLoggedIn) => {
+        this.loggedIn = isLoggedIn;
+      }  
+    );
   }
 
   logout() {
-		this.userService.logout().subscribe(
-			(status) => {
-				this.router.navigate(['/']);
-			}
-		);
-	}
+    this.userService.logout().subscribe(
+      (status) => {
+        this.router.navigate(['/']);
+      }
+    );
+  }
 }
