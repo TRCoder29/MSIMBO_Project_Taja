@@ -20,8 +20,8 @@ export class AdminDashboardComponent implements OnInit {
     this.uid = this.sharedService.user._id;
   }
 
-  logout() {
-  this.userService.logout().subscribe(
+	logout() {
+	this.userService.logout().subscribe(
      (data: any) => this.router.navigate(['/login'])
     );
   }

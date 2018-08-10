@@ -22,7 +22,7 @@
 			<!-- Make My Account and Log Out disappear when not logged in -->
 			<a routerLink="/login" *ngIf="!loggedIn">Login</a>
 			<a routerLink="/register" *ngIf="!loggedIn">Register</a>
-			<a routerLink="/user" *ngIf="loggedIn && !isAdmin">My Account</a>
+			<a routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">My Account</a>
 			<a routerLink="/admin" *ngIf="loggedIn && isAdmin">My Account</a>
 			<a routerLink="#" (click)="logout()" *ngIf="loggedIn">Log Out</a>
 		</div>

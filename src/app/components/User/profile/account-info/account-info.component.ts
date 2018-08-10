@@ -161,9 +161,9 @@ export class AccountInfoComponent implements OnInit {
 							if (updatedUser.isAdmin) {
 							this.usernameTaken = false;
 							this.submitSuccess = true;
-							this.router.navigate(['admin-clients'])
+							this.router.navigate(['/admin-clients'])
 							} else {
-					         this.router.navigate(['user']);
+					         this.router.navigate(['/user/:uid']);
 							}
 						}
 					);
@@ -173,15 +173,14 @@ export class AccountInfoComponent implements OnInit {
 	}
 
 	delete(){
-		console.log("delete");
     this.userService.deleteUser(this.uid).subscribe(
       (users: User[]) => {
       	if (this.sharedService.user.isAdmin) {
-			this.router.navigate(['admin-clients'])
+			this.router.navigate(['/admin-clients'])
 			} else {
 			this.userService.logout().subscribe(
 				(res: any) => {
-					this.router.navigate(['home']);
+					this.router.navigate(['/home']);
 				}
 				)
 	    	}

@@ -30,7 +30,6 @@ import { AccountInfoComponent } from './components/User/profile/account-info/acc
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
-import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
 import { AdminContactComponent } from './components/Admin/admin-contact/admin-contact.component';
 
@@ -40,8 +39,9 @@ const APP_ROUTES : Routes = [
   { path : 'home' , component: HomeComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent},
-  { path : 'user' , component:  ProfileComponent, canActivate: [AuthGuard]},
-  { path : 'account-info/:uid' , component:  AccountInfoComponent, canActivate: [AuthGuard]},
+  { path : 'user/:uid' , component:  ProfileComponent, canActivate: [AuthGuard]},
+  { path : 'account-info' , component:  AccountInfoComponent, canActivate: [AuthGuard]},
+  // { path : 'account-info/:uid' , component:  CustomerItineraryComponent, canActivate: [AuthGuard]},
 
   // Business
   
@@ -61,7 +61,6 @@ const APP_ROUTES : Routes = [
   { path : 'admin' , component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path : 'admin-clients' , component: AdminClientsComponent, canActivate: [AdminGuard]},
   { path : 'admin-clients/new' , component: AdminClientsNewComponent, canActivate: [AdminGuard]},
-  { path : 'admin-clients/edit' , component: AdminClientsEditComponent, canActivate: [AdminGuard]},
   { path : 'admin-itinerary' , component: AdminItineraryComponent, canActivate: [AdminGuard]},
   { path : 'admin-contacts' , component: AdminContactComponent, canActivate: [AdminGuard]},
 ];

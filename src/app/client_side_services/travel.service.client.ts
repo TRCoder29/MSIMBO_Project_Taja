@@ -18,8 +18,8 @@ export class TravelService {
 //  ]
 
 
-  createTravel(userId: string, travel: Travel) {
-      const url = this.baseUrl + '/api/user/' + userId + '/website';
+  createTrip(userId: string, travel: Travel) {
+      const url = this.baseUrl + '/api/travel/' + userId + '/website';
       return this.http.post(url, travel).pipe(map(
       (response: Response) => {
           return response.json();
@@ -28,7 +28,7 @@ export class TravelService {
   }
 
 
-  findTravelByUser(userId: string) {
+  findTripByUser(userId: string) {
   	const url = this.baseUrl + '/api/user/' + userId + '/website';
     return this.http.get(url).pipe(map(
       (response: Response) => {
@@ -38,8 +38,8 @@ export class TravelService {
   }
 
 
-  findTravelById(websiteId: string) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  findTripById(travelId: string) {
+    const url = this.baseUrl + '/api/website/' + travelId;
     return this.http.get(url).pipe(map(
       (response: Response) => {
         return response.json();
@@ -48,8 +48,8 @@ export class TravelService {
   }
 
 
-  updateTravel(websiteId: string, travel: Travel) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  updateTripRequest(travelId: string, travel: Travel) {
+    const url = this.baseUrl + '/api/travel-request/' + travelId;
     return this.http.put(url, travel).pipe(map(
       (response: Response) => {
         return response.json();
@@ -58,8 +58,8 @@ export class TravelService {
   }
 
 
-  deleteTravel(websiteId: string) {
-    const url = this.baseUrl + '/api/website/' + websiteId;
+  deleteTripRequest(travelId: string) {
+    const url = this.baseUrl + '/api/travel-request/' + travelId;
     return this.http.delete(url).pipe(map(
       (response: Response) => {
         return response.json();

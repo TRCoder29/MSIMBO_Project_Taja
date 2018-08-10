@@ -28,7 +28,6 @@ import { AccountInfoComponent } from './components/User/profile/account-info/acc
 import { AdminDashboardComponent } from './components/Admin/admin-dashboard/admin-dashboard.component';
 import { AdminClientsComponent } from './components/Admin/admin-clients/admin-clients.component';
 import { AdminClientsNewComponent } from './components/Admin/admin-clients/admin-clients-new/admin-clients-new.component';
-import { AdminClientsEditComponent } from './components/Admin/admin-clients/admin-clients-edit/admin-clients-edit.component';
 import { AdminItineraryComponent } from './components/Admin/admin-itinerary/admin-itinerary.component';
 import { AdminContactComponent } from './components/Admin/admin-contact/admin-contact.component';
 
@@ -69,7 +68,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AdminClientsComponent,
     AdminItineraryComponent,
     AdminClientsNewComponent,
-    AdminClientsEditComponent,
     NavbarComponent,
     AccountInfoComponent,
     AdminContactComponent,
