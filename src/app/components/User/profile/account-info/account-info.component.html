@@ -22,7 +22,7 @@
 		<div class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</div>
 
 		<!-- Alert if username is taken -->
-		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
+<!-- 		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div> -->
 
 		<!-- Password -->
 		<div class="form-group">
@@ -34,16 +34,16 @@
 		<div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
 
 		<!-- Verify Password -->
-		<div class="form-group">
+<!-- 		<div class="form-group">
 			<label>Verify Password</label>
 			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" ngModel="{{user.verifyPassword}}" #verifyPassword="ngModel" >
-		</div>
+		</div> -->
 
 		<!-- Missing/Invalid verify password alert -->
-		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div>
+<!-- 		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div> -->
 
 		<!-- Alert if password and verify password don't match) -->
-		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+		<!-- <div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div> -->
 
 		<br><br>
 
@@ -193,9 +193,14 @@
 			<!-- Delete Button Website-List-->
 <!-- 			<button class="btn btn-danger btn-block" (click)="delete()" type="button">Delete</button> -->
 			<!-- Cancel Button User Profile Link -->
-			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button>
+			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}">Cancel</button>
+
+<!-- 			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button> -->
+
+
 			<!-- Cancel Button User Profile Link -->
-			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button>
+			<button class="btn btn-primary btn-block" routerLink="/admin">Cancel</button>
+<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button> -->
 		</div>
 	</form>
 </div>
