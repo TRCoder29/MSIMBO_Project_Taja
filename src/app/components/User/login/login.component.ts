@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
         this.errorFlag = false;
         this.sharedService.user = user;
         if(user.isAdmin){
-          this.router.navigate(['admin'])
+          this.router.navigate(['/admin'])
         } else {
-          this.router.navigate(['user'])
+          this.router.navigate(['/user'])
         }
       }
     },

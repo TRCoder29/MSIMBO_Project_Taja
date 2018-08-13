@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { UserService } from '../../../../client_side_services/user.service.client'
 import { User } from '../../../../models/user.model.client'
 import { SharedService } from '../../../../client_side_services/shared.service.client'
+declare var $: any;
 
 @Component({
   selector: 'app-account-info',
@@ -67,6 +68,7 @@ export class AccountInfoComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService, public sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
+	  $("input[required]").parent().children("label").addClass("required")
 	  this.activatedRoute.params.subscribe(params => {
   		this.uid = params['uid'];
   		this.userService.findUserByUsername(this.username).subscribe(
@@ -78,7 +80,6 @@ export class AccountInfoComponent implements OnInit {
         (user: User) => {
           this.user = user;
           	this.username = this.user.username;
-			console.log(this.username);
 			this.firstName = this.user.firstName;
 			this.lastName = this.user.lastName;
 			this.dob = this.user.dob;
@@ -134,7 +135,7 @@ export class AccountInfoComponent implements OnInit {
 					this.submitSuccess = false;
 				} else {
 					const updatedUser: User = {
-						_id: this.user._id,
+						// _id: this.user._id,
 						username: this.username,
 						password: this.user.password,
 						firstName: this.firstName,

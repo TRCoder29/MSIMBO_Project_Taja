@@ -34,16 +34,16 @@
 		<div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
 
 		<!-- Verify Password -->
-<!-- 		<div class="form-group">
+		<div class="form-group">
 			<label>Verify Password</label>
-			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" ngModel="{{user.verifyPassword}}" #verifyPassword="ngModel" >
-		</div> -->
+			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" ngModel="{{user.verifyPassword}}" #verifyPassword="ngModel">
+		</div>
 
 		<!-- Missing/Invalid verify password alert -->
-<!-- 		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div> -->
+		<!-- 		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div> -->
 
 		<!-- Alert if password and verify password don't match) -->
-		<!-- <div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div> -->
+		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
 
 		<br><br>
 
@@ -51,7 +51,7 @@
 		<!-- First Name -->
 		<div class="form-group">
 			<label>First Name</label>
-			<input class="form-control" name="firstName" type="text" placeholder="First Name" required ngModel="{{user.firstName}}" #firstName="ngModel">
+			<input class="form-control" name="firstName" type="text" placeholder="First Name" ngModel="{{user.firstName}}" #firstName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid First Namne alert -->
@@ -60,7 +60,7 @@
 		<!-- Last Name -->
 		<div class="form-group">
 			<label>Last Name</label>
-			<input class="form-control" name="lastName" type="text" placeholder="Last Name" required ngModel="{{user.lastName}}" #lastName="ngModel">
+			<input class="form-control" name="lastName" type="text" placeholder="Last Name" ngModel="{{user.lastName}}" #lastName="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Last Name alert -->
@@ -69,7 +69,7 @@
 		<!-- DOB -->
 		<div class="form-group">
 			<label>DOB</label>
-			<input class="form-control" name="dob" type="date" placeholder="Date of Birth (dd/mm/year)" required ngModel="{{user.dob}}" #dob="ngModel">
+			<input class="form-control" name="dob" type="date" placeholder="Date of Birth (dd/mm/year)" ngModel="{{user.dob}}" #dob="ngModel">
 		</div>
 
 		<!-- Missing/Invalid DOB alert -->
@@ -78,7 +78,7 @@
 		<!-- Gender -->
 		<div class="form-group">
 			<label>Gender</label>
-			<input class="form-control" name="gender" type="text" placeholder="Gender" required ngModel="{{user.gender}}" #gender="ngModel">
+			<input class="form-control" name="gender" type="text" placeholder="Gender" ngModel="{{user.gender}}" #gender="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Gender alert -->
@@ -87,7 +87,7 @@
 		<!-- Country -->
 		<div class="form-group">
 			<label>Country</label>
-			<input class="form-control" name="country" type="text" placeholder="Country" required ngModel="{{user.country}}" #country="ngModel">
+			<input class="form-control" name="country" type="text" placeholder="Country" ngModel="{{user.country}}" #country="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Country alert -->
@@ -96,7 +96,7 @@
 		<!-- State -->
 		<div class="form-group">
 			<label>State</label>
-			<input class="form-control" name="state" type="text" placeholder="State" required ngModel="{{user.state}}" #state="ngModel">
+			<input class="form-control" name="state" type="text" placeholder="State" ngModel="{{user.state}}" #state="ngModel">
 		</div>
 
 		<!-- Missing/Invalid State alert -->
@@ -105,7 +105,7 @@
 		<!-- City -->
 		<div class="form-group">
 			<label>City</label>
-			<input class="form-control" name="city" type="text" placeholder="City" required ngModel="{{user.city}}" #city="ngModel">
+			<input class="form-control" name="city" type="text" placeholder="City" ngModel="{{user.city}}" #city="ngModel">
 		</div>
 
 		<!-- Missing/Invalid City alert -->
@@ -114,7 +114,7 @@
 		<!-- Phone Number -->
 		<div class="form-group">
 			<label>Phone Number</label>
-			<input class="form-control" name="phone" type="text" placeholder="Phone Number" required ngModel="{{user.phone}}" #phone="ngModel">
+			<input class="form-control" name="phone" type="text" placeholder="Phone Number" ngModel="{{user.phone}}" #phone="ngModel">
 		</div>
 
 		<!-- Missing/Invalid Phone Number alert -->
@@ -123,7 +123,7 @@
 		<!-- E-Mail -->
 		<div class="form-group">
 			<label>E-Mail</label>
-			<input class="form-control" name="email" type="text" placeholder="E-Mail" required ngModel="{{user.email}}" #email="ngModel">
+			<input class="form-control" name="email" type="text" placeholder="E-Mail" ngModel="{{user.email}}" #email="ngModel">
 		</div>
 
 		<!-- Missing/Invalid E-Mail alert -->
@@ -190,20 +190,18 @@
 		<div>
 			<!-- Update Button Profile Link-->
 			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Update</button>
-			<!-- Delete Button Website-List-->
-<!-- 			<button class="btn btn-danger btn-block" (click)="delete()" type="button">Delete</button> -->
+
 			<!-- Cancel Button User Profile Link -->
 			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}">Cancel</button>
-
-<!-- 			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button> -->
-
-
-			<!-- Cancel Button User Profile Link -->
-			<button class="btn btn-primary btn-block" routerLink="/admin">Cancel</button>
-<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button> -->
 		</div>
 	</form>
 </div>
 
+<!-- Delete Button Website-List-->
+<!-- 			<button class="btn btn-danger btn-block" (click)="delete()" type="button">Delete</button> -->
+<!-- 			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button> -->
 
 
+			<!-- Cancel Button User Profile Link -->
+<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin">Cancel</button> -->
+<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button> -->

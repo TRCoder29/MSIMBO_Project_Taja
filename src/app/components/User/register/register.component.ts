@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms'
-import { UserService } from '../../../client_side_services/user.service.client'
-import { User } from '../../../models/user.model.client'
-import { Router } from '@angular/router'
+import { NgForm } from '@angular/forms';
+import { UserService } from '../../../client_side_services/user.service.client';
+import { User } from '../../../models/user.model.client';
+import { Router } from '@angular/router';
 import { SharedService } from '../../../client_side_services/shared.service.client';
+declare var $: any;
+
 
 @Component({
   selector: 'app-register',
@@ -43,6 +45,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.passwordError = false;
     this.usernameError = false;
+    $("input[required]").parent().children("label").addClass("required")
   }
 
   register() {
@@ -70,7 +73,7 @@ export class RegisterComponent implements OnInit {
           this.userService.register(this.username, this.password).subscribe(
             (data: User) => {
               this.sharedService.user = data;
-              this.router.navigate(['user']);
+              this.router.navigate(['/user:uid']);
             },
             (error: any) => {
               this.usernameError = false;

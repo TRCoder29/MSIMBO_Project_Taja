@@ -36,8 +36,6 @@ margin-bottom: auto;
   color: red;
 }
 
-/*Where does this go?*/
-/*$("input[required]").parent("label").addClass("required");*/
 
 /*Navbar Style (General)*/
 .navbar {

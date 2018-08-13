@@ -93,7 +93,9 @@ module.exports = function(app){
 
 	function logout(req, res) {
 	   req.logOut();
-	   res.send(200);
+	   // res.send(200);
+	   // res.sendStatus(status);
+	   res.sendStatus(200);
 	}
 
 	function findUserById(req, res) {

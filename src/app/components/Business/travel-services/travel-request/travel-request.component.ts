@@ -4,6 +4,7 @@ import { TravelService } from '../../../../client_side_services/travel.service.c
 import { Travel } from '../../../../models/travel.model.client'
 import { Router } from '@angular/router'
 import { SharedService } from '../../../../client_side_services/shared.service.client';
+declare var $: any;
 
 @Component({
   selector: 'app-travel-request',
@@ -66,6 +67,7 @@ export class TravelRequestComponent implements OnInit {
     this.passwordError = false;
     this.usernameError = false;
     // Add ngoninit from account-info
+    $("input[required]").parent().children("label").addClass("required")
   }
 
   create() {

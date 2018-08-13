@@ -3,6 +3,7 @@ import { ContactService } from '../../../client_side_services/contact.service.cl
 import { Contact } from '../../../models/contact.model.client'
 import { NgForm } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
+declare var $: any;
 
 @Component({
   selector: 'app-contact',
@@ -25,6 +26,7 @@ export class ContactComponent implements OnInit {
 
 
   ngOnInit() {
+    $("input[required]").parent().children("label").addClass("required")
   }
 
   create(){

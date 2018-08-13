@@ -4,6 +4,7 @@ import { User } from '../../../../models/user.model.client';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../../../client_side_services/shared.service.client';
+declare var $: any;
 
 @Component({
   selector: 'app-admin-clients-new',
@@ -43,9 +44,10 @@ export class AdminClientsNewComponent implements OnInit {
   ngOnInit() {
     this.passwordError = false;
     this.usernameError = false;
+    $("input[required]").parent().children("label").addClass("required")
   }
 
-  register() {
+  create() {
     this.ngOnInit();
     this.username = this.adminClientsNewForm.value.username;
     this.password = this.adminClientsNewForm.value.password;
@@ -78,7 +80,7 @@ export class AdminClientsNewComponent implements OnInit {
           this.userService.register(this.username, this.password).subscribe(
             (data: User) => {
               this.sharedService.user = data;
-              this.router.navigate(['admin']);
+              this.router.navigate(['/admin-clients']);
             },
             (error: any) => {
               this.usernameError = false;
