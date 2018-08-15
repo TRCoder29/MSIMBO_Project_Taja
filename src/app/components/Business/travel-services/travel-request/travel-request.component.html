@@ -7,224 +7,265 @@
 	<form (ngSubmit)="create()" #f="ngForm">
 	    <fieldset>
 	    <label><b><u>Travel Request:</u></b></label><br><br>
-	      <label><b>First Name:</b></label>
-	      <input type="text" name="firstName" required ngModel #firstName="ngModel"><br><br>
-	      <label><b>Last Name:</b></label>
-	      <input type="text" name="lastName" required ngModel #lastName="ngModel"><br><br>
-	                  
-	      <label><b>Departure City:</b></label>
-	      <input type="text" name="departureCity" required ngModel #departureCity="ngModel"><br><br>
-	      <label><b>Destination(s):</b></label>
-	      <input type="text" name="destination" required ngModel #destination="ngModel"><br><br>
+	    <label><b>Traveler Info:</b></label><br>
+	    	<div>
+	    		<label>First Name:</label>
+	    		<input type="text" name="firstName" required ngModel #firstName="ngModel"><br>
+	    		<label>Last Name:</label>
+	    		<input type="text" name="lastName" required ngModel #lastName="ngModel"><br><br>
+		                  
+		        <label>Departure City:</label>
+		        <input type="text" name="departureCity" required ngModel #departureCity="ngModel"><br>
+		        <label>Destination(s):</label>
+		        <input type="text" name="destination" required ngModel #destination="ngModel"><br><br>
+		      
+		      	<label>Number of Guests:</label>
+		      	<input type="text" name="numGuest" required ngModel #numGuest="ngModel"><br><br>
+		      	<label>Number of Adults:</label>
+		      	<input type="text" name="numAdult" required ngModel #numAdult="ngModel"><br>
+		      	<label *ngIf="!numAdult.invalid">Age (Adults):</label>
+		      	<input type="text" name="adultAge" ngModel #adultAge="ngModel" *ngIf="!numAdult.invalid"><br><br>
+
+		      	<label>Number of Children:</label>
+		      	<input type="text" name="numChild" required ngModel #numChild="ngModel"><br>
+		      	<label *ngIf="!numChild.invalid">Age (Children):</label>
+		      	<input type="text" name="childAge" ngModel #childAge="ngModel" *ngIf="!numChild.invalid"><br><br>
+	  		</div>
+
+		  	<div>
+		  		<label><b>Travel Dates:</b></label><br>
+		  		<label>Depart:</label>
+		  		<input type="date" name="departDate" ngModel #departDate="ngModel"><br>
+		  		<label>Return:</label>
+		  		<input type="date" name="returnDate" ngModel #returnDate="ngModel"><br>
+		  		<label>Flexible?:</label>
+		  		<label>Yes</label>
+		  		<input type="checkbox" name="flexible" value="Yes" ngModel #flexible="ngModel">
+		  		<label>No</label>
+		  		<input type="checkbox" name="flexible" value="No" ngModel #flexible="ngModel"><br><br>
+		    </div>
+
+		    <div>
+				<label><b>Preferred Departure Time(s):</b></label><br>
+				<label>Morning (5:00AM-11:59AM)</label>
+				<input type="checkbox" name="departTime" value="morning" ngModel #departTime="ngModel"><br>
+				<label>Afternoon (12:00PM-5:59PM)</label>
+				<input type="checkbox" name="departTime" value="afternoon" ngModel #departTime="ngModel"><br>
+				<label>Evening (6:00PM-7:59PM)</label>
+				<input type="checkbox" name="departTime" value="evening" ngModel #departTime="ngModel"><br>
+				<label>Night (8:0PM:-4:59AM)</label>
+				<input type="checkbox" name="departTime" value="night" ngModel #departTime="ngModel"><br>
+				<label>No Preference:</label>
+				<input type="checkbox" name="departTime" value="noPreference" ngModel #departTime="ngModel"><br><br>
+	     	</div>
+
+	     	<div>
+	     		<label><b>Preferred Return Time(s):</b></label><br>
+	     		<label>Morning (5:00AM-11:59AM)</label>
+	     		<input type="checkbox" name="returnTime" value="morning" ngModel #returnTime="ngModel"><br>
+	     		<label>Afternoon (12:00PM-5:59PM)</label>
+	     		<input type="checkbox" name="returnTime" value="afternoon" ngModel #returnTime="ngModel"><br>
+	     		<label>Evening (6:00PM-7:59PM)</label>
+	     		<input type="checkbox" name="returnTime" value="evening" ngModel #returnTime="ngModel"><br>
+	     		<label>Night (8:0PM:-4:59AM)</label>
+	     		<input type="checkbox" name="returnTime" value="night" ngModel #returnTime="ngModel"><br>
+	     		<label>No Preference:</label>
+	     		<input type="checkbox" name="returnTime" value="noPreference" ngModel #returnTime="ngModel"><br><br>
+	      	</div>
+
+
+	      	<div>
+	      		<label><b>Desired Method of Travel:</b></label><br>
+	      		<label>Flight</label>
+	      		<input type="checkbox" name="travelMethod" value="flight" ngModel #travelMethod="ngModel"><br>
+	      		<label>Rental Car</label>
+	      		<input type="checkbox" name="travelMethod" value="car" ngModel #travelMethod="ngModel"><br>
+	      		<label>Bus (i.e. Greyhound, etc.)</label>
+	      		<input type="checkbox" name="travelMethod" value="bus" ngModel #travelMethod="ngModel"><br>
+	      		<label>Rail (i.e. Amtrak, etc.)</label>
+	      		<input type="checkbox" name="travelMethod" value="rail" ngModel #travelMethod="ngModel"><br>
+	      		<label>Hotel/Cruise Transfer</label>
+	      		<input type="checkbox" name="travelMethod" value="hotelTransfer" ngModel #travelMethod="ngModel"><br>
+	      		<label>Chauffer</label>
+	      		<input type="checkbox" name="travelMethod" value="chauffer" ngModel #travelMethod="ngModel"><br>
+	      		<label>No Preference:</label>
+	      		<input type="checkbox" name="travelMethod" value="noPreference" ngModel #travelMethod="ngModel"><br><br>
+	      	</div>
+
+	      	<div>
+	      		<label><b>Desired Accommodations:</b></label><br>
+	      		<!-- Hotel -->
+	      		<label>Hotel</label>
+	      		<input type="checkbox" name="hotel" value="hotel" ngModel #hotel="ngModel"><br>
+	      		<label># of Rooms: </label>
+	      		<input type="text" name="hotelRooms" ngModel #hotelRooms="ngModel"><br>
+	      		<label># of Guests per Room: </label>
+	      		<input type="text" name="hotelGuestNum" ngModel #hotelGuestNum="ngModel"><br>
+	      		<label>Double</label>
+	      		<input type="checkbox" name="roomType" value="double" ngModel #roomType="ngModel">
+	      		<label>Queen</label>
+	      		<input type="checkbox" name="roomType" value="queen" ngModel #roomType="ngModel">
+	      		<label>King</label>
+	      		<input type="checkbox" name="roomType" value="king" ngModel #roomType="ngModel">
+	      		<label>Suite</label>
+	      		<input type="checkbox" name="roomType" value="suite" ngModel #roomType="ngModel"><br><br>
+	      	</div>
+
+	      	<div>
+	      		<!-- Home Share (i.e. AirBNB, Innclusive, etc.) -->
+	      		<label>Home Share (i.e. AirBNB, Innclusive, etc.)</label>
+	      		<input type="checkbox" name="homeShare" value="homeApt" ngModel #homeShare="ngModel"><br>
+	      		<label># of Rooms: </label>
+	      		<input type="text" name="homeRooms" ngModel #homeRooms="ngModel"><br>
+	      		<label># of Guests per Room: </label>
+	      		<input type="text" name="homeGuests" ngModel #homeGuests="ngModel"><br>
+	      		<label>Double</label>
+	      		<input type="checkbox" name="allIncType" value="double" ngModel #allIncType="ngModel">
+	      		<label>Queen</label>
+	      		<input type="checkbox" name="allIncType" value="queen" ngModel #allIncType="ngModel">
+	      		<label>King</label>
+	      		<input type="checkbox" name="allIncType" value="king" ngModel #allIncType="ngModel">
+	      		<label>Suite</label>
+	      		<input type="checkbox" name="allIncType" value="suite" ngModel #allIncType="ngModel"><br><br>
+			</div>
+
+			<div>
+				<!-- All-Inclusive Resort -->
+				<label>All-Inclusive Resort</label>
+				<input type="checkbox" name="allInclusive" value="allInclusive" ngModel #allInclusive="ngModel"><br>
+				<label># of Rooms: </label>
+				<input type="text" name="allIncRooms" ngModel #allIncRooms="ngModel"><br>
+				<label># of Guests per Room: </label>
+				<input type="text" name="allIncGuests" ngModel #allIncGuests="ngModel"><br>
+				<label>Double</label>
+				<input type="checkbox" name="allIncType" value="double" ngModel #allIncType="ngModel">
+				<label>Queen</label>
+				<input type="checkbox" name="allIncType" value="queen" ngModel #allIncType="ngModel">
+				<label>King</label>
+				<input type="checkbox" name="allIncType" value="king" ngModel #allIncType="ngModel">
+				<label>Suite</label>
+				<input type="checkbox" name="allIncType" value="suite" ngModel #allIncType="ngModel"><br><br>
+			</div>
+
+			<div>
+				<!-- Cruise -->
+				<label>Cruise</label>
+				<input type="checkbox" name="cruise" value="cruise" ngModel #cruise="ngModel"><br>
+				<label># of Cabins: </label>
+				<input type="text" name="cruiseCabins" ngModel #cruiseCabins="ngModel"><br>
+				<label># of Guests per Room: </label>
+				<input type="text" name="cruiseGuests" ngModel #cruiseGuests="ngModel"><br><br>
+
+				<label>Pre-Cruise Hotel</label>
+				<input type="checkbox" name="preCruise" value="preCruise" ngModel #preCruise="ngModel"><br>
+				<label># of Rooms: </label>
+				<input type="text" name="preCruiseRooms" ngModel #preCruiseRooms="ngModel"><br>
+				<label># of Guests per Room: </label>
+				<input type="text" name="preCruiseGuests" ngModel #preCruiseGuests="ngModel"><br>
+				<label>Double</label>
+				<input type="checkbox" name="preCruiseType" value="double" ngModel #preCruiseType="ngModel">
+				<label>Queen</label>
+				<input type="checkbox" name="preCruiseType" value="queen" ngModel #preCruiseType="ngModel">
+				<label>King</label>
+				<input type="checkbox" name="preCruiseType" value="king" ngModel #preCruiseType="ngModel">
+				<label>Suite</label>
+				<input type="checkbox" name="preCruiseType" value="suite" ngModel #preCruiseType="ngModel"><br><br>
+
+				<label>Post-Cruise Hotel</label>
+				<input type="checkbox" name="postCruise" value="postCruise" ngModel #postCruise="ngModel"><br>
+				<label># of Rooms: </label>
+				<input type="text" name="postCruiseRooms"><br>
+				<label># of Guests per Room: </label>
+				<input type="text" name="postCruiseGuests"><br>
+				<label>Double</label>
+				<input type="checkbox" name="postCruiseType" value="double" ngModel #postCruiseType="ngModel">
+				<label>Queen</label>
+				<input type="checkbox" name="postCruiseType" value="queen" ngModel #postCruiseType="ngModel">
+				<label>King</label>
+				<input type="checkbox" name="postCruiseType" value="king" ngModel #postCruiseType="ngModel">
+				<label>Suite</label>
+				<input type="checkbox" name="postCruiseType" value="suite" ngModel #postCruiseType="ngModel"><br><br>
+			</div>
+
+			<div>
+				<!-- No Preference/Surprise Option -->
+				<label>No Preference/Surprise Me!:</label>
+				<input type="checkbox" name="noPreference" value="noPreference" ngModel #noPreference="ngModel"><br><br>
+			</div>
+
+			<div>
+				<!-- Amenities -->
+				<label><b>Desired Amenities/Features:</b></label><br>
+				<label><u>In-Room:</u></label><br>
+				<!-- In-Room Amenities -->
+				<label>Air Conditioning</label>
+				<input type="checkbox" name="amenity" value="aircondition" ngModel #amenity="ngModel"><br>
+				<label>Hair Dryer</label>
+				<input type="checkbox" name="amenity" value="hairDryer" ngModel #amenity="ngModel"><br>
+				<label>Clothes Iron</label>
+				<input type="checkbox" name="amenity" value="clothesIron" ngModel #amenity="ngModel"><br>
+				<label>Mini-Fridge</label>
+				<input type="checkbox" name="amenity" value="miniFridge" ngModel #amenity="ngModel"><br>
+				<label>Coffeemaker</label>
+				<input type="checkbox" name="amenity" value="coffee" ngModel #amenity="ngModel"><br>
+				<label>Mini-Bar</label>
+				<input type="checkbox" name="amenity" value="miniBar" ngModel #amenity="ngModel"><br>
+				<label>Microwave</label>
+				<input type="checkbox" name="amenity" value="microwave" ngModel #amenity="ngModel"><br>
+				<label>Kitchenette</label>
+				<input type="checkbox" name="amenity" value="kitchenette" ngModel #amenity="ngModel"><br><br>
+				
+				<label><u>Services:</u></label><br>
+				<label>Concierge</label>
+				<input type="checkbox" name="amenity" value="consierge" ngModel #amenity="ngModel"><br>
+				<label>Laundry Service</label>
+				<input type="checkbox" name="amenity" value="laundry" ngModel #amenity="ngModel"><br>
+				<label>Room Service</label>
+				<input type="checkbox" name="amenity" value="roomService" ngModel #amenity="ngModel"><br><br>
+				
+				<label><u>Facilities:</u></label><br>
+				<label>Business Center</label>
+				<input type="checkbox" name="amenity" value="businessCenter" ngModel #amenity="ngModel"><br>
+				<label>Spa</label>
+				<input type="checkbox" name="amenity" value="spa" ngModel #amenity="ngModel"><br>
+				<label>Swimming Pool</label>
+				<input type="checkbox" name="amenity" value="coffee" ngModel #amenity="ngModel"><br>
+				<label>Restaurant in Hotel</label>
+				<input type="checkbox" name="amenity" value="restaurant" ngModel #amenity="ngModel"><br>
+				<label>Breakfast Included</label>
+				<input type="checkbox" name="amenity" value="breakfast" ngModel #amenity="ngModel"><br><br>
 	      
-	      <label><b>Number of Guests:</b></label>
-	      <input type="text" name="numGuest" required ngModel #numGuest="ngModel"><br><br>
-	      <label><b>Number of Adults:</b></label>
-	      <input type="text" name="numAdult" required ngModel #numAdult="ngModel"><br><br>
-	      <label><b>Number of Children:</b></label>
-	      <input type="text" name="numChild" required ngModel #numChild="ngModel"><br><br>
-	      <label><b>Ages (Children):</b></label>
-	      <input type="text" name="childAge" ngModel #childAge="ngModel"><br><br>
-
-	      <label><b>Travel Dates:</b></label><br>
-	      <label>Depart:</label>
-	      <input type="date" name="departDate" required ngModel #departDate="ngModel"><br>
-	      <label>Return:</label>
-	      <input type="date" name="returnDate" required ngModel #returnDate="ngModel"><br>
-	      <label>Flexible?:</label>
-	      <label>Yes</label>
-	      <input type="checkbox" name="flexible" value="Yes" ngModel #flexible="ngModel">
-	      <label>No</label>
-	      <input type="checkbox" name="flexible" value="No" ngModel #flexible="ngModel"><br><br>
+	      		<!-- Hotel Transportation -->
+	      		<label><u>Hotel Transportation:</u></label><br>
+	      		<label>Free Parking</label>
+	      		<input type="checkbox" name="amenity" value="parking" ngModel #amenity="ngModel"><br>
+	      		<label>Shuttle Transportation</label>
+	      		<input type="checkbox" name="amenity" value="shuttle" ngModel #amenity="ngModel"><br><br>
 	      
-	      <label><b>Preferred Departure Time(s):</b></label><br>
-	      <label>Morning (5:00AM-11:59AM)</label>
-	      <input type="checkbox" name="departTime" value="morning" ngModel #departTime="ngModel"><br>
-	      <label>Afternoon (12:00PM-5:59PM)</label>
-	      <input type="checkbox" name="departTime" value="afternoon" ngModel #departTime="ngModel"><br>
-	      <label>Evening (6:00PM-7:59PM)</label>
-	      <input type="checkbox" name="departTime" value="evening" ngModel #departTime="ngModel"><br>
-	      <label>Night (8:0PM:-4:59AM)</label>
-	      <input type="checkbox" name="departTime" value="night" ngModel #departTime="ngModel"><br>
-	      <label>No Preference:</label>
-	      <input type="checkbox" name="departTime" value="noPreference" ngModel #departTime="ngModel"><br><br>
-	      
+	      		<!-- No Hotel Preferences -->
+	      		<label>No Preference:</label>
+	      		<input type="checkbox" name="amenity" value="noPreference" ngModel #amenity="ngModel"><br><br>
+			</div>
 
-	      <label><b>Preferred Return Time(s):</b></label><br>
-	      <label>Morning (5:00AM-11:59AM)</label>
-	      <input type="checkbox" name="returnTime" value="morning" ngModel #returnTime="ngModel"><br>
-	      <label>Afternoon (12:00PM-5:59PM)</label>
-	      <input type="checkbox" name="returnTime" value="afternoon" ngModel #returnTime="ngModel"><br>
-	      <label>Evening (6:00PM-7:59PM)</label>
-	      <input type="checkbox" name="returnTime" value="evening" ngModel #returnTime="ngModel"><br>
-	      <label>Night (8:0PM:-4:59AM)</label>
-	      <input type="checkbox" name="returnTime" value="night" ngModel #returnTime="ngModel"><br>
-	      <label>No Preference:</label>
-	      <input type="checkbox" name="returnTime" value="noPreference" ngModel #returnTime="ngModel"><br><br>
-	      
-	      <label><b>Desired Method of Travel:</b></label><br>
-	      <label>Flight</label>
-	      <input type="checkbox" name="travelMethod" value="flight" ngModel #travelMethod="ngModel"><br>
-	      <label>Rental Car</label>
-	      <input type="checkbox" name="travelMethod" value="car" ngModel #travelMethod="ngModel"><br>
-	      <label>Bus (i.e. Greyhound, etc.)</label>
-	      <input type="checkbox" name="travelMethod" value="bus" ngModel #travelMethod="ngModel"><br>
-	      <label>Rail (i.e. Amtrak, etc.)</label>
-	      <input type="checkbox" name="travelMethod" value="rail" ngModel #travelMethod="ngModel"><br>
-	      <label>Hotel/Cruise Transfer</label>
-	      <input type="checkbox" name="travelMethod" value="hotelTransfer" ngModel #travelMethod="ngModel"><br>
-	      <label>Chauffer</label>
-	      <input type="checkbox" name="travelMethod" value="chauffer" ngModel #travelMethod="ngModel"><br>
-	      <label>No Preference:</label>
-	      <input type="checkbox" name="travelMethod" value="noPreference" ngModel #travelMethod="ngModel"><br><br>
+			<div>
+				<!-- Travel Budget -->
+				<label><b>Travel Budget:</b></label>
+				<input type="text" name="budget" placeholder="$" required ngModel #budget="ngModel"><br><br>
+			</div>
 
-	      <label><b>Desired Accommodations:</b></label><br>
-	      <!-- Hotel -->
-	      <label>Hotel</label>
-	      <input type="checkbox" name="hotel" value="hotel" ngModel #hotel="ngModel"><br>
-	      <label># of Rooms: </label>
-	      <input type="text" name="hotelRooms" ngModel #hotelRooms="ngModel"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="hotelGuestNum" ngModel #hotelGuestNum="ngModel"><br>
-	      <label>Double</label>
-	      <input type="checkbox" name="roomType" value="double" ngModel #roomType="ngModel">
-	      <label>Queen</label>
-	      <input type="checkbox" name="roomType" value="queen" ngModel #roomType="ngModel">
-	      <label>King</label>
-	      <input type="checkbox" name="roomType" value="king" ngModel #roomType="ngModel">
-	      <label>Suite</label>
-	      <input type="checkbox" name="roomType" value="suite" ngModel #roomType="ngModel"><br><br>
-
-	      <!-- Home Share (i.e. AirBNB, Innclusive, etc.) -->
-	      <label>Home Share (i.e. AirBNB, Innclusive, etc.)</label>
-	      <input type="checkbox" name="homeShare" value="homeApt" ngModel #homeShare="ngModel"><br>
-	      <label># of Rooms: </label>
-	      <input type="text" name="homeRooms" ngModel #homeRooms="ngModel"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="homeGuests" ngModel #homeGuests="ngModel"><br>
-	      <label>Double</label>
-	      <input type="checkbox" name="allIncType" value="double" ngModel #allIncType="ngModel">
-	      <label>Queen</label>
-	      <input type="checkbox" name="allIncType" value="queen" ngModel #allIncType="ngModel">
-	      <label>King</label>
-	      <input type="checkbox" name="allIncType" value="king" ngModel #allIncType="ngModel">
-	      <label>Suite</label>
-	      <input type="checkbox" name="allIncType" value="suite" ngModel #allIncType="ngModel"><br><br>
-
-	      <!-- All-Inclusive Resort -->
-	      <label>All-Inclusive Resort</label>
-	      <input type="checkbox" name="allInclusive" value="allInclusive" ngModel #allInclusive="ngModel"><br>
-	      <label># of Rooms: </label>
-	      <input type="text" name="allIncRooms" ngModel #allIncRooms="ngModel"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="allIncGuests" ngModel #allIncGuests="ngModel">
-	      <label>Double</label>
-	      <input type="checkbox" name="allIncType" value="double" ngModel #allIncType="ngModel">
-	      <label>Queen</label>
-	      <input type="checkbox" name="allIncType" value="queen" ngModel #allIncType="ngModel">
-	      <label>King</label>
-	      <input type="checkbox" name="allIncType" value="king" ngModel #allIncType="ngModel">
-	      <label>Suite</label>
-	      <input type="checkbox" name="allIncType" value="suite" ngModel #allIncType="ngModel"><br><br>
-
-	      <!-- Cruise -->
-	      <label>Cruise</label>
-	      <input type="checkbox" name="cruise" value="cruise" ngModel #cruise="ngModel"><br>
-	      <label># of Cabins: </label>
-	      <input type="text" name="cruiseCabins" ngModel #cruiseCabins="ngModel"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="cruiseGuests" ngModel #cruiseGuests="ngModel"><br><br>
-
-	      <label>Pre-Cruise Hotel</label>
-	      <input type="checkbox" name="preCruise" value="preCruise" ngModel #="ngModel"><br>
-	      <label># of Rooms: </label>
-	      <input type="text" name="preCruiseRooms" ngModel #="ngModel"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="preCruiseGuests" ngModel #="ngModel">
-	      <label>Double</label>
-	      <input type="checkbox" name="preCruiseType" value="double" ngModel #="ngModel">
-	      <label>Queen</label>
-	      <input type="checkbox" name="preCruiseType" value="queen" ngModel #="ngModel">
-	      <label>King</label>
-	      <input type="checkbox" name="preCruiseType" value="king" ngModel #="ngModel">
-	      <label>Suite</label>
-	      <input type="checkbox" name="preCruiseType" value="suite" ngModel #="ngModel"><br><br>
-
-	      <label>Post-Cruise Hotel</label>
-	      <input type="checkbox" name="postCruise" value="postCruise" ngModel #="ngModel"><br>
-	      <label># of Rooms: </label>
-	      <input type="text" name="postCruiseRooms"><br>
-	      <label># of Guests per Room: </label>
-	      <input type="text" name="postCruiseGuests">
-	      <label>Double</label>
-	      <input type="checkbox" name="postCruiseType" value="double" ngModel #="ngModel">
-	      <label>Queen</label>
-	      <input type="checkbox" name="postCruiseType" value="queen" ngModel #="ngModel">
-	      <label>King</label>
-	      <input type="checkbox" name="postCruiseType" value="king" ngModel #="ngModel">
-	      <label>Suite</label>
-	      <input type="checkbox" name="postCruiseType" value="suite" ngModel #="ngModel"><br><br>
-
-	      <!-- No Preference/Surprise Option -->
-	      <label>No Preference/Surprise Me!:</label>
-	      <input type="checkbox" name="noPreference" value="noPreference" ngModel #="ngModel"><br><br>
-
-	      <!-- Amenities -->
-	      <label><b>Desired Amenities/Features:</b></label><br>
-	      <!-- In-Room Amenities -->
-	      <label>Air Conditioning</label>
-	      <input type="checkbox" name="amenity" value="aircondition" ngModel #amenity="ngModel"><br>
-	      <label>Hair Dryer</label>
-	      <input type="checkbox" name="amenity" value="hairDryer" ngModel #amenity="ngModel"><br>
-	      <label>Clothes Iron</label>
-	      <input type="checkbox" name="amenity" value="clothesIron" ngModel #amenity="ngModel"><br>
-	      <label>Mini-Fridge</label>
-	      <input type="checkbox" name="amenity" value="miniFridge" ngModel #amenity="ngModel"><br>
-	      <label>Coffeemaker</label>
-	      <input type="checkbox" name="amenity" value="coffee" ngModel #amenity="ngModel"><br>
-	      <label>Mini-Bar</label>
-	      <input type="checkbox" name="amenity" value="miniBar" ngModel #amenity="ngModel"><br>
-	      <label>Microwave</label>
-	      <input type="checkbox" name="amenity" value="microwave" ngModel #amenity="ngModel"><br>
-	      <label>Kitchenette</label>
-	      <input type="checkbox" name="amenity" value="kitchenette" ngModel #amenity="ngModel"><br>
-	      <label>Concierge</label>
-	      <input type="checkbox" name="amenity" value="consierge" ngModel #amenity="ngModel"><br>
-	      <label>Laundry Service</label>
-	      <input type="checkbox" name="amenity" value="laundry" ngModel #amenity="ngModel"><br>
-	      <label>Room Service</label>
-	      <input type="checkbox" name="amenity" value="roomService" ngModel #amenity="ngModel"><br>
-	      <label>Business Center</label>
-	      <input type="checkbox" name="amenity" value="businessCenter" ngModel #amenity="ngModel"><br>
-	      <label>Spa</label>
-	      <input type="checkbox" name="amenity" value="spa" ngModel #amenity="ngModel"><br>
-	      <label>Swimming Pool</label>
-	      <input type="checkbox" name="amenity" value="coffee" ngModel #amenity="ngModel"><br>
-	      <label>Restaurant in Hotel</label>
-	      <input type="checkbox" name="amenity" value="restaurant" ngModel #amenity="ngModel"><br>
-	      <label>Breakfast Included</label>
-	      <input type="checkbox" name="amenity" value="breakfast" ngModel #amenity="ngModel"><br><br>
-	      
-	      <!-- Hotel Transportation -->
-	      <label>Free Parking</label>
-	      <input type="checkbox" name="amenity" value="parking" ngModel #amenity="ngModel"><br>
-	      <label>Shuttle Transportation</label>
-	      <input type="checkbox" name="amenity" value="shuttle" ngModel #amenity="ngModel"><br><br>
-	      
-	      <!-- No Hotel Preferences -->
-	      <label>No Preference:</label>
-	      <input type="checkbox" name="amenity" value="noPreference" ngModel #amenity="ngModel"><br><br>
-
-	      <!-- Travel Budget -->
-	      <label><b>Travel Budget:</b></label>
-	      <input type="text" name="budget" placeholder="$" required ngModel #budget="ngModel"><br><br>
-
-	      <!-- Submit Button -->
-	      <button class="btn btn-secondary btn-block" type="submit">Submit</button>
-	      <!-- [disabled]="f.invalid" -->
-	      <button class="btn btn-danger btn-block" routerLink="/service-request">Cancel</button>
+			<div>
+				<!-- Submit Button -->
+				<button class="btn btn-secondary btn-block" type="submit">Submit</button>
+				<!-- [disabled]="f.invalid" -->
+				<button class="btn btn-danger btn-block" routerLink="/service-request">Cancel</button>
+			</div>
 	    </fieldset>
 	</form>
 </div>
 
 <!-- Checkbox Formatting Example: https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms -->
+
+<!-- Work on code that closes the window when Cancel button is pushed if originally navigated from Service-Request page and navigated back to the User/Admin portal if originally navigated from the portal. -->
+<!-- <button class="btn btn-danger btn-block" type="button" value="Close this window" onclick="self.close()" routerLink="/service-request">Cancel</button> -->
+
+<!-- Work on code that navigates back to the previous page once Cancel is pressed, so if  -->

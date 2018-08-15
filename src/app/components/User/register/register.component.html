@@ -129,17 +129,13 @@
 		<!-- Missing/Invalid E-Mail alert -->
 		<div class="alert alert-danger" *ngIf="email.invalid && email.touched">Please enter e-mail address!</div>
 
-		<!-- Preferred Contact Method -->
+			<!-- Preferred Contact Method -->
 		<div class="form-group">
-			<label>Preferred Contact Method (Choose One):</label>
-			<div class="container">Phone
-			<input class="form-control" name="prefPhone" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefPhone="ngModel">
-			<span class="checkmark"></span>
-			</div>
-			<div class="container">E-Mail
-			<input class="form-control" name="prefEmail" type="checkbox" check="checked" placeholder="Choose One" ngModel #prefEmail="ngModel">
-			<span class="checkmark"></span>
-			</div>
+			<form>
+				<label>Preferred Contact Method:</label><br>
+				<input type="radio" name="prefContact" value="phone" checked>Phone<br>
+				<input type="radio" name="prefContact" value="email">E-Mail<br>
+			</form> 
 		</div>
 
 		<br><br>

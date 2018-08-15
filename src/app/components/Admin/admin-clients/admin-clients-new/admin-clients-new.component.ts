@@ -29,8 +29,7 @@ export class AdminClientsNewComponent implements OnInit {
   city: string;
   phone: string;
   email: string;
-  prefPhone: boolean;
-  prefEmail: boolean;
+  prefContact: boolean;
   idNum: string;
   idType: string;
   idDate: string;
@@ -61,8 +60,7 @@ export class AdminClientsNewComponent implements OnInit {
     this.city = this.adminClientsNewForm.value.city;
     this.phone = this.adminClientsNewForm.value.phone;
     this.email = this.adminClientsNewForm.value.email;
-    this.prefPhone =  false;
-    this.prefEmail =  false;
+    this.prefContact = this.adminClientsNewForm.value.prefContact;
     this.idNum =  this.adminClientsNewForm.value.idNum;
     this.idType =  this.adminClientsNewForm.value.idType;
     this.idDate =  this.adminClientsNewForm.value.idDate;
@@ -70,6 +68,7 @@ export class AdminClientsNewComponent implements OnInit {
     this.idState =  this.adminClientsNewForm.value.idState;
     this.redress =  this.adminClientsNewForm.value.redress;
     this.knownTravelNum =  this.adminClientsNewForm.value.knownTravelNum;
+    // Verify Password Alert
     if(this.password !== this.adminClientsNewForm.value.verifyPassword) {
       this.passwordError = true;
     } else {
@@ -77,9 +76,29 @@ export class AdminClientsNewComponent implements OnInit {
       this.userService.findUserByUsername(this.username).subscribe(
         (data: any) => {
           if(!data) {
-          this.userService.register(this.username, this.password).subscribe(
+            const newUser: User= {
+              username: this.username,
+              password: this.password,
+              firstName: this.firstName,
+              lastName: this.lastName,
+              dob: this.dob,
+              gender: this.gender,
+              country: this.country,
+              state: this.state,
+              city: this.city,
+              phone: this.phone,
+              email: this.email,
+              prefContact:  this.prefContact,
+              idNum:  this.idNum,
+              idType:  this.idType,
+              idDate:  this.idDate,
+              idCountry:  this.idCountry,
+              idState:  this.idState,
+              redress:  this.redress,
+              knownTravelNum:  this.knownTravelNum,
+            }
+          this.userService.createUser(newUser).subscribe(
             (data: User) => {
-              this.sharedService.user = data;
               this.router.navigate(['/admin-clients']);
             },
             (error: any) => {

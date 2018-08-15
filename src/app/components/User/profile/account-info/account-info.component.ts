@@ -27,8 +27,7 @@ export class AccountInfoComponent implements OnInit {
 	city: string;
 	phone: string;
 	email: string;
-	prefPhone: boolean;
-	prefEmail: boolean;
+	prefContact: boolean;
 	idNum?: string;
 	idType?: string;
 	idDate?: string;
@@ -39,6 +38,9 @@ export class AccountInfoComponent implements OnInit {
 	oldUsername: string;
 	usernameTaken: boolean;
 	submitSuccess: boolean;
+	passwordError: boolean;
+	// verifyPassword: string;
+	usernameError: boolean;
 	isAdmin: boolean;
 	user: User = {
 		username: '',
@@ -52,8 +54,7 @@ export class AccountInfoComponent implements OnInit {
 		city: '',
 		phone: '',
 		email: '',
-		prefPhone: false,
-		prefEmail: false,
+		prefContact: false,
 		idNum: '',
 		idType: '',
 		idDate: '',
@@ -69,6 +70,8 @@ export class AccountInfoComponent implements OnInit {
 
   ngOnInit() {
 	  $("input[required]").parent().children("label").addClass("required")
+	  this.passwordError = false;
+	  this.usernameError = false;
 	  this.activatedRoute.params.subscribe(params => {
   		this.uid = params['uid'];
   		this.userService.findUserByUsername(this.username).subscribe(
@@ -76,6 +79,11 @@ export class AccountInfoComponent implements OnInit {
           this.users = users;
         }
        );
+  		// if(this.password !== this.verifyPassword) {
+	   //    this.passwordError = true;
+	   //  } else {
+	   //    this.passwordError = false;
+	  	// }
   		this.userService.findUserById(this.uid).subscribe(
         (user: User) => {
           this.user = user;
@@ -89,8 +97,7 @@ export class AccountInfoComponent implements OnInit {
 			this.city = this.user.city;
 			this.phone = this.user.phone;
 			this.email = this.user.email;
-			this.prefPhone =  false;
-			this.prefEmail =  false;
+			this.prefContact =  this.user.prefContact;
 			this.idNum =  this.idNum;
 			this.idType =  this.idType;
 			this.idDate =  this.idDate;
@@ -99,7 +106,6 @@ export class AccountInfoComponent implements OnInit {
 			this.redress =  this.redress;
 			this.knownTravelNum =  this.knownTravelNum;
 			this.oldUsername = this.user.username;
-
         }
       );
     })
@@ -117,15 +123,14 @@ export class AccountInfoComponent implements OnInit {
 		this.city = this.accountInfoForm.value.city;
 		this.phone = this.accountInfoForm.value.phone;
 		this.email = this.accountInfoForm.value.email;
-		this.prefPhone =  false;
-		this.prefEmail =  false;
-		this.idNum =  this.idNum;
-		this.idType =  this.idType;
-		this.idDate =  this.idDate;
-		this.idCountry =  this.idCountry;
-		this.idState =  this.idState;
-		this.redress =  this.redress;
-		this.knownTravelNum =  this.knownTravelNum;
+		this.prefContact = this.accountInfoForm.value.prefContact;
+		this.idNum = this.accountInfoForm.value.idNum;
+		this.idType = this.accountInfoForm.value.idType;
+		this.idDate = this.accountInfoForm.value.idDate;
+		this.idCountry = this.accountInfoForm.value.idCountry;
+		this.idState = this.accountInfoForm.value.idState;
+		this.redress = this.accountInfoForm.value.redress;
+		this.knownTravelNum = this.accountInfoForm.value.knownTravelNum;
 		this.oldUsername = this.user.username;
 		this.userService.findUserByUsername(this.username).subscribe(
 			(user: User) => {
@@ -135,7 +140,7 @@ export class AccountInfoComponent implements OnInit {
 					this.submitSuccess = false;
 				} else {
 					const updatedUser: User = {
-						// _id: this.user._id,
+						_id: this.user._id,
 						username: this.username,
 						password: this.user.password,
 						firstName: this.firstName,
@@ -147,8 +152,7 @@ export class AccountInfoComponent implements OnInit {
 						city: this.city,
 						phone: this.phone,
 						email: this.email,
-						prefPhone: false,
-						prefEmail: false,
+						prefContact: this.prefContact,
 						idNum: this.idNum,
 						idType: this.idType,
 						idDate: this.idDate,
@@ -157,14 +161,15 @@ export class AccountInfoComponent implements OnInit {
 						redress: this.redress,
 						knownTravelNum: this.knownTravelNum
 					};
-					this.userService.updateUser(this.username, updatedUser).subscribe(
+					console.log(updatedUser);
+					this.userService.updateUser(this.user._id, updatedUser).subscribe(
 						(res: any) => {
-							if (updatedUser.isAdmin) {
+							if (this.sharedService.user.isAdmin) {
 							this.usernameTaken = false;
 							this.submitSuccess = true;
-							this.router.navigate(['/admin-clients'])
+							this.router.navigate(['/admin'])
 							} else {
-					         this.router.navigate(['/user/:uid']);
+					         this.router.navigate(['/user']);
 							}
 						}
 					);
@@ -188,3 +193,8 @@ export class AccountInfoComponent implements OnInit {
 	    });
 	}
 }
+
+	  // this.usernameTaken = false;
+	  // this.submitSuccess = false;
+	  // this.passwordError = false;
+	  // this.verifyPassword = false;

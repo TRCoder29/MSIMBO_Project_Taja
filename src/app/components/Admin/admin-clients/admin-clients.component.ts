@@ -17,6 +17,7 @@ export class AdminClientsComponent implements OnInit {
 uid: string;
 users: User[];
 search: string = "";
+includes: boolean;
 
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router) { }
 

@@ -1,46 +1,47 @@
 export class Travel {
-	_id?
-	username
-	password
-	firstName
-	lastName
-	departureCity
-	destination
-	numGuest
-	numAdult
-	numChild
-	childAge
-	departDate
-	returnDate
-	flexible
-	departTime: boolean; // Many Choices (See Below)
-	returnTime: boolean; // Many Choices (See Below)
-	travelMethod: boolean; // Many Choices (See Below)
-	hotel: boolean;  // Choose or Not
-	hotelRooms
-	hotelGuestNum
-	roomType: boolean; // Many Choices (See Below)
-	homeShare: boolean; // Choose or Not
-	homeRooms
-	homeGuests
-	allInclusive: boolean; // Choose or Not
-	allIncRooms
-	allIncGuests
-	allIncType: boolean; // Many Choices (See Below)
-	cruise: boolean; // Choose or Not
-	cruiseCabins
-	cruiseGuests
-	preCruise: boolean; // Choose or Not
-	preCruiseRooms
-	preCruiseGuests
-	preCruiseType: boolean;  // Many Choices (See Below)
-	postCruise: boolean; // Choose or Not
-	postCruiseRooms
-	postCruiseGuests
-	postCruiseType: boolean;   // Many Choices (See Below)
-	amenity: boolean; // Many Choices (See Below)
-	budget
+	_id?: string;
+	username: string;
+	password: string;
+	firstName: string;
+	lastName: string;
+	departureCity: string;
+	destination: string;
+	numGuest: string;
+	numAdult: string;
+	numChild: string;
+	childAge: string;
+	departDate: string;
+	returnDate: string;
+	flexible?: boolean;
+	departTime?: boolean;
+	returnTime?: boolean;
+	travelMethod?: boolean;
+	hotel?: boolean;
+	hotelRooms?: string;
+	hotelGuestNum?: string;
+	roomType?: boolean;
+	homeShare?: boolean;
+	homeRooms?: string;
+	homeGuests?: string;
+	allInclusive?: boolean;
+	allIncRooms?: string;
+	allIncGuests?: string;
+	allIncType?: boolean;
+	cruise?: boolean;
+	cruiseCabins?: string;
+	cruiseGuests?: string;
+	preCruise?: boolean;
+	preCruiseRooms?: string;
+	preCruiseGuests?: string;
+	preCruiseType?: boolean;
+	postCruise?: boolean;
+	postCruiseRooms?: string;
+	postCruiseGuests?: string;
+	postCruiseType?: boolean;
+	amenity?: boolean;
+	budget?: string;
 
+	// Add other variables created in the html form
 	// Do I need variables to represent the travel details/preferences; passport details and the contact preference
 
 	constructor(_id, username, password, firstName, lastName, departureCity, destination, numGuest, numAdult, numChild, childAge,
@@ -60,33 +61,33 @@ export class Travel {
 		this.childAge = childAge;
 		this.departDate = departDate;
 		this.returnDate = returnDate;
-		this.flexible = flexible; // Two Choices
-		this.departTime = departTime; // Many Choices (See Below)
-		this.returnTime = returnTime; // Many Choices (See Below)
-		this.travelMethod = travelMethod; // Many Choices (See Below)
-		this.hotel = hotel;  // Choose or Not
+		this.flexible = flexible;
+		this.departTime = departTime;
+		this.returnTime = returnTime;
+		this.travelMethod = travelMethod;
+		this.hotel = hotel;
 		this.hotelRooms = hotelRooms;
 		this.hotelGuestNum = hotelGuestNum;
-		this.roomType = roomType; // Many Choices (See Below)
-		this.homeShare = homeShare; // Choose or Not
+		this.roomType = roomType;
+		this.homeShare = homeShare;
 		this.homeRooms = homeRooms;
 		this.homeGuests = homeGuests;
-		this.allInclusive = allInclusive; // Choose or Not
+		this.allInclusive = allInclusive;
 		this.allIncRooms = allIncRooms;
 		this.allIncGuests = allIncGuests;
-		this.allIncType = allIncType; // Many Choices (See Below)
-		this.cruise = cruise; // Choose or Not
+		this.allIncType = allIncType;
+		this.cruise = cruise;
 		this.cruiseCabins = cruiseCabins;
 		this.cruiseGuests = cruiseGuests;
-		this.preCruise = preCruise; // Choose or Not
+		this.preCruise = preCruise;
 		this.preCruiseRooms = preCruiseRooms;
 		this.preCruiseGuests = preCruiseGuests;
-		this.preCruiseType = preCruiseType;  // Many Choices (See Below)
-		this.postCruise = postCruise; // Choose or Not
+		this.preCruiseType = preCruiseType;
+		this.postCruise = postCruise;
 		this.postCruiseRooms = postCruiseRooms;
 		this.postCruiseGuests = postCruiseGuests;
-		this.postCruiseType = postCruiseType;   // Many Choices (See Below)
-		this.amenity = amenity; // Many Choices (See Below)
+		this.postCruiseType = postCruiseType;
+		this.amenity = amenity;
 		this.budget = budget;
 	}
 }

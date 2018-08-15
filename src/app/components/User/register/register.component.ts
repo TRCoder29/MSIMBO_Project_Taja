@@ -30,8 +30,7 @@ export class RegisterComponent implements OnInit {
   city: string;
   phone: string;
   email: string;
-  prefPhone: boolean;
-  prefEmail: boolean;
+  prefContact: boolean;
   idNum: string;
   idType: string;
   idDate: string;
@@ -39,7 +38,7 @@ export class RegisterComponent implements OnInit {
   idState: string;
   redress: string;
   knownTravelNum: string;
-  
+
   constructor(private userService: UserService, private router: Router, private sharedService: SharedService) { }
 
   ngOnInit() {
@@ -62,7 +61,14 @@ export class RegisterComponent implements OnInit {
   	this.city = this.registerForm.value.city;
   	this.phone = this.registerForm.value.phone;
   	this.email = this.registerForm.value.email;
-
+    this.prefContact =  this.registerForm.value.prefContact;
+    this.idNum =  this.registerForm.value.idNum;
+    this.idType =  this.registerForm.value.idType;
+    this.idDate =  this.registerForm.value.idDate;
+    this.idCountry =  this.registerForm.value.idCountry;
+    this.idState =  this.registerForm.value.idState;
+    this.redress =  this.registerForm.value.redress;
+    this.knownTravelNum =  this.registerForm.value.knownTravelNum;
     if(this.password !== this.verifyPassword) {
       this.passwordError = true;
     } else {
@@ -70,10 +76,31 @@ export class RegisterComponent implements OnInit {
       this.userService.findUserByUsername(this.username).subscribe(
         (data: any) => {
           if(!data) {
-          this.userService.register(this.username, this.password).subscribe(
+            const newUser: User = {
+              username: this.username,
+              password: this.password,
+              firstName: this.firstName,
+              lastName: this.lastName,
+              dob: this.dob,
+              gender: this.gender,
+              country: this.country,
+              state: this.state,
+              city: this.city,
+              phone: this.phone,
+              email: this.email,
+              prefContact:  this.prefContact,
+              idNum:  this.idNum,
+              idType:  this.idType,
+              idDate:  this.idDate,
+              idCountry:  this.idCountry,
+              idState:  this.idState,
+              redress:  this.redress,
+              knownTravelNum:  this.knownTravelNum,
+            }
+          this.userService.register(newUser).subscribe(
             (data: User) => {
               this.sharedService.user = data;
-              this.router.navigate(['/user:uid']);
+              this.router.navigate(['/user']);
             },
             (error: any) => {
               this.usernameError = false;

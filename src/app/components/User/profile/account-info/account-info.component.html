@@ -22,7 +22,7 @@
 		<div class="alert alert-danger" *ngIf="username.invalid && username.touched">Please enter username!</div>
 
 		<!-- Alert if username is taken -->
-<!-- 		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div> -->
+		<div class="alert alert-danger" *ngIf="usernameError">Username is already taken, please try another one!</div>
 
 		<!-- Password -->
 		<div class="form-group">
@@ -33,17 +33,17 @@
 		<!-- Missing/Invalid password alert -->
 		<div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter password!</div>
 
-		<!-- Verify Password -->
-		<div class="form-group">
+		<!-- Verify Password (Will Add This Again Later When Better Password Features are Created) -->
+		<!-- <div class="form-group">
 			<label>Verify Password</label>
 			<input class="form-control" name="verifyPassword" type="password" placeholder="Verify Password" ngModel="{{user.verifyPassword}}" #verifyPassword="ngModel">
-		</div>
+		</div> -->
 
 		<!-- Missing/Invalid verify password alert -->
-		<!-- 		<div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</div> -->
+		<!-- <div class="alert alert-danger" *ngIf="verifyPassword.invalid && verifyPassword.touched && password.touched">Please verify password!</div> -->
 
-		<!-- Alert if password and verify password don't match) -->
-		<div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div>
+		<!-- Alert if password and verify password don't match -->
+		<!-- <div class="alert alert-danger" *ngIf="passwordError">Passwords do not match!</div> -->
 
 		<br><br>
 
@@ -131,15 +131,11 @@
 
 		<!-- Preferred Contact Method -->
 		<div class="form-group">
-			<label>Preferred Contact Method (Choose One):</label>
-			<div class="container">Phone
-			<input class="form-control" name="prefPhone" type="checkbox" check="checked" placeholder="Choose One" ngModel="{{user.prefPhone}}" #prefPhone="ngModel">
-			<span class="checkmark"></span>
-			</div>
-			<div class="container">E-Mail
-			<input class="form-control" name="prefEmail" type="checkbox" check="checked" placeholder="Choose One" ngModel="{{user.prefEmail}}" #prefEmail="ngModel">
-			<span class="checkmark"></span>
-			</div>
+			<form>
+				<label>Preferred Contact Method:</label><br>
+				<input type="radio" name="prefContact" value="phone" ngModel="{{user.prefContact}}" #prefContact="ngModel">Phone<br>
+				<input type="radio" name="prefContact" value="email" ngModel="{{user.prefContact}}" #prefContact="ngModel">E-Mail<br>
+			</form> 
 		</div>
 
 		<br><br>
@@ -190,18 +186,32 @@
 		<div>
 			<!-- Update Button Profile Link-->
 			<button class="btn btn-secondary btn-block" type="submit" [disabled]="f.invalid">Update</button>
+		</div>
 
+		<div>
 			<!-- Cancel Button User Profile Link -->
-			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}">Cancel</button>
+			<!-- If the current user is not the Admin, Cancel sends them back to User portal -->
+			<button class="btn btn-primary btn-block" *ngIf="!sharedService.user.isAdmin" routerLink="/user">Cancel</button>
+			<!-- If the current user is the Admin, Cancel sends them back to User portal -->
+			<button class="btn btn-primary btn-block" *ngIf="sharedService.user.isAdmin" routerLink="/admin">Cancel</button>
 		</div>
 	</form>
 </div>
 
+
+<!-- Use in the future when Users are given the ability to delete their profile -->
 <!-- Delete Button Website-List-->
 <!-- 			<button class="btn btn-danger btn-block" (click)="delete()" type="button">Delete</button> -->
 <!-- 			<button class="btn btn-primary btn-block" routerLink="/user/{{user._id}}" *ngIf="loggedIn && !isAdmin">Cancel</button> -->
 
 
-			<!-- Cancel Button User Profile Link -->
-<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin">Cancel</button> -->
-<!-- 			<button class="btn btn-primary btn-block" routerLink="/admin" *ngIf="loggedIn && isAdmin">Cancel</button> -->
+<!-- Current Update/Cancel Routing (as of 8/15/18):
+Scenario 1: Admin clicks on Manage Info (Admin) to manage their own information from their main portal. Only way to update information.
+	Update: Leads back to Admin portal.
+	Cancel: Leads back to Admin portal.
+Scenario 2: Admin is in the Admin-Client page and clicks on a user to update.
+	Update: Leads back to Admin-Client management page. (Currently leading back to Admin portal)
+	Cancel: Leads back to Admin-Client management page. (Currently leading back to Admin portal)
+Scenario 3: User clicks on Manage Info (Admin) to manage their own information from their main portal.
+	Update: Leads back to User portal.
+	Cancel: Leads back to User portal. -->

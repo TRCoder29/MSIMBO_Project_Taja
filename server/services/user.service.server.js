@@ -59,6 +59,7 @@ module.exports = function(app){
 
 	function createUser(req, res) {
 		var user = req.body;
+		user.password = bcrypt.hashSync(user.password);
 		userModel.createUser(user).then(
 			(data) => {
 				res.json(data);
@@ -137,6 +138,7 @@ module.exports = function(app){
 
     function updateUser(req, res) {
     	var uid = req.params['uid'];
+    	console.log(uid);
     	var user = req.body;
     	console.log(uid);
     	console.log(user);

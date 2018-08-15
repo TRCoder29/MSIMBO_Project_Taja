@@ -32,21 +32,18 @@ findUsers() {
 }
 
 createUser(user: User) {
-  const url = this.baseUrl + '/api/user';
-  return this.http.post(url, user).pipe(map(
+   this.options.withCredentials = true;
+  return this.http.post(this.baseUrl + '/api/user', user).pipe(map(
     (response: Response) => {
       return response.json();
     }
   ))
 }
 
-register(username: String, password: String) {
+
+register(user: User) {
  // this communication will be secured
  this.options.withCredentials = true;
- const user = {
-   username : username,
-   password : password
- };
  return this.http.post(this.baseUrl + '/api/register', user, this.options).pipe(map(
    (res: Response) => {
      const data = res.json();

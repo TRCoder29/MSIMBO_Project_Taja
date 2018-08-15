@@ -24,7 +24,7 @@
 	<ul class="list-group" align="center">
 		<!-- Client List -->
 		<div *ngFor="let user of users">
-			<li class="list-group-item" *ngIf="!user.isAdmin && user.username.includes(search)">
+			<li class="list-group-item" *ngIf="!user.isAdmin && user.username && user.username.includes(search)">
 					<!-- Client-List Link -->
 					<a class="text-primary" routerLink="#">{{user.username}}</a>
 		<!-- 			<form id="adminClientsForm" (ngSubmit)="delete()" #f="ngForm"> -->
