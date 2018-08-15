@@ -9,14 +9,14 @@
 /*Remove Bullets from UL https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_unordered_none)*/
 /*Colorful trail effect: https://css-tricks.com/basics-css-blend-modes/*/
 /*Two Columns: https://www.w3schools.com/howto/howto_css_two_columns.asp*/
-/*Column Ratio Change with Screen Change: https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
+/*Column Ratio Change with Screen Change: https://www.w3schools.com/css/css_rwd_assets/Mediaqueries.asp*/
 /*Viewport (Mobile Ratio): https://www.w3schools.com/css/css_rwd_viewport.asp*/
 /*Add Google Search: http://www.developerdrive.com/2012/08/add-a-simple-google-yahoo-or-bing-search-box-to-your-website/*/
 /*Country List Dropdown: https://gist.github.com/soul-wish/8030172*/
 /*Red "Required" Asterisk: https://codepen.io/thewebtech/pen/grLQpp*/
 
 /*Screen resizing*/
-/*@media only screen and (max-width: 600px) {
+/*@assets/Media only screen and (max-width: 600px) {
     body {
         background-color: lightblue;
     }
@@ -184,31 +184,31 @@ margin-bottom: auto;
 
 /*Transparent Button (About)*/
 .homebutton1 {
-    background-image: url("./media/Gildedmarket.jpg");
+    background-image: url("./assets/Media/Gildedmarket.jpg");
     background-position: center;
 }
 
 /*Transparent Button (Services)*/
 .homebutton2 {
-    background-image: url("./media/YellowFlowers.jpg");
+    background-image: url("./assets/Media/YellowFlowers.jpg");
     background-position: center;
 }
 
 /*Transparent Button (Blog)*/
 .homebutton3 {
-    background-image: url("./media/CancunView.jpg");
+    background-image: url("./assets/Media/CancunView.jpg");
     background-position: center;
 }
 
 /*Transparent Button (Contact)*/
 .homebutton4 {
-    background-image: url("./media/BlueAlley.jpg");
+    background-image: url("./assets/Media/BlueAlley.jpg");
     background-position: center;
 }
 
 /*Transparent Button (Profile)*/
 .homebutton5{
-    background-image: url("./media/PraguePalaceWay.jpg");
+    background-image: url("./assets/Media/PraguePalaceWay.jpg");
     background-position: center;
 }
 
@@ -218,7 +218,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .aboutbackground { 
-    background-image: url("./media/GildedMarket.jpg");
+    background-image: url("./assets/Media/GildedMarket.jpg");
 /*    position: fixed;*/
     height: 100%;
     width: 100%;
@@ -256,7 +256,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .genservbackground {
-    background-image: url("./media/BlueAlley.jpg");
+    background-image: url("./assets/Media/BlueAlley.jpg");
     position: fixed;
     height: 100%;
     width: 100%;
@@ -291,7 +291,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .dobizbackground { 
-    background-image: url("./media/FortressGarden.jpg");
+    background-image: url("./assets/Media/FortressGarden.jpg");
 /*    position: fixed;*/
     height: 100%;
     width: 100%;
@@ -326,7 +326,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .itinbackground { 
-    background-image: url("./media/CancunView.jpg");
+    background-image: url("./assets/Media/CancunView.jpg");
     position: fixed;
     height: 100%;
     width: 100%;
@@ -429,7 +429,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .blogbackground { 
-    background-image: url("./media/FlowerTree.jpg");
+    background-image: url("./assets/Media/FlowerTree.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -466,7 +466,7 @@ margin-bottom: auto;
 
 /*Background Image*/
 .contactbackground { 
-    background-image: url("./media/GardenWalkway.jpg");
+    background-image: url("./assets/Media/GardenWalkway.jpg");
     /*position: fixed;*/
     height: 100%;
     width: 100%;
