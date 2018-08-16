@@ -3,14 +3,14 @@
 
 This is an app for a travel agency with CRM and booking capabiilities.
 
-Visitors and clients can perform the following tasks:
-Learn more about the business and the services it provides
-Get ideas for travel destinations through the blog and booking page
-Request travel-related services
-Communicate with the business
-Create and update a user profile if desired
-Keep track of service requests and payments
-Contact business through contact page
+Visitors and clients can perform the following tasks:<br>
+Learn more about the business and the services it provides<br>
+Get ideas for travel destinations page<br>
+Request travel-related services<br>
+Communicate with the business<br>
+Create and update a user profile if desired<br>
+Keep track of service requests and payments<br>
+Contact business through contact page<br>
 
 Administrators can perform the following tasks:<br>
 Add/update/delete/search for user profiles<br>
