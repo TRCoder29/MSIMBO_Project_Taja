@@ -23,7 +23,7 @@ Features Pending:<br>
 Active Blog<br>
 Contact Form<br>
 Service Request Forms:<br>
-	Group Travel Request (5+ Travelers)<br>
+	<div text-indent: 50px>Group Travel Request (5+ Travelers)</div><br>
 	Special Event/Occasion<br>
 	Travel Consulting<br>
 	Services/Amenities<br>
