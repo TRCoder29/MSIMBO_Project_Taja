@@ -19,11 +19,11 @@ Add/update/delete blog posts<br>
 Add/update/delete admin profiles<br>
 
 
-Features Pending:
-Active Blog
-Contact Form
-Service Request Forms:
-	Group Travel Request (5+ Travelers)
-	Special Event/Occasion
-	Travel Consulting
-	Services/Amenities
+Features Pending:<br>
+Active Blog<br>
+Contact Form<br>
+Service Request Forms:<br>
+	Group Travel Request (5+ Travelers)<br>
+	Special Event/Occasion<br>
+	Travel Consulting<br>
+	Services/Amenities<br>
